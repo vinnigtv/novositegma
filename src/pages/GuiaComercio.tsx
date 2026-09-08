@@ -3,7 +3,7 @@ import { Search, Star, Store, Globe2, SlidersHorizontal, Sparkles, BadgeCheck, A
 import type { BusinessType, Estabelecimento } from '../types';
 import { PageHero } from '../components/ui/PageHero';
 import { BusinessCard, CtaBanner, LinhaNegocioSimples } from '../components/ui/Cards';
-import { getEstabelecimentos } from '../lib/db';
+import { getEstabelecimentos, getPageHeroImages } from '../lib/db';
 import { Link } from '../lib/router';
 
 type Secao = 'todos' | BusinessType;
@@ -25,6 +25,7 @@ export const GuiaComercioPage: React.FC = () => {
 
   const todos = getEstabelecimentos();
   const aprovados = todos.filter((e) => e.status !== 'pendente');
+  const heroImages = getPageHeroImages();
 
   const categoriasDaSecao = useMemo(() => {
     const base = secao === 'todos' ? aprovados : aprovados.filter((e) => e.tipo === secao);
@@ -70,7 +71,7 @@ export const GuiaComercioPage: React.FC = () => {
         kicker="Guia completo"
         title="Guia de Comércio e Serviços de Guararema"
         description="Um diretório completo e profissional da Cidade Natureza: gastronomia, hospedagem, experiências e os negócios que a cidade aprova."
-        image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&auto=format&fit=crop&q=80"
+        image={heroImages.guiaComercio}
         meta="Diretório colaborativo atualizado pela comunidade"
       />
 

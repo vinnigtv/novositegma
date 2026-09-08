@@ -4,9 +4,11 @@ import { PageHero } from '../components/ui/PageHero';
 import { PostCard, CtaBanner } from '../components/ui/Cards';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { postagens } from '../data/blog';
+import { getPageHeroImages } from '../lib/db';
 
 export const BlogPage: React.FC = () => {
   const [principal, ...resto] = postagens;
+  const heroImages = getPageHeroImages();
 
   return (
     <>
@@ -15,7 +17,7 @@ export const BlogPage: React.FC = () => {
         kicker="Blog"
         title="Dicas, roteiros e bastidores"
         description="Tudo o que a gente aprende morando na Cidade Natureza — e que ninguém mais conta para você."
-        image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&auto=format&fit=crop&q=80"
+        image={heroImages.blog}
       />
 
       <section className="py-16">

@@ -1,9 +1,10 @@
-import type { Atracao, Estabelecimento, Evento, SlideCidade } from '../types';
+import type { Atracao, Estabelecimento, Evento, PageHeroImages, SlideCidade } from '../types';
 import { defaultAtracoes } from '../data/pontosTuristicos';
 import { defaultEstabelecimentos } from '../data/estabelecimentos';
 import { defaultEventos } from '../data/eventos';
 import { defaultSlidesCidade } from '../data/cidade';
 import { defaultSlidesHero, capaHero } from '../data/hero';
+import { defaultPageHeroImages } from '../data/pageHero';
 
 const KEYS = {
   atracoes: 'rg.atracoes.v1',
@@ -11,6 +12,7 @@ const KEYS = {
   eventos: 'rg.eventos.v1',
   slidesCidade: 'rg.slidesCidade.v1',
   slidesHero: 'rg.slidesHero.v1',
+  pageHeroImages: 'rg.pageHeroImages.v1',
 } as const;
 
 function readCollection<T>(key: string, fallback: T[]): T[] {
@@ -80,6 +82,21 @@ export function getSlidesHero(): SlideCidade[] {
 export function saveSlidesHero(list: SlideCidade[]) {
   const demais = list.filter((s) => s.id !== capaHero.id);
   writeCollection(KEYS.slidesHero, [capaHero, ...demais]);
+}
+
+export function getPageHeroImages(): PageHeroImages {
+  try {
+    const raw = localStorage.getItem(KEYS.pageHeroImages);
+    if (raw === null) return defaultPageHeroImages;
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? (parsed as PageHeroImages) : defaultPageHeroImages;
+  } catch {
+    return defaultPageHeroImages;
+  }
+}
+
+export function savePageHeroImages(map: PageHeroImages) {
+  localStorage.setItem(KEYS.pageHeroImages, JSON.stringify(map));
 }
 
 export interface CadastroComerciante {

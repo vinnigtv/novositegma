@@ -3,6 +3,7 @@ import { Car, Map, Clock, Fuel, ShieldCheck, Navigation } from 'lucide-react';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { CtaBanner } from '../components/ui/Cards';
+import { getPageHeroImages } from '../lib/db';
 
 const rotas = [
   {
@@ -22,6 +23,8 @@ const rotas = [
 ];
 
 export const ComoChegarPage: React.FC = () => {
+  const heroImages = getPageHeroImages();
+
   return (
     <>
       <PageHero
@@ -29,7 +32,7 @@ export const ComoChegarPage: React.FC = () => {
         kicker="Planeje sua viagem"
         title="Como chegar em Guararema"
         description="Duas ótimas estradas te trazem até a Cidade Natureza em cerca de uma hora — o difícil é escolher o que fazer primeiro."
-        image="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&auto=format&fit=crop&q=80"
+        image={heroImages.comoChegar}
       />
 
       <section className="py-16">

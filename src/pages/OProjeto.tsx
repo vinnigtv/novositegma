@@ -3,6 +3,7 @@ import { Target, HeartHandshake, Megaphone, TrendingUp } from 'lucide-react';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { CtaBanner } from '../components/ui/Cards';
+import { getPageHeroImages } from '../lib/db';
 
 const valores = [
   {
@@ -35,6 +36,8 @@ const passos = [
 ];
 
 export const OProjetoPage: React.FC = () => {
+  const heroImages = getPageHeroImages();
+
   return (
     <>
       <PageHero
@@ -42,7 +45,7 @@ export const OProjetoPage: React.FC = () => {
         kicker="Institucional"
         title="O Projeto Guararema.net"
         description="Somos o guia digital da Cidade Natureza: conectamos visitantes, moradores e negócios em torno do melhor da nossa cidade."
-        image="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1600&auto=format&fit=crop&q=80"
+        image={heroImages.oProjeto}
       />
 
       <section className="py-20">

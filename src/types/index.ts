@@ -78,3 +78,5 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+export type PageHeroImages = Record<string, string>;

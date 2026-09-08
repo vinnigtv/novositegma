@@ -3,7 +3,7 @@ import { Search } from 'lucide-react';
 import { PageHero } from '../components/ui/PageHero';
 import { AtracaoCard } from '../components/ui/Cards';
 import { CtaBanner } from '../components/ui/Cards';
-import { getAtracoes } from '../lib/db';
+import { getAtracoes, getPageHeroImages } from '../lib/db';
 import { categoriaLabels } from '../data/pontosTuristicos';
 import type { AttractionCategory } from '../types';
 
@@ -14,6 +14,7 @@ export const PontosTuristicosPage: React.FC = () => {
   const [busca, setBusca] = useState('');
 
   const atracoes = getAtracoes();
+  const heroImages = getPageHeroImages();
 
   const categorias: { id: Filtro; label: string }[] = [
     { id: 'todos', label: 'Todos' },
@@ -41,7 +42,7 @@ export const PontosTuristicosPage: React.FC = () => {
         kicker="Pontos turísticos"
         title="14 paradas para se apaixonar por Guararema"
         description="Da Pedra Montada ao Pontilhão, passando pelas igrejas históricas e pela Vila de Luís Carlos — escolha por onde começar."
-        image="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&auto=format&fit=crop&q=80"
+        image={heroImages.pontosTuristicos}
         meta={`${atracoes.length} pontos turísticos catalogados`}
       />
 

@@ -3,6 +3,7 @@ import { Sparkles, Star, PartyPopper, Snowflake } from 'lucide-react';
 import { Link } from '../lib/router';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
+import { getPageHeroImages } from '../lib/db';
 
 const atracoesNatal = [
   {
@@ -28,6 +29,8 @@ const atracoesNatal = [
 ];
 
 export const CidadeNatalPage: React.FC = () => {
+  const heroImages = getPageHeroImages();
+
   return (
     <>
       <PageHero
@@ -35,7 +38,7 @@ export const CidadeNatalPage: React.FC = () => {
         kicker="Eventos especiais"
         title="Cidade Natal"
         description="No fim do ano, Guararema se transforma: luzes, música e uma atmosfera mágica que encanta crianças e adultos."
-        image="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=1600&auto=format&fit=crop&q=80"
+        image={heroImages.cidadeNatal}
         meta="Dezembro · Centro Histórico"
       />
 

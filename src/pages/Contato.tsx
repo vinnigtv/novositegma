@@ -3,9 +3,11 @@ import { Mail, Phone, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from '../components/ui/BrandIcons';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
+import { getPageHeroImages } from '../lib/db';
 
 export const ContatoPage: React.FC = () => {
   const [enviado, setEnviado] = useState(false);
+  const heroImages = getPageHeroImages();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +28,7 @@ export const ContatoPage: React.FC = () => {
         kicker="Contato"
         title="Fale com o Guararema.net"
         description="Dúvidas sobre o roteiro, indicações de lugares ou interesse em ser parceiro? Mande uma mensagem que a gente responde rapidinho."
-        image="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1600&auto=format&fit=crop&q=80"
+        image={heroImages.contato}
       />
 
       <section className="py-20">

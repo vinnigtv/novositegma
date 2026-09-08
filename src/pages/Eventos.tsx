@@ -2,10 +2,11 @@ import React from 'react';
 import { PageHero } from '../components/ui/PageHero';
 import { EventoCard, CtaBanner } from '../components/ui/Cards';
 import { SectionHeading } from '../components/ui/SectionHeading';
-import { getEventos } from '../lib/db';
+import { getEventos, getPageHeroImages } from '../lib/db';
 
 export const EventosPage: React.FC = () => {
   const eventos = getEventos();
+  const heroImages = getPageHeroImages();
   const destaque = eventos.find((e) => e.destaque);
   const outros = eventos.filter((e) => !e.destaque);
 
@@ -16,7 +17,7 @@ export const EventosPage: React.FC = () => {
         kicker="Programação & eventos"
         title="A agenda cultural da Cidade Natureza"
         description="Música, festas tradicionais, gastronomia e o Natal mais encantador do Vale do Paraíba: Guararema celebra o ano inteiro."
-        image="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?w=1600&auto=format&fit=crop&q=80"
+        image={heroImages.eventos}
         meta="Programação sujeita a alteração"
       />
 

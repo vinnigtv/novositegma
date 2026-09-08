@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { PageHero } from '../components/ui/PageHero';
 import { BusinessCard, CtaBanner } from '../components/ui/Cards';
-import { getEstabelecimentosPorTipo } from '../lib/db';
+import { getEstabelecimentosPorTipo, getPageHeroImages } from '../lib/db';
 import type { BusinessType, Estabelecimento } from '../types';
 
 interface ListagemConfig {
   tipo: BusinessType;
   titulo: string;
   descricao: string;
-  heroImage: string;
   kicker: string;
   resumo: string;
 }
@@ -19,7 +18,6 @@ const configPorTipo: Record<BusinessType, ListagemConfig> = {
     tipo: 'comer',
     titulo: 'Pra Comer',
     descricao: 'Conheça nossa culinária: restaurantes, pizzarias, hamburguerias, bares, cafeterias, sorveterias, alambiques, pesqueiros e muito mais.',
-    heroImage: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&auto=format&fit=crop&q=80',
     kicker: 'Gastronomia',
     resumo: 'A comida é parte do roteiro — e em Guararema ela é caprichada.',
   },
@@ -27,7 +25,6 @@ const configPorTipo: Record<BusinessType, ListagemConfig> = {
     tipo: 'dormir',
     titulo: 'Onde Dormir',
     descricao: 'Toda a hospitalidade que você merece: hotéis, hotéis-fazenda, pousadas, chalés, hostels, chácaras, sítios, estúdios e campings.',
-    heroImage: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&auto=format&fit=crop&q=80',
     kicker: 'Hospedagem',
     resumo: 'Acorde com a natureza ao redor em Guararema.',
   },
@@ -35,7 +32,6 @@ const configPorTipo: Record<BusinessType, ListagemConfig> = {
     tipo: 'fazer',
     titulo: 'O que Fazer',
     descricao: 'Independente da sua rota — lazer, histórica, cultural, aventura, rural, ecoturismo, bem-estar ou entretenimento — aqui tem programa.',
-    heroImage: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&auto=format&fit=crop&q=80',
     kicker: 'Experiências',
     resumo: 'Aventura e relaxamento na medida certa.',
   },
@@ -43,7 +39,6 @@ const configPorTipo: Record<BusinessType, ListagemConfig> = {
     tipo: 'guia',
     titulo: 'Guia de Comércio & Serviços',
     descricao: 'Tudo o que você precisa conhecer: estética e beleza, vestuário, saúde, pets, imóveis, eletrônicos, educação, construção e prestadores especializados.',
-    heroImage: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600&auto=format&fit=crop&q=80',
     kicker: 'Comércio local',
     resumo: 'A cidade que se cuida e se desenvolve com negócios de gente da terra.',
   },
@@ -51,6 +46,7 @@ const configPorTipo: Record<BusinessType, ListagemConfig> = {
 
 export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
   const config = configPorTipo[tipo];
+  const heroImages = getPageHeroImages();
   const [categoria, setCategoria] = useState('todas');
   const [busca, setBusca] = useState('');
 
@@ -70,7 +66,7 @@ export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
 
   return (
     <>
-      <PageHero crumb="/" kicker={config.kicker} title={config.titulo} description={config.descricao} image={config.heroImage} />
+      <PageHero crumb="/" kicker={config.kicker} title={config.titulo} description={config.descricao} image={heroImages[`listagem/${tipo}`]} />
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
