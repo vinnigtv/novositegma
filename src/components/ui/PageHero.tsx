@@ -22,15 +22,15 @@ export const PageHero: React.FC<PageHeroProps> = ({ kicker, title, description, 
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <Link
-          to={crumb ?? '/'}
-          className="absolute top-6 left-4 sm:left-6 lg:left-8 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/25 text-white text-xs font-bold shadow-lg shadow-black/25 hover:bg-black/55 transition-colors"
-        >
-          <ChevronLeft className="w-4 h-4" />
-          {crumb ? 'Voltar' : 'Início'}
-        </Link>
-
         <div className="max-w-4xl">
+          <Link
+            to={crumb ?? '/'}
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-xs font-bold shadow-lg shadow-black/20 hover:bg-white/30 transition-colors mb-5"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            {crumb ? 'Voltar' : 'Início'}
+          </Link>
+
           <div className="flex items-center flex-wrap gap-x-4 gap-y-3 mb-5">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur text-white text-[11px] font-bold uppercase tracking-[0.18em] whitespace-nowrap">
               <MapPin className="w-3.5 h-3.5" />
