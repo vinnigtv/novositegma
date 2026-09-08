@@ -3,6 +3,7 @@ import { Star, MapPin, Clock, Ticket, Info, Lightbulb, Map } from 'lucide-react'
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { AtracaoCard, CtaBanner } from '../components/ui/Cards';
+import { GaleriaFotos } from '../components/ui/GaleriaFotos';
 import { getAtracoes, getAtracao } from '../lib/db';
 import { categoriaLabels } from '../data/pontosTuristicos';
 import type { Atracao } from '../types';
@@ -68,17 +69,7 @@ export const AtracaoDetalhePage: React.FC<{ slug: string }> = ({ slug }) => {
               {/* Gallery */}
               <div className="mt-10">
                 <h3 className="text-xl font-bold text-olive-deep mb-4">Galerias de fotos</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {[atracao.imagem, ...atracao.galeria].slice(0, 3).map((img, idx) => (
-                    <img
-                      key={idx}
-                      src={img}
-                      alt={`${atracao.titulo} — foto ${idx + 1}`}
-                      loading="lazy"
-                      className="rounded-2xl h-44 object-cover w-full hover:scale-[1.02] transition-transform duration-300"
-                    />
-                  ))}
-                </div>
+                <GaleriaFotos fotos={[atracao.imagem, ...atracao.galeria]} alt={atracao.titulo} />
               </div>
 
               {/* Dicas */}
