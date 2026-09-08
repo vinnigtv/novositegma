@@ -28,9 +28,9 @@ export const Hero: React.FC = () => {
             className="h-full w-full"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-mist/35 via-mist/15 to-mist/35" />
-        <div className="absolute inset-0 bg-gradient-to-r from-mist/20 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,245,247,0.2),transparent_68%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent,rgba(0,0,0,0.35)_78%)] pointer-events-none" />
       </div>
 
       {/* Decorative accents */}
@@ -39,17 +39,17 @@ export const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-olive-deep/30 z-0" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center relative z-10">
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/75 backdrop-blur-md border border-white/60 text-olive-deep text-xs sm:text-sm font-semibold mb-7 shadow-lg shadow-black/10 [text-shadow:0_1px_4px_rgba(0,0,0,0.25)]">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/25 text-white text-xs sm:text-sm font-semibold mb-7 shadow-lg shadow-black/30">
           <span className="w-2 h-2 rounded-full bg-umber animate-pulse" />
           A Cidade Natureza · a 80 km de São Paulo
         </span>
 
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 [text-shadow:0_2px_10px_rgba(245,245,247,0.95),0_6px_40px_rgba(51,53,41,0.85)]">
-          <span className="block text-olive-deep [text-shadow:0_2px_10px_rgba(245,245,247,0.95),0_6px_40px_rgba(51,53,41,0.85)]">Visite. Conheça.</span>
-          <span className="block text-umber [text-shadow:0_2px_10px_rgba(245,245,247,0.95),0_6px_40px_rgba(51,53,41,0.85)]">E ame Guararema.</span>
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.55),0_8px_40px_rgba(0,0,0,0.6)]">
+          <span className="block">Visite. Conheça.</span>
+          <span className="block text-umber [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">E ame Guararema.</span>
         </h1>
 
-        <p className="text-base sm:text-lg lg:text-xl text-ink/90 font-normal leading-relaxed max-w-2xl mx-auto mb-10 [text-shadow:0_2px_12px_rgba(245,245,247,0.95),0_4px_24px_rgba(51,53,41,0.6)]">
+        <p className="text-base sm:text-lg lg:text-xl text-white/95 font-normal leading-relaxed max-w-2xl mx-auto mb-10 [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]">
           Reconhecida pela qualidade de vida, segurança e preservação da natureza, Guararema reúne tudo o que
           você procura: história, gastronomia, ecoturismo e a serenidade de uma cidade de interior.
         </p>
@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
           >
             Conhecer Pontos Turísticos
           </Button>
-          <Button variant="outline" to="/o-que-fazer" size="lg" icon={<Train className="w-5 h-5" />}>
+          <Button variant="light" to="/o-que-fazer" size="lg" icon={<Train className="w-5 h-5" />}>
             Ver o que Fazer
           </Button>
         </div>
@@ -88,10 +88,10 @@ export const Hero: React.FC = () => {
       {/* Scroll hint */}
       <Link
         to="/a-cidade"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-olive-deep/70 text-[10px] font-bold uppercase tracking-[0.25em] hover:text-umber transition-colors"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/85 text-[10px] font-bold uppercase tracking-[0.25em] hover:text-umber transition-colors"
       >
         Descubra
-        <span className="w-5 h-8 rounded-full border-2 border-olive-deep/40 flex items-start justify-center p-1.5">
+        <span className="w-5 h-8 rounded-full border-2 border-white/70 flex items-start justify-center p-1.5">
           <span className="w-1 h-2 rounded-full bg-umber animate-bounce" />
         </span>
       </Link>
