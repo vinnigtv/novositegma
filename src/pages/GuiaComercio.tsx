@@ -230,7 +230,7 @@ export const GuiaComercioPage: React.FC = () => {
                     </span>
                     <span className="text-xs text-muted">{gratuitos.length} negócios</span>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {gratuitos.map((e) => (
                       <LinhaNegocioSimples key={e.id} empresa={e} />
                     ))}

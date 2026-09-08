@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MapPin, Star, Phone, Calendar, Globe, ExternalLink } from 'lucide-react';
+import { ArrowRight, MapPin, Star, Phone, Calendar, Globe, ExternalLink, Utensils, Bed, Compass, Store } from 'lucide-react';
 import type { Atracao, Estabelecimento, Evento, Postagem } from '../../types';
 import { Link } from '../../lib/router';
 import { categoriaLabels } from '../../data/pontosTuristicos';
@@ -191,11 +191,20 @@ export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boole
   );
 };
 
+const iconeTipo: Record<string, React.ElementType> = {
+  comer: Utensils,
+  dormir: Bed,
+  fazer: Compass,
+  guia: Store,
+};
+
 export const LinhaNegocioSimples: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
+  const Icone = iconeTipo[empresa.tipo] ?? Store;
+
   return (
-    <article className="flex items-center gap-4 bg-surface rounded-2xl border border-olive/10 p-4">
-      <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center font-extrabold text-lg flex-shrink-0 font-heading">
-        {(empresa.nome || '?').trim().charAt(0).toUpperCase()}
+    <article className="flex items-center gap-3 bg-surface rounded-2xl border border-olive/10 p-4">
+      <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center flex-shrink-0">
+        <Icone className="w-5 h-5" />
       </span>
       <div className="min-w-0 flex-1">
         <p className="font-bold text-olive-deep truncate">{empresa.nome}</p>
