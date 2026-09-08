@@ -16,8 +16,9 @@ export const PageHero: React.FC<PageHeroProps> = ({ kicker, title, description, 
     <section className="relative min-h-[62vh] flex items-end overflow-hidden pt-36 pb-20">
       <div className="absolute inset-0 z-0">
         <img src={image} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-olive-deep via-olive-deep/70 to-mist/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-olive-deep/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent,rgba(0,0,0,0.35)_78%)] pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
