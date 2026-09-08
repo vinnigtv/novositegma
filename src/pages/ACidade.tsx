@@ -38,7 +38,6 @@ export const ACidadePage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/"
         kicker="A Cidade"
         title="A Cidade Natureza"
         description="Reconhecida pela qualidade de vida, segurança e cuidado com a natureza, Guararema é o refúgio perfeito a uma hora da capital."

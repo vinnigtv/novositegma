@@ -36,7 +36,6 @@ export const AtracaoDetalhePage: React.FC<{ slug: string }> = ({ slug }) => {
   return (
     <>
       <PageHero
-        crumb="/pontos-turisticos"
         kicker={categoriaLabels[atracao.categoria]}
         title={atracao.titulo}
         description={atracao.resumo}

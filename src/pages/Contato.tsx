@@ -24,7 +24,6 @@ export const ContatoPage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/"
         kicker="Contato"
         title="Fale com o Guararema.net"
         description="Dúvidas sobre o roteiro, indicações de lugares ou interesse em ser parceiro? Mande uma mensagem que a gente responde rapidinho."

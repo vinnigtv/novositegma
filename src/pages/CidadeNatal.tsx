@@ -34,7 +34,6 @@ export const CidadeNatalPage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/eventos"
         kicker="Eventos especiais"
         title="Cidade Natal"
         description="No fim do ano, Guararema se transforma: luzes, música e uma atmosfera mágica que encanta crianças e adultos."

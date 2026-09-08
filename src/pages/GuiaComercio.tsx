@@ -67,7 +67,6 @@ export const GuiaComercioPage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/"
         kicker="Guia completo"
         title="Guia de Comércio e Serviços de Guararema"
         description="Um diretório completo e profissional da Cidade Natureza: gastronomia, hospedagem, experiências e os negócios que a cidade aprova."

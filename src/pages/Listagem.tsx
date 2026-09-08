@@ -66,7 +66,7 @@ export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
 
   return (
     <>
-      <PageHero crumb="/" kicker={config.kicker} title={config.titulo} description={config.descricao} image={heroImages[`listagem/${tipo}`]} />
+      <PageHero kicker={config.kicker} title={config.titulo} description={config.descricao} image={heroImages[`listagem/${tipo}`]} />
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

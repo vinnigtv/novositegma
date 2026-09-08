@@ -41,7 +41,6 @@ export const OProjetoPage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/"
         kicker="Institucional"
         title="O Projeto Guararema.net"
         description="Somos o guia digital da Cidade Natureza: conectamos visitantes, moradores e negócios em torno do melhor da nossa cidade."

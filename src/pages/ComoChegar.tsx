@@ -28,7 +28,6 @@ export const ComoChegarPage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/"
         kicker="Planeje sua viagem"
         title="Como chegar em Guararema"
         description="Duas ótimas estradas te trazem até a Cidade Natureza em cerca de uma hora — o difícil é escolher o que fazer primeiro."

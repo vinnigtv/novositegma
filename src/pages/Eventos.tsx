@@ -13,7 +13,6 @@ export const EventosPage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/"
         kicker="Programação & eventos"
         title="A agenda cultural da Cidade Natureza"
         description="Música, festas tradicionais, gastronomia e o Natal mais encantador do Vale do Paraíba: Guararema celebra o ano inteiro."

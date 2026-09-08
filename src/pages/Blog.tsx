@@ -13,7 +13,6 @@ export const BlogPage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/"
         kicker="Blog"
         title="Dicas, roteiros e bastidores"
         description="Tudo o que a gente aprende morando na Cidade Natureza — e que ninguém mais conta para você."

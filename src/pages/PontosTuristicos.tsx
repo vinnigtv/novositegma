@@ -38,7 +38,6 @@ export const PontosTuristicosPage: React.FC = () => {
   return (
     <>
       <PageHero
-        crumb="/"
         kicker="Pontos turísticos"
         title="14 paradas para se apaixonar por Guararema"
         description="Da Pedra Montada ao Pontilhão, passando pelas igrejas históricas e pela Vila de Luís Carlos — escolha por onde começar."
