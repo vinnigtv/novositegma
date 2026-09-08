@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { ClipboardCheck, Store, BadgeCheck, Crown, MapPin, CheckCircle2, ArrowRight } from 'lucide-react';
-import type { Estabelecimento } from '../types';
-import { tiposRecursos } from '../data/estabelecimentos';
 import { salvarCadastro } from '../lib/db';
 import { Link } from '../lib/router';
 import { SectionHeading } from '../components/ui/SectionHeading';
@@ -16,7 +14,6 @@ const passos = [
 export const CadastroPage: React.FC = () => {
   const [dados, setDados] = useState({
     nome: '',
-    tipo: 'comer' as Estabelecimento['tipo'],
     categoria: '',
     descricao: '',
     endereco: '',
@@ -35,7 +32,7 @@ export const CadastroPage: React.FC = () => {
       setErro('Preencha pelo menos nome do negócio, categoria e endereço.');
       return;
     }
-    salvarCadastro(dados);
+    salvarCadastro({ ...dados, tipo: 'guia' });
     setEnviado(true);
     setErro('');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -118,22 +115,6 @@ export const CadastroPage: React.FC = () => {
                     placeholder="Ex.: Padaria Estação"
                     className="w-full px-3.5 py-2.5 rounded-xl bg-surface border border-olive/20 text-sm text-ink placeholder-muted focus:outline-none focus:border-umber focus:ring-2 focus:ring-umber/15 transition"
                   />
-                </label>
-                <label className="block">
-                  <span className="block text-xs font-bold text-olive-deep uppercase tracking-wide mb-1.5">
-                    Seção *
-                  </span>
-                  <select
-                    value={dados.tipo}
-                    onChange={(e) => patch({ tipo: e.target.value as Estabelecimento['tipo'] })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-surface border border-olive/20 text-sm text-ink focus:outline-none focus:border-umber cursor-pointer transition"
-                  >
-                    {(Object.keys(tiposRecursos) as (keyof typeof tiposRecursos)[]).map((t) => (
-                      <option key={t} value={t}>
-                        {tiposRecursos[t]}
-                      </option>
-                    ))}
-                  </select>
                 </label>
                 <label className="block">
                   <span className="block text-xs font-bold text-olive-deep uppercase tracking-wide mb-1.5">
