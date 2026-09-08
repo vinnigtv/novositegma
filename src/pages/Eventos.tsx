@@ -2,9 +2,10 @@ import React from 'react';
 import { PageHero } from '../components/ui/PageHero';
 import { EventoCard, CtaBanner } from '../components/ui/Cards';
 import { SectionHeading } from '../components/ui/SectionHeading';
-import { eventos } from '../data/eventos';
+import { getEventos } from '../lib/db';
 
 export const EventosPage: React.FC = () => {
+  const eventos = getEventos();
   const destaque = eventos.find((e) => e.destaque);
   const outros = eventos.filter((e) => !e.destaque);
 

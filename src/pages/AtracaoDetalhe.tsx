@@ -3,10 +3,13 @@ import { Star, MapPin, Clock, Ticket, Info, Lightbulb, Map } from 'lucide-react'
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { AtracaoCard, CtaBanner } from '../components/ui/Cards';
-import { atracoes, categoriaLabels, getAtracao } from '../data/pontosTuristicos';
+import { getAtracoes, getAtracao } from '../lib/db';
+import { categoriaLabels } from '../data/pontosTuristicos';
+import type { Atracao } from '../types';
 
 export const AtracaoDetalhePage: React.FC<{ slug: string }> = ({ slug }) => {
   const atracao = getAtracao(slug);
+  const atracoes = getAtracoes();
 
   if (!atracao) {
     return (
@@ -173,6 +176,6 @@ export const AtracaoDetalhePage: React.FC<{ slug: string }> = ({ slug }) => {
   );
 };
 
-function relatacionadas(lista: typeof atracoes, slug: string, n: number) {
+function relatacionadas(lista: Atracao[], slug: string, n: number) {
   return lista.filter((a) => a.slug !== slug).slice(0, n);
 }

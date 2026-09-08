@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Mail, ChevronDown, MapPin } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from '../ui/BrandIcons';
 import { Link } from '../../lib/router';
-import { atracoes } from '../../data/pontosTuristicos';
-
-const destaquesMenu = atracoes.filter((a) => a.destaque).slice(0, 4);
+import { getAtracoes } from '../../lib/db';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const destaquesMenu = getAtracoes().filter((a) => a.destaque).slice(0, 4);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);

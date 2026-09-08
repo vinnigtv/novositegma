@@ -1,6 +1,6 @@
 import type { Evento } from '../types';
 
-export const eventos: Evento[] = [
+export const defaultEventos: Evento[] = [
   {
     id: 'orquestra-sinfonica',
     titulo: 'Orquestra Sinfônica de Guararema',
@@ -70,4 +70,3 @@ export const eventos: Evento[] = [
   },
 ];
 
-export const eventosEmDestaque = eventos.filter((e) => e.destaque === true);

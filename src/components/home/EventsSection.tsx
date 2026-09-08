@@ -3,9 +3,10 @@ import { ArrowRight, CalendarDays } from 'lucide-react';
 import { Link } from '../../lib/router';
 import { SectionHeading } from '../ui/SectionHeading';
 import { EventoCard } from '../ui/Cards';
-import { eventos } from '../../data/eventos';
+import { getEventos } from '../../lib/db';
 
 export const EventsSection: React.FC = () => {
+  const eventos = getEventos();
   const next = eventos.slice(0, 3);
 
   return (

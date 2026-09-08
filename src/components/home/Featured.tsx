@@ -3,10 +3,10 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from '../../lib/router';
 import { SectionHeading } from '../ui/SectionHeading';
 import { AtracaoCard } from '../ui/Cards';
-import { atracoes } from '../../data/pontosTuristicos';
+import { getAtracoes } from '../../lib/db';
 
 export const Featured: React.FC = () => {
-  const featured = atracoes.filter((a) => a.destaque).slice(0, 6);
+  const featured = getAtracoes().filter((a) => a.destaque).slice(0, 6);
 
   return (
     <section className="py-24 relative">

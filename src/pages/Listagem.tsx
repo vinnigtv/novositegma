@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { PageHero } from '../components/ui/PageHero';
 import { BusinessCard, CtaBanner } from '../components/ui/Cards';
-import { getEstabelecimentosPorTipo } from '../data/estabelecimentos';
+import { getEstabelecimentosPorTipo } from '../lib/db';
 import type { BusinessType, Estabelecimento } from '../types';
 
 interface ListagemConfig {

@@ -1,6 +1,6 @@
 import type { Estabelecimento } from '../types';
 
-export const estabelecimentos: Estabelecimento[] = [
+export const defaultEstabelecimentos: Estabelecimento[] = [
   {
     id: 'forneria-toscana',
     nome: 'Forneria Toscana',
@@ -298,10 +298,6 @@ export const estabelecimentos: Estabelecimento[] = [
     tags: ['Petshop', 'Banho & Tosa', 'Rações'],
   },
 ];
-
-export function getEstabelecimentosPorTipo(tipo: Estabelecimento['tipo']) {
-  return estabelecimentos.filter((e) => e.tipo === tipo);
-}
 
 export const tiposRecursos: Record<Estabelecimento['tipo'], string> = {
   comer: 'Pra Comer',

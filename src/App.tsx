@@ -13,6 +13,7 @@ import { BlogPage } from './pages/Blog';
 import { CidadeNatalPage } from './pages/CidadeNatal';
 import { ComoChegarPage } from './pages/ComoChegar';
 import { OProjetoPage } from './pages/OProjeto';
+import { AdminPage } from './pages/Admin';
 
 function NotFoundPage() {
   return (
@@ -59,6 +60,8 @@ function renderPage(path: string) {
       return <ComoChegarPage />;
     case 'o-projeto':
       return <OProjetoPage />;
+    case 'admin':
+      return <AdminPage />;
     default:
       return <NotFoundPage />;
   }
@@ -70,6 +73,12 @@ export function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, [path]);
+
+  const isAdmin = path.startsWith('/admin');
+
+  if (isAdmin) {
+    return <main className="min-h-screen bg-mist text-ink">{renderPage(path)}</main>;
+  }
 
   return (
     <div className="min-h-screen bg-mist text-ink flex flex-col">

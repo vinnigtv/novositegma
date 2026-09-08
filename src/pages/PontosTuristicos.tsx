@@ -3,7 +3,8 @@ import { Search } from 'lucide-react';
 import { PageHero } from '../components/ui/PageHero';
 import { AtracaoCard } from '../components/ui/Cards';
 import { CtaBanner } from '../components/ui/Cards';
-import { atracoes, categoriaLabels } from '../data/pontosTuristicos';
+import { getAtracoes } from '../lib/db';
+import { categoriaLabels } from '../data/pontosTuristicos';
 import type { AttractionCategory } from '../types';
 
 type Filtro = 'todos' | AttractionCategory;
@@ -11,6 +12,8 @@ type Filtro = 'todos' | AttractionCategory;
 export const PontosTuristicosPage: React.FC = () => {
   const [filtro, setFiltro] = useState<Filtro>('todos');
   const [busca, setBusca] = useState('');
+
+  const atracoes = getAtracoes();
 
   const categorias: { id: Filtro; label: string }[] = [
     { id: 'todos', label: 'Todos' },

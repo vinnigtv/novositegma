@@ -7,7 +7,7 @@ export const categoriaLabels: Record<Atracao['categoria'], string> = {
   historia: 'História',
 };
 
-export const atracoes: Atracao[] = [
+export const defaultAtracoes: Atracao[] = [
   {
     slug: 'pedra-montada',
     titulo: 'Parque Municipal da Pedra Montada',
@@ -450,6 +450,3 @@ export const atracoes: Atracao[] = [
   },
 ];
 
-export function getAtracao(slug: string): Atracao | undefined {
-  return atracoes.find((a) => a.slug === slug);
-}
