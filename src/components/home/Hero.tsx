@@ -28,9 +28,9 @@ export const Hero: React.FC = () => {
             className="h-full w-full"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-mist/85 via-mist/55 to-mist" />
-        <div className="absolute inset-0 bg-gradient-to-r from-mist/50 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,245,247,0.55),transparent_68%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-mist/50 via-mist/30 to-mist" />
+        <div className="absolute inset-0 bg-gradient-to-r from-mist/35 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,245,247,0.35),transparent_68%)] pointer-events-none" />
       </div>
 
       {/* Decorative accents */}
