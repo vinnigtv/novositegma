@@ -1,8 +1,9 @@
 import type { SlideCidade } from '../types';
+import capaUrl from '../assets/image1.png';
 
 export const capaHero: SlideCidade = {
   id: 'capa',
-  imagem: `${import.meta.env.BASE_URL}image1.png`,
+  imagem: capaUrl,
   titulo: 'Visite. Conheça. E ame Guararema.',
   legenda: 'A Cidade Natureza · a 80 km de São Paulo',
 };
