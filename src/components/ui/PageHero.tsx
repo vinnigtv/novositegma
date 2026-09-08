@@ -21,16 +21,14 @@ export const PageHero: React.FC<PageHeroProps> = ({ kicker, title, description, 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="max-w-4xl">
-          <div className="flex items-center flex-wrap gap-x-4 gap-y-3 mb-5">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur text-white text-[11px] font-bold uppercase tracking-[0.18em] whitespace-nowrap">
-              <MapPin className="w-3.5 h-3.5" />
-              {kicker}
-            </span>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur text-white text-[11px] font-bold uppercase tracking-[0.18em] whitespace-nowrap mb-4">
+            <MapPin className="w-3.5 h-3.5" />
+            {kicker}
+          </span>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.05] min-w-0">
-              {title}
-            </h1>
-          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.05] mb-5">
+            {title}
+          </h1>
 
           <p className="text-white/85 text-base sm:text-lg leading-relaxed max-w-2xl">{description}</p>
 
