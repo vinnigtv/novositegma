@@ -1,131 +1,120 @@
 import React from 'react';
-import { Compass, Heart, MapPin, Phone, Mail, Globe, Share2, Camera } from 'lucide-react';
+import { Mail, MapPin, Heart, Phone } from 'lucide-react';
+import { InstagramIcon, FacebookIcon } from '../ui/BrandIcons';
+import { Link } from '../../lib/router';
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="bg-slate-950 border-t border-slate-900 pt-16 pb-12 relative">
+    <footer className="bg-umber-deep text-white/80 pt-16 pb-8 relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-olive via-umber to-umber" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/60">
-          
-          {/* Col 1 & 2: Brand Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-slate-950 shadow-md shadow-emerald-500/20">
-                <Compass className="w-5 h-5 stroke-[2.5]" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+          {/* Brand */}
+          <div className="lg:col-span-4">
+            <Link to="/" className="flex items-center gap-2.5 mb-4">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-olive to-umber flex items-center justify-center text-white">
+                <MapPin className="w-5 h-5 stroke-[2.2]" />
               </div>
-              <span className="text-xl font-bold text-white font-['Outfit']">
-                Guararema
-              </span>
-            </div>
-
-            <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-sm">
-              Descubra o refúgio perfeito da Grande São Paulo e Vale do Paraíba. Ecoturismo, gastronomia, história e a serenidade do Rio Paraíba do Sul.
+              <div className="leading-none">
+                <span className="text-xl font-bold tracking-tight text-white font-heading">Rota Guararema</span>
+                <span className="text-[9px] font-bold tracking-[0.28em] text-umber-tint uppercase block mt-0.5">
+                  Cidade Natureza
+                </span>
+              </div>
+            </Link>
+            <p className="text-sm leading-relaxed max-w-sm">
+              O guia digital da Cidade Natureza: pontos turísticos, gastronomia, hospedagem e os segredos que
+              ninguém mais conta sobre Guararema.
             </p>
-
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5 mt-6">
               <a
-                href="#contact"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
-                aria-label="Galeria de Fotos"
+                href="https://www.instagram.com/rotaguararema"
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white/80 hover:bg-white hover:text-umber-deep transition-colors"
+                aria-label="Instagram"
               >
-                <Camera className="w-4 h-4" />
+                <InstagramIcon className="w-4 h-4" />
               </a>
               <a
-                href="#contact"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
-                aria-label="Compartilhar"
+                href="https://www.facebook.com/rotaguararema"
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white/80 hover:bg-white hover:text-umber-deep transition-colors"
+                aria-label="Facebook"
               >
-                <Share2 className="w-4 h-4" />
+                <FacebookIcon className="w-4 h-4" />
               </a>
               <a
-                href="#contact"
-                className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
-                aria-label="Website Oficial"
+                href="mailto:contato@rotaguararema.com.br"
+                className="w-9 h-9 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white/80 hover:bg-white hover:text-umber-deep transition-colors"
+                aria-label="E-mail"
               >
-                <Globe className="w-4 h-4" />
+                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Col 3: Navegação */}
-          <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-['Outfit']">
-              Navegação
-            </h4>
+          {/* Navegação */}
+          <div className="lg:col-span-2">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-heading">Navegação</h4>
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <a href="#home" className="text-slate-400 hover:text-emerald-400 transition-colors">Início</a>
-              </li>
-              <li>
-                <a href="#highlights" className="text-slate-400 hover:text-emerald-400 transition-colors">Principais Destaques</a>
-              </li>
-              <li>
-                <a href="#attractions" className="text-slate-400 hover:text-emerald-400 transition-colors">Pontos Turísticos</a>
-              </li>
-              <li>
-                <a href="#train" className="text-slate-400 hover:text-emerald-400 transition-colors">Passeio de Trem</a>
-              </li>
+              <li><Link to="/" className="hover:text-white transition-colors">Início</Link></li>
+              <li><Link to="/a-cidade" className="hover:text-white transition-colors">A Cidade</Link></li>
+              <li><Link to="/pontos-turisticos" className="hover:text-white transition-colors">Pontos Turísticos</Link></li>
+              <li><Link to="/pra-comer" className="hover:text-white transition-colors">Pra Comer</Link></li>
+              <li><Link to="/onde-dormir" className="hover:text-white transition-colors">Onde Dormir</Link></li>
+              <li><Link to="/o-que-fazer" className="hover:text-white transition-colors">O que Fazer</Link></li>
             </ul>
           </div>
 
-          {/* Col 4: Atrações */}
-          <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-['Outfit']">
-              Lugares Populares
-            </h4>
+          {/* Atrações populares */}
+          <div className="lg:col-span-2">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-heading">Imperdíveis</h4>
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <span className="text-slate-400">Recanto do Américo</span>
-              </li>
-              <li>
-                <span className="text-slate-400">Vila de Luís Carlos</span>
-              </li>
-              <li>
-                <span className="text-slate-400">Parque da Ilha Grande</span>
-              </li>
-              <li>
-                <span className="text-slate-400">Igreja da Escada</span>
-              </li>
-              <li>
-                <span className="text-slate-400">Mirante Municipal</span>
-              </li>
+              <li><Link to="/pontos-turisticos/pau-dalho" className="hover:text-white transition-colors">Recanto do Américo</Link></li>
+              <li><Link to="/pontos-turisticos/vila-de-luis-carlos" className="hover:text-white transition-colors">Vila de Luís Carlos</Link></li>
+              <li><Link to="/pontos-turisticos/ilha-grande" className="hover:text-white transition-colors">Parque da Ilha Grande</Link></li>
+              <li><Link to="/pontos-turisticos/mirante-do-gerbasio" className="hover:text-white transition-colors">Mirante do Gerbásio</Link></li>
+              <li><Link to="/pontos-turisticos/estacao-de-trem-maria-fumaca-e-pontilhao" className="hover:text-white transition-colors">Maria Fumaça</Link></li>
             </ul>
           </div>
 
-          {/* Col 5: Informações de Visita */}
-          <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-['Outfit']">
-              Informações
-            </h4>
-            <ul className="space-y-3 text-sm text-slate-400">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>Guararema - SP, Brasil</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>Centro de Atendimento ao Turista</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span>turismo@guararema.sp.gov.br</span>
-              </li>
-            </ul>
+          {/* Institucional & Mais informações */}
+          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-heading">Institucional</h4>
+              <ul className="space-y-2.5 text-sm">
+                <li><Link to="/o-projeto" className="hover:text-white transition-colors">O Projeto</Link></li>
+                <li><Link to="/eventos" className="hover:text-white transition-colors">Eventos</Link></li>
+                <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><Link to="/cidade-natal" className="hover:text-white transition-colors">Cidade Natal</Link></li>
+                <li><Link to="/contato" className="hover:text-white transition-colors">Contato</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-heading">Mais Info</h4>
+              <ul className="space-y-2.5 text-sm">
+                <li><Link to="/como-chegar" className="hover:text-white transition-colors">Como Chegar</Link></li>
+                <li><Link to="/guia-de-comercios-e-servicos" className="hover:text-white transition-colors">Comércio & Serviços</Link></li>
+                <li className="flex items-start gap-2 pt-1 text-sm text-white/70">
+                  <Phone className="w-4 h-4 text-umber-tint flex-shrink-0 mt-0.5" />
+                  <span>Telefones úteis na Secretaria de Turismo</span>
+                </li>
+              </ul>
+            </div>
           </div>
-
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Guararema Turismo. Todos os direitos reservados.</p>
+        {/* Bottom bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+          <p>© {new Date().getFullYear()} Rota Guararema. Todos os direitos reservados.</p>
           <div className="flex items-center gap-1">
-            <span>Desenvolvido com</span>
-            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
-            <span>para visitantes & moradores</span>
+            <span>Feito com</span>
+            <Heart className="w-3.5 h-3.5 text-umber-tint fill-umber-tint inline" />
+            <span>para visitantes & moradores da Cidade Natureza</span>
           </div>
         </div>
-
       </div>
     </footer>
   );

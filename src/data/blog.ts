@@ -1,0 +1,58 @@
+import type { Postagem } from '../types';
+
+export const postagens: Postagem[] = [
+  {
+    id: 'roteiro-1-dia',
+    titulo: 'Roteiro de 1 dia em Guararema: o que não pode faltar',
+    categoria: 'Roteiros',
+    resumo: 'Manhã no Recanto do Américo, trem na hora do almoço e pôr do sol no Mirante. Veja o passo a passo de um dia perfeito.',
+    imagem: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=900&auto=format&fit=crop&q=80',
+    data: '02 set 2026',
+    leitura: '8 min',
+  },
+  {
+    id: 'melhores-cafes',
+    titulo: 'Onde tomar o melhor café em Guararema',
+    categoria: 'Gastronomia',
+    resumo: 'Da Cafeteria Central na Estação Literária aos bistrôs da Vila de Luís Carlos, um guia para os apaixonados por café.',
+    imagem: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&auto=format&fit=crop&q=80',
+    data: '28 ago 2026',
+    leitura: '6 min',
+  },
+  {
+    id: 'maria-fumaca-passos',
+    titulo: 'Trem da Maria Fumaça: horários, valores e dicas',
+    categoria: 'Experiências',
+    resumo: 'Saiba como garantir seu lugar na maior locomotiva a vapor do Brasil e aproveitar a Vila de Luís Carlos sem aperto.',
+    imagem: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=900&auto=format&fit=crop&q=80',
+    data: '20 ago 2026',
+    leitura: '7 min',
+  },
+  {
+    id: 'vida-no-interior',
+    titulo: 'Por que cada vez mais gente escolhe morar em Guararema',
+    categoria: 'Cidade',
+    resumo: 'Segurança, qualidade de vida, natureza preservada e, ainda assim, pertinho de São Paulo. Entenda o novo interior.',
+    imagem: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=900&auto=format&fit=crop&q=80',
+    data: '15 ago 2026',
+    leitura: '9 min',
+  },
+  {
+    id: 'dormir-rural',
+    titulo: 'Hotéis-fazenda e pousadas rurais: qual escolher?',
+    categoria: 'Hospedagem',
+    resumo: 'Chacreando, hotel-fazenda ou chalé romântico? Saiba qual perfil de hospedagem combina com o seu tipo de viagem.',
+    imagem: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&auto=format&fit=crop&q=80',
+    data: '08 ago 2026',
+    leitura: '5 min',
+  },
+  {
+    id: 'fotografias-cidade-natureza',
+    titulo: '5 lugares para fotografar a Cidade Natureza',
+    categoria: 'Dicas',
+    resumo: 'Do trapiche ao coreto, um roteiro fotográfico com os melhores ângulos e luzes de Guararema.',
+    imagem: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=900&auto=format&fit=crop&q=80',
+    data: '30 jul 2026',
+    leitura: '6 min',
+  },
+];
