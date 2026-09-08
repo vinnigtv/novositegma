@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Search, Star, Store, Globe2, SlidersHorizontal, Sparkles, BadgeCheck } from 'lucide-react';
+import { Search, Star, Store, Globe2, SlidersHorizontal, Sparkles, BadgeCheck, ArrowRight } from 'lucide-react';
 import type { BusinessType, Estabelecimento } from '../types';
 import { PageHero } from '../components/ui/PageHero';
 import { BusinessCard, CtaBanner, LinhaNegocioSimples } from '../components/ui/Cards';
@@ -100,6 +100,34 @@ export const GuiaComercioPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Destaque: cadastre sua empresa */}
+      <section className="pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-umber via-umber to-umber-deep px-6 py-8 sm:px-10 sm:py-9 shadow-xl shadow-umber/15">
+            <div className="absolute -top-16 -right-16 w-56 h-56 bg-white/10 rounded-full blur-[70px] pointer-events-none" />
+            <div className="absolute -bottom-20 -left-10 w-64 h-64 bg-umber-deep/50 rounded-full blur-[80px] pointer-events-none" />
+            <div className="absolute top-6 left-10 w-2 h-2 rounded-full bg-white/40" />
+            <div className="absolute bottom-8 right-14 w-3 h-3 rounded-full bg-white/30" />
+
+            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="text-center sm:text-left">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Sua empresa aqui? Cadastre grátis.</h3>
+                <p className="text-sm text-white/80 mt-1.5 max-w-xl">
+                  Entre na listagem simples do Guia Guararema em poucos minutos — sem cartão, sem compromisso.
+                </p>
+              </div>
+              <Link
+                to="/cadastro"
+                className="group inline-flex items-center gap-2 rounded-full bg-white text-umber-deep font-semibold px-7 py-3.5 text-sm shadow-lg hover:bg-umber-soft transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
+              >
+                Cadastrar agora
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 mb-8">
@@ -196,16 +224,11 @@ export const GuiaComercioPage: React.FC = () => {
 
               {gratuitos.length > 0 ? (
                 <div className="mt-12">
-                  <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-                    <div className="flex items-center gap-2">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-olive-soft text-olive-deep text-xs font-bold">
-                        <BadgeCheck className="w-3.5 h-3.5" /> Listagem simples
-                      </span>
-                      <span className="text-xs text-muted">{gratuitos.length} negócios</span>
-                    </div>
-                    <Link to="/cadastro" className="text-xs font-bold text-umber hover:text-umber-deep transition-colors">
-                      Sua empresa aqui? Cadastre grátis →
-                    </Link>
+                  <div className="flex items-center gap-2 mb-5">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-olive-soft text-olive-deep text-xs font-bold">
+                      <BadgeCheck className="w-3.5 h-3.5" /> Listagem simples
+                    </span>
+                    <span className="text-xs text-muted">{gratuitos.length} negócios</span>
                   </div>
                   <ul className="space-y-3">
                     {gratuitos.map((e) => (
