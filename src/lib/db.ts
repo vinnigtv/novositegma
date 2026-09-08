@@ -3,12 +3,14 @@ import { defaultAtracoes } from '../data/pontosTuristicos';
 import { defaultEstabelecimentos } from '../data/estabelecimentos';
 import { defaultEventos } from '../data/eventos';
 import { defaultSlidesCidade } from '../data/cidade';
+import { defaultSlidesHero } from '../data/hero';
 
 const KEYS = {
   atracoes: 'rg.atracoes.v1',
   estabelecimentos: 'rg.estabelecimentos.v2',
   eventos: 'rg.eventos.v1',
   slidesCidade: 'rg.slidesCidade.v1',
+  slidesHero: 'rg.slidesHero.v1',
 } as const;
 
 function readCollection<T>(key: string, fallback: T[]): T[] {
@@ -67,6 +69,51 @@ export function getSlidesCidade(): SlideCidade[] {
 
 export function saveSlidesCidade(list: SlideCidade[]) {
   writeCollection(KEYS.slidesCidade, list);
+}
+
+export function getSlidesHero(): SlideCidade[] {
+  return readCollection<SlideCidade>(KEYS.slidesHero, defaultSlidesHero);
+}
+
+export function saveSlidesHero(list: SlideCidade[]) {
+  writeCollection(KEYS.slidesHero, list);
+}
+
+export interface CadastroComerciante {
+  nome: string;
+  tipo: Estabelecimento['tipo'];
+  categoria: string;
+  descricao: string;
+  endereco: string;
+  bairro: string;
+  telefone: string;
+  whatsapp: string;
+  email: string;
+}
+
+export function salvarCadastro(dados: CadastroComerciante): Estabelecimento {
+  const atual = getEstabelecimentos();
+  const novo: Estabelecimento = {
+    id: `cadastro-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
+    nome: dados.nome.trim(),
+    tipo: dados.tipo,
+    categoria: dados.categoria.trim() || 'Comércio local',
+    descricao: dados.descricao.trim(),
+    imagem:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&auto=format&fit=crop&q=80',
+    endereco: dados.endereco.trim(),
+    bairro: dados.bairro.trim(),
+    telefone: dados.telefone.trim() || undefined,
+    whatsapp: dados.whatsapp.trim() || undefined,
+    email: dados.email.trim() || undefined,
+    tags: [dados.categoria.trim()].filter(Boolean),
+    status: 'pendente',
+    plano: 'gratuito',
+    rating: { media: 0, total: 0 },
+  };
+  const novaLista = [novo, ...atual];
+  saveEstabelecimentos(novaLista);
+  return novo;
 }
 
 export function resetData() {

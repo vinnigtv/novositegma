@@ -97,7 +97,7 @@ export const PontosTuristicosPage: React.FC = () => {
 
       <CtaBanner
         title="Falta um ponto na lista?"
-        description="Conhece um lugar que merece entrar no guia? Mande sua indicação para a equipe da Rota Guararema."
+        description="Conhece um lugar que merece entrar no guia? Mande sua indicação para a equipe do Guia Guararema."
         textButton="Indicar um local"
         to="/contato"
       />

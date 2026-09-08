@@ -220,12 +220,12 @@ const Detalhe: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
                       <Globe className="w-4 h-4" />
                     </a>
                   ) : null}
-                  <span className="p-2.5 rounded-full bg-olive/10 text-olive-deep cursor-default" aria-label="Cadastrado na Rota Guararema">
+                  <span className="p-2.5 rounded-full bg-olive/10 text-olive-deep cursor-default" aria-label="Cadastrado no Guia Guararema">
                     <Calendar className="w-4 h-4" />
                   </span>
                 </div>
                 <p className="text-[10px] text-muted text-center mt-3">
-                  Cadastro {Ano} · Rota Guararema. Informações enviadas pelo próprio negócio.
+                  Cadastro {Ano} · Guia Guararema. Informações enviadas pelo próprio negócio.
                 </p>
               </div>
             </aside>
@@ -252,10 +252,10 @@ const Detalhe: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
       ) : null}
 
       <CtaBanner
-        title="Divulgue o seu negócio na Rota"
-        description="Fotos, horários, contato direto e avaliações da comunidade no guia oficial da Cidade Natureza."
-        textButton="Falar com a Rota Guararema"
-        to="/contato"
+        title="Divulgue o seu negócio no Guia"
+        description="Cadastro grátis na listagem simples ou card completo com fotos, horários, contato direto e avaliações da comunidade."
+        textButton="Cadastre sua empresa"
+        to="/cadastro"
       />
     </>
   );

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 stroke-[2.2]" />
               </div>
               <div className="leading-none">
-                <span className="text-xl font-bold tracking-tight text-white font-heading">Rota Guararema</span>
+                <span className="text-xl font-bold tracking-tight text-white font-heading">Guia Guararema</span>
                 <span className="text-[9px] font-bold tracking-[0.28em] text-umber-tint uppercase block mt-0.5">
                   Cidade Natureza
                 </span>
@@ -89,14 +89,16 @@ export const Footer: React.FC = () => {
                 <li><Link to="/eventos" className="hover:text-white transition-colors">Eventos</Link></li>
                 <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                 <li><Link to="/cidade-natal" className="hover:text-white transition-colors">Cidade Natal</Link></li>
+                <li><Link to="/como-chegar" className="hover:text-white transition-colors">Como Chegar</Link></li>
                 <li><Link to="/contato" className="hover:text-white transition-colors">Contato</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-heading">Mais Info</h4>
+              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-heading">Para empresas</h4>
               <ul className="space-y-2.5 text-sm">
-                <li><Link to="/como-chegar" className="hover:text-white transition-colors">Como Chegar</Link></li>
+                <li><Link to="/cadastro" className="hover:text-white transition-colors">Cadastre sua empresa grátis</Link></li>
                 <li><Link to="/guia-de-comercios" className="hover:text-white transition-colors">Guia de Comércio & Serviços</Link></li>
+                <li><Link to="/o-projeto" className="hover:text-white transition-colors">Planos de parceria</Link></li>
                 <li className="flex items-start gap-2 pt-1 text-sm text-white/70">
                   <Phone className="w-4 h-4 text-umber-tint flex-shrink-0 mt-0.5" />
                   <span>Telefones úteis na Secretaria de Turismo</span>
@@ -108,7 +110,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
-          <p>© {new Date().getFullYear()} Rota Guararema. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Guia Guararema. Todos os direitos reservados.</p>
           <div className="flex items-center gap-1">
             <span>Feito com</span>
             <Heart className="w-3.5 h-3.5 text-umber-tint fill-umber-tint inline" />

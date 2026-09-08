@@ -66,6 +66,8 @@ export function novoEstabelecimento(): Estabelecimento {
     horario: '',
     tags: [],
     destaque: false,
+    status: 'aprovado',
+    plano: 'pago',
   };
 }
 

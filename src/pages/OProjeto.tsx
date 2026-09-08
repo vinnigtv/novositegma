@@ -31,7 +31,7 @@ const passos = [
   { numero: '01', titulo: 'Fale com a gente', texto: 'Envie seus dados pelo formulário de contato contando sobre o seu negócio.' },
   { numero: '02', titulo: 'Escolha o plano', texto: 'Definimos juntos a melhor exposição: guia, destaques, eventos e redes sociais.' },
   { numero: '03', titulo: 'Publicamos', texto: 'Seu negócio entra no guia com fotos, descrição e formas de contato.' },
-  { numero: '04', titulo: 'Acompanhe os resultados', texto: 'Relatórios periódicos mostram a visibilidade da sua marca na Rota.' },
+  { numero: '04', titulo: 'Acompanhe os resultados', texto: 'Relatórios periódicos mostram a visibilidade da sua marca no Guia.' },
 ];
 
 export const OProjetoPage: React.FC = () => {
@@ -40,7 +40,7 @@ export const OProjetoPage: React.FC = () => {
       <PageHero
         crumb="/"
         kicker="Institucional"
-        title="O Projeto Rota Guararema"
+        title="O Projeto Guia Guararema"
         description="Somos o guia digital da Cidade Natureza: conectamos visitantes, moradores e negócios em torno do melhor da nossa cidade."
         image="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1600&auto=format&fit=crop&q=80"
       />
@@ -55,7 +55,7 @@ export const OProjetoPage: React.FC = () => {
               />
               <div className="mt-6 space-y-4 text-ink/80 leading-relaxed">
                 <p>
-                  A Rota Guararema nasceu da vontade de contar a história da cidade que amamos: mais do que uma
+                  O Guia Guararema nasceu da vontade de contar a história da cidade que amamos: mais do que uma
                   lista de lugares, um jeito de mostrar os segredos que só quem mora aqui conhece.
                 </p>
                 <p>
@@ -82,7 +82,7 @@ export const OProjetoPage: React.FC = () => {
           <SectionHeading
             align="center"
             eyebrow="Seja parceiro"
-            title="Como colocar seu negócio na Rota"
+            title="Como colocar seu negócio no Guia"
             description="Um processo simples e transparente, pensado para o comércio, a gastronomia e os serviços de Guararema."
           />
 
@@ -102,7 +102,7 @@ export const OProjetoPage: React.FC = () => {
 
       <CtaBanner
         title="Vamos colocar sua marca no mapa?"
-        description="Entre em contato e descubra os planos de parceria da Rota Guararema."
+        description="Entre em contato e descubra os planos de parceria do Guia Guararema."
         textButton="Quero ser parceiro"
         to="/contato"
       />

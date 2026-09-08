@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mail, ChevronDown, MapPin } from 'lucide-react';
+import { Menu, X, Mail, ChevronDown, MapPin, Store } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from '../ui/BrandIcons';
 import { Link } from '../../lib/router';
 import { getAtracoes } from '../../lib/db';
@@ -40,6 +40,10 @@ export const Navbar: React.FC = () => {
             contato@rotaguararema.com.br
           </a>
           <div className="flex items-center gap-4">
+            <Link to="/cadastro" className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <Store className="w-3.5 h-3.5" />
+              Cadastre sua empresa
+            </Link>
             <Link to="/eventos" className="flex items-center gap-1.5 hover:text-white transition-colors">
               <MapPin className="w-3.5 h-3.5" />
               Programação & Eventos
@@ -84,7 +88,7 @@ export const Navbar: React.FC = () => {
               </div>
               <div className="leading-none">
                 <span className="text-xl font-bold tracking-tight text-olive-deep font-heading">
-                  Rota Guararema
+                  Guia Guararema
                 </span>
                 <span className="text-[9px] font-bold tracking-[0.28em] text-umber uppercase block mt-0.5">
                   Cidade Natureza

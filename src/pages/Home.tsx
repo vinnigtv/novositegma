@@ -21,10 +21,10 @@ export const HomePage: React.FC = () => {
       <Partners />
       <GuideSection />
       <CtaBanner
-        title="Seu negócio na Rota Guararema"
-        description="Tenha sua empresa divulgada no guia turístico da Cidade Natureza e alcance milhares de visitantes todos os meses."
-        textButton="Quero ser parceiro"
-        to="/contato"
+        title="Seu negócio no Guia Guararema"
+        description="Cadastro grátis na listagem simples ou card completo com fotos e contatos. Alcance milhares de visitantes todos os meses."
+        textButton="Cadastre sua empresa"
+        to="/cadastro"
       />
     </>
   );

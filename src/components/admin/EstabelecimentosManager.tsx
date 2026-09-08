@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
-import { Plus, Pencil, Trash2, X, Check, Star, Store } from 'lucide-react';
+import { Plus, Pencil, Trash2, X, Check, Star, Store, Hourglass, Crown, BadgeCheck } from 'lucide-react';
 import type { Estabelecimento } from '../../types';
 import { getEstabelecimentos, saveEstabelecimentos } from '../../lib/db';
 import { tiposRecursos } from '../../data/estabelecimentos';
 import { novoEstabelecimento } from './utils';
 import { Botao, Campo, Input, Textarea, TextLines, Select, Toggle } from './fields';
+import { UploadImagem, UploadVarias } from '../ui/UploadImagem';
 
 export const EstabelecimentosManager: React.FC = () => {
   const [lista, setLista] = useState<Estabelecimento[]>(() => getEstabelecimentos());
   const [draft, setDraft] = useState<Estabelecimento | null>(null);
   const [indice, setIndice] = useState<number | null>(null);
+  const [filtro, setFiltro] = useState<'todos' | 'pendentes' | 'aprovados'>('todos');
   const [erro, setErro] = useState('');
   const [aviso, setAviso] = useState('');
+
+  const pendentes = lista.filter((e) => e.status === 'pendente').length;
 
   const patch = (p: Partial<Estabelecimento>) => setDraft((d) => (d ? { ...d, ...p } : d));
 
@@ -62,6 +66,23 @@ export const EstabelecimentosManager: React.FC = () => {
     setIndice(null);
     setErro('');
   };
+
+  const aprovar = (e: Estabelecimento) => {
+    const novaLista = lista.map((x) => (x.id === e.id ? { ...x, status: 'aprovado' as const } : x));
+    saveEstabelecimentos(novaLista);
+    setLista(novaLista);
+    setAviso(`"${e.nome}" aprovado e agora aparece no Guia.`);
+    window.setTimeout(() => setAviso(''), 3000);
+  };
+
+  const mudarPlano = (e: Estabelecimento, plano: 'pago' | 'gratuito') => {
+    const novaLista = lista.map((x) => (x.id === e.id ? { ...x, plano } : x));
+    saveEstabelecimentos(novaLista);
+    setLista(novaLista);
+  };
+
+  const visiveis =
+    filtro === 'todos' ? lista : lista.filter((e) => (filtro === 'pendentes' ? e.status === 'pendente' : e.status !== 'pendente'));
 
   if (draft) {
     return (
@@ -119,10 +140,22 @@ export const EstabelecimentosManager: React.FC = () => {
             <Input value={draft.horario ?? ''} onChange={(e) => patch({ horario: e.target.value })} />
           </Campo>
           <Campo rotulo="Imagem principal" dica="Foto de capa exibida no card e no carrossel.">
-            <Input value={draft.imagem} onChange={(e) => patch({ imagem: e.target.value })} placeholder="https://..." />
+            <UploadImagem valor={draft.imagem} onChange={(v) => patch({ imagem: v })} />
           </Campo>
-          <Campo rotulo="Logo" dica="URL da logo do negócio. Sem URL, usamos a inicial com a cor da marca.">
-            <Input value={draft.logo ?? ''} onChange={(e) => patch({ logo: e.target.value })} placeholder="https://..." />
+          <Campo rotulo="Logo" dica="Sem logo, usamos a inicial com a cor da marca.">
+            <UploadImagem valor={draft.logo ?? ''} onChange={(v) => patch({ logo: v })} />
+          </Campo>
+          <Campo rotulo="Situação">
+            <Select value={draft.status ?? 'aprovado'} onChange={(e) => patch({ status: e.target.value as Estabelecimento['status'] })}>
+              <option value="aprovado">Aprovado (visível no Guia)</option>
+              <option value="pendente">Pendente de aprovação</option>
+            </Select>
+          </Campo>
+          <Campo rotulo="Plano" dica="Completo = card com fotos; Simples = só nome e endereço na listagem.">
+            <Select value={draft.plano ?? 'pago'} onChange={(e) => patch({ plano: e.target.value as Estabelecimento['plano'] })}>
+              <option value="pago">Completo (card com fotos e contatos)</option>
+              <option value="gratuito">Simples (listagem básica)</option>
+            </Select>
           </Campo>
           <Campo rotulo="Destaque">
             <div className="pt-2">
@@ -130,8 +163,8 @@ export const EstabelecimentosManager: React.FC = () => {
             </div>
           </Campo>
           <div className="md:col-span-2">
-            <Campo rotulo="Fotos do carrossel" dica="Uma URL por linha. A primeira é a foto principal.">
-              <TextLines valor={draft.fotos ?? []} onChange={(v) => patch({ fotos: v })} linha="https://..." />
+            <Campo rotulo="Fotos do carrossel" dica="Envie fotos do dispositivo. A primeira é a foto principal.">
+              <UploadVarias valor={draft.fotos ?? []} onChange={(v) => patch({ fotos: v })} />
             </Campo>
           </div>
           <div className="md:col-span-2">
@@ -166,21 +199,40 @@ export const EstabelecimentosManager: React.FC = () => {
         <div>
           <h2 className="text-xl font-extrabold text-olive-deep">Estabelecimentos</h2>
           <p className="text-sm text-muted mt-0.5">
-            {lista.length} cadastrados · Pra Comer, Onde Dormir, O que Fazer e Guia de Comércio & Serviços.
+            {lista.length} cadastrados · {pendentes} aguardando aprovação.
+            {filtro === 'pendentes' ? ' Mostrando apenas pendentes.' : ''}
           </p>
         </div>
-        <Botao onClick={novo}>
-          <Plus className="w-4 h-4" /> Novo estabelecimento
-        </Botao>
+        <div className="flex items-center gap-2">
+          <div className="flex rounded-2xl bg-mist border border-olive/10 p-1">
+            {(['todos', 'pendentes', 'aprovados'] as const).map((f) => (
+              <button
+                key={f}
+                type="button"
+                onClick={() => setFiltro(f)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${
+                  filtro === f ? 'bg-olive text-white shadow' : 'text-olive-deep hover:bg-olive-soft'
+                }`}
+              >
+                {f === 'todos' ? 'Todos' : f === 'pendentes' ? `Pendentes (${pendentes})` : 'Aprovados'}
+              </button>
+            ))}
+          </div>
+          <Botao onClick={novo}>
+            <Plus className="w-4 h-4" /> Novo
+          </Botao>
+        </div>
       </div>
 
       {aviso ? <p className="text-xs font-bold text-olive-deep bg-olive-soft rounded-xl px-3 py-2 mb-5">{aviso}</p> : null}
 
-      {lista.length === 0 ? (
-        <p className="text-sm text-muted text-center py-12">Nenhum estabelecimento cadastrado.</p>
+      {visiveis.length === 0 ? (
+        <p className="text-sm text-muted text-center py-12">
+          {filtro === 'pendentes' ? 'Nenhum cadastro aguardando aprovação. ✨' : 'Nenhum estabelecimento cadastrado.'}
+        </p>
       ) : (
         <ul className="divide-y divide-olive/10">
-          {lista.map((e, i) => (
+          {visiveis.map((e, i) => (
             <li key={e.id} className="flex items-center gap-4 py-4">
               {e.imagem ? (
                 <img src={e.imagem} alt="" className="w-16 h-16 rounded-2xl object-cover bg-mist flex-shrink-0" />
@@ -192,8 +244,26 @@ export const EstabelecimentosManager: React.FC = () => {
               <div className="min-w-0 flex-1">
                 <p className="font-bold text-olive-deep truncate">
                   {e.nome}
+                  {e.status === 'pendente' ? (
+                    <span className="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold">
+                      <Hourglass className="w-3 h-3" /> Pendente
+                    </span>
+                  ) : (
+                    <span className="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-olive-soft text-olive-deep text-[11px] font-bold">
+                      <BadgeCheck className="w-3 h-3" /> Aprovado
+                    </span>
+                  )}
+                  {(e.plano ?? 'pago') === 'pago' ? (
+                    <span className="ml-1 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-umber-soft text-umber-deep text-[11px] font-bold">
+                      <Crown className="w-3 h-3" /> Completo
+                    </span>
+                  ) : (
+                    <span className="ml-1 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-mist text-muted text-[11px] font-bold">
+                      Simples
+                    </span>
+                  )}
                   {e.destaque ? (
-                    <span className="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-umber-soft text-umber-deep text-[11px] font-bold">
+                    <span className="ml-1 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-umber-soft text-umber-deep text-[11px] font-bold">
                       <Star className="w-3 h-3" /> Destaque
                     </span>
                   ) : null}
@@ -210,6 +280,33 @@ export const EstabelecimentosManager: React.FC = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
+                {(e.plano ?? 'pago') !== 'pago' ? (
+                  <button
+                    onClick={() => mudarPlano(e, 'pago')}
+                    className="hidden lg:inline-flex px-2.5 py-1.5 rounded-xl border border-olive/25 text-olive-deep text-[11px] font-bold hover:bg-olive-soft transition cursor-pointer"
+                    title="Tornar plano completo (com card)"
+                  >
+                    para Completo
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => mudarPlano(e, 'gratuito')}
+                    className="hidden lg:inline-flex px-2.5 py-1.5 rounded-xl border border-olive/25 text-muted text-[11px] font-bold hover:bg-olive-soft transition cursor-pointer"
+                    title="Tornar listagem simples"
+                  >
+                    para Simples
+                  </button>
+                )}
+                {e.status === 'pendente' ? (
+                  <button
+                    onClick={() => aprovar(e)}
+                    className="p-2 rounded-xl bg-olive text-white hover:bg-olive-deep transition cursor-pointer"
+                    aria-label={`Aprovar ${e.nome}`}
+                    title="Aprovar e publicar no Guia"
+                  >
+                    <Check className="w-4 h-4" />
+                  </button>
+                ) : null}
                 <button
                   onClick={() => editar(e, i)}
                   className="p-2 rounded-xl bg-olive/10 text-olive-deep hover:bg-olive/20 transition cursor-pointer"

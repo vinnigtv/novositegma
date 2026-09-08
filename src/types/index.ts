@@ -40,6 +40,8 @@ export interface Estabelecimento {
   tags: string[];
   destaque?: boolean;
   rating?: { media: number; total: number };
+  status?: 'pendente' | 'aprovado';
+  plano?: 'pago' | 'gratuito';
 }
 
 export interface SlideCidade {

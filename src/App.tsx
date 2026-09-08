@@ -11,6 +11,7 @@ import { GuiaComercioPage } from './pages/GuiaComercio';
 import { EstabelecimentoDetalhePage } from './pages/EstabelecimentoDetalhe';
 import { EventosPage } from './pages/Eventos';
 import { ContatoPage } from './pages/Contato';
+import { CadastroPage } from './pages/Cadastro';
 import { BlogPage } from './pages/Blog';
 import { CidadeNatalPage } from './pages/CidadeNatal';
 import { ComoChegarPage } from './pages/ComoChegar';
@@ -56,6 +57,8 @@ function renderPage(path: string) {
       return <EventosPage />;
     case 'contato':
       return <ContatoPage />;
+    case 'cadastro':
+      return <CadastroPage />;
     case 'blog':
       return <BlogPage />;
     case 'cidade-natal':

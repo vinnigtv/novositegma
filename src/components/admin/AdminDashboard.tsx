@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Store, CalendarDays, Images, LogOut, ExternalLink, RotateCcw } from 'lucide-react';
+import { MapPin, Store, CalendarDays, Images, LogOut, ExternalLink, RotateCcw, Layout } from 'lucide-react';
 import { logout } from '../../lib/auth';
 import { resetData } from '../../lib/db';
 import { Link } from '../../lib/router';
@@ -7,12 +7,14 @@ import { AtracoesManager } from './AtracoesManager';
 import { EstabelecimentosManager } from './EstabelecimentosManager';
 import { EventosManager } from './EventosManager';
 import { CidadeManager } from './CidadeManager';
+import { HeroManager } from './HeroManager';
 
-type Secao = 'atracoes' | 'estabelecimentos' | 'cidade' | 'eventos';
+type Secao = 'atracoes' | 'estabelecimentos' | 'cidade' | 'hero' | 'eventos';
 
 const menus: { id: Secao; rotulo: string; icone: React.ReactNode }[] = [
   { id: 'atracoes', rotulo: 'Pontos turísticos', icone: <MapPin className="w-4 h-4" /> },
   { id: 'estabelecimentos', rotulo: 'Pra Comer · Onde Dormir · O que Fazer · Guia', icone: <Store className="w-4 h-4" /> },
+  { id: 'hero', rotulo: 'Abertura · Fotos da Home', icone: <Layout className="w-4 h-4" /> },
   { id: 'cidade', rotulo: 'A Cidade · Carrossel', icone: <Images className="w-4 h-4" /> },
   { id: 'eventos', rotulo: 'Eventos', icone: <CalendarDays className="w-4 h-4" /> },
 ];
@@ -41,7 +43,7 @@ export const AdminDashboard: React.FC = () => {
               <MapPin className="w-5 h-5" />
             </span>
             <div className="min-w-0">
-              <p className="font-extrabold leading-tight truncate">Painel da Rota Guararema</p>
+              <p className="font-extrabold leading-tight truncate">Painel do Guia Guararema</p>
               <p className="text-[11px] text-white/60 leading-tight">Conteúdo e atrativos do site</p>
             </div>
           </div>
@@ -90,6 +92,7 @@ export const AdminDashboard: React.FC = () => {
           <main>
             {secao === 'atracoes' ? <AtracoesManager /> : null}
             {secao === 'estabelecimentos' ? <EstabelecimentosManager /> : null}
+            {secao === 'hero' ? <HeroManager /> : null}
             {secao === 'cidade' ? <CidadeManager /> : null}
             {secao === 'eventos' ? <EventosManager /> : null}
 

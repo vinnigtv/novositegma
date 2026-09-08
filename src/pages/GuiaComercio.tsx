@@ -1,9 +1,10 @@
 import React, { useMemo, useState } from 'react';
-import { Search, Star, Store, Globe2, SlidersHorizontal, Sparkles } from 'lucide-react';
+import { Search, Star, Store, Globe2, SlidersHorizontal, Sparkles, BadgeCheck } from 'lucide-react';
 import type { BusinessType, Estabelecimento } from '../types';
 import { PageHero } from '../components/ui/PageHero';
-import { BusinessCard, CtaBanner } from '../components/ui/Cards';
+import { BusinessCard, CtaBanner, LinhaNegocioSimples } from '../components/ui/Cards';
 import { getEstabelecimentos } from '../lib/db';
+import { Link } from '../lib/router';
 
 type Secao = 'todos' | BusinessType;
 type Ordenacao = 'destaque' | 'melhores' | 'az';
@@ -23,18 +24,19 @@ export const GuiaComercioPage: React.FC = () => {
   const [ordenacao, setOrdenacao] = useState<Ordenacao>('destaque');
 
   const todos = getEstabelecimentos();
+  const aprovados = todos.filter((e) => e.status !== 'pendente');
 
   const categoriasDaSecao = useMemo(() => {
-    const base = secao === 'todos' ? todos : todos.filter((e) => e.tipo === secao);
+    const base = secao === 'todos' ? aprovados : aprovados.filter((e) => e.tipo === secao);
     return ['todas', ...Array.from(new Set(base.map((e) => e.categoria).filter(Boolean)))];
-  }, [todos, secao]);
+  }, [aprovados, secao]);
 
-  const totalAvaliacoes = todos.reduce((acc, e) => acc + (e.rating?.total ?? 0), 0);
-  const totalCategorias = new Set(todos.map((e) => e.categoria).filter(Boolean)).size;
-  const totalDestaques = todos.filter((e) => e.destaque).length;
+  const totalAvaliacoes = aprovados.reduce((acc, e) => acc + (e.rating?.total ?? 0), 0);
+  const totalCategorias = new Set(aprovados.map((e) => e.categoria).filter(Boolean)).size;
+  const totalDestaques = aprovados.filter((e) => e.destaque).length;
 
   const filtrados = useMemo(() => {
-    let list = secao === 'todos' ? todos : todos.filter((e) => e.tipo === secao);
+    let list = secao === 'todos' ? aprovados : aprovados.filter((e) => e.tipo === secao);
     if (categoria !== 'todas') list = list.filter((e) => e.categoria === categoria);
     const termo = busca.trim().toLowerCase();
     if (termo) {
@@ -52,11 +54,14 @@ export const GuiaComercioPage: React.FC = () => {
     if (ordenacao === 'destaque') {
       list = [...list].sort((a, b) => Number(Boolean(b.destaque)) - Number(Boolean(a.destaque)) || media(b) - media(a));
     }
-    return list;
-  }, [todos, secao, categoria, busca, ordenacao]);
+    const pagos = list.filter((e) => (e.plano ?? 'pago') === 'pago');
+    const gratuitos = list.filter((e) => (e.plano ?? 'gratuito') === 'gratuito').sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+    return [...pagos, ...gratuitos];
+  }, [aprovados, secao, categoria, busca, ordenacao]);
 
-  const destaques = filtrados.filter((e) => e.destaque).slice(0, 2);
-  const restantes = filtrados.filter((e) => !destaques.includes(e));
+  const destaques = filtrados.filter((e) => e.destaque && (e.plano ?? 'pago') === 'pago').slice(0, 2);
+  const restantes = filtrados.filter((e) => !destaques.includes(e) && (e.plano ?? 'pago') === 'pago');
+  const gratuitos = filtrados.filter((e) => (e.plano ?? 'gratuito') === 'gratuito');
 
   return (
     <>
@@ -188,20 +193,41 @@ export const GuiaComercioPage: React.FC = () => {
                   ))}
                 </div>
               ) : null}
+
+              {gratuitos.length > 0 ? (
+                <div className="mt-12">
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-olive-soft text-olive-deep text-xs font-bold">
+                        <BadgeCheck className="w-3.5 h-3.5" /> Listagem simples
+                      </span>
+                      <span className="text-xs text-muted">{gratuitos.length} negócios</span>
+                    </div>
+                    <Link to="/cadastro" className="text-xs font-bold text-umber hover:text-umber-deep transition-colors">
+                      Sua empresa aqui? Cadastre grátis →
+                    </Link>
+                  </div>
+                  <ul className="space-y-3">
+                    {gratuitos.map((e) => (
+                      <LinhaNegocioSimples key={e.id} empresa={e} />
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </>
           )}
 
           <p className="mt-8 text-xs text-muted">
-            Relação atualizada pela comunidade Rota Guararema. Encontrou algo errado ou quer incluir seu negócio? Fale com a gente pelo contato.
+            Relação atualizada pela comunidade Guia Guararema. Encontrou algo errado ou quer incluir seu negócio? Fale com a gente pelo contato.
           </p>
         </div>
       </section>
 
       <CtaBanner
         title="Seu negócio merece ser encontrado"
-        description="Cadastre sua empresa no guia da Cidade Natureza com fotos, avaliações da comunidade e canais de contato direto."
-        textButton="Quero aparecer no guia"
-        to="/contato"
+        description="Cadastre sua empresa grátis no guia da Cidade Natureza. Nome, endereço e contatos aparecem na listagem simples; o card completo com fotos é opcional."
+        textButton="Cadastre sua empresa"
+        to="/cadastro"
       />
     </>
   );

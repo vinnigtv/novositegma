@@ -24,7 +24,7 @@ export const ContatoPage: React.FC = () => {
       <PageHero
         crumb="/"
         kicker="Contato"
-        title="Fale com a Rota Guararema"
+        title="Fale com o Guia Guararema"
         description="Dúvidas sobre o roteiro, indicações de lugares ou interesse em ser parceiro? Mande uma mensagem que a gente responde rapidinho."
         image="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1600&auto=format&fit=crop&q=80"
       />
@@ -125,7 +125,7 @@ export const ContatoPage: React.FC = () => {
               })}
 
               <div className="rounded-2xl bg-gradient-to-br from-olive to-umber p-6 text-white">
-                <h3 className="font-bold text-lg mb-2">Siga a Rota Guararema</h3>
+                <h3 className="font-bold text-lg mb-2">Siga o Guia Guararema</h3>
                 <p className="text-sm text-white/85 mb-4">Fotos, novidades e bastidores no nosso dia a dia.</p>
                 <div className="flex gap-2.5">
                   <a

@@ -326,6 +326,8 @@ function enriquecer(e: Estabelecimento, idx: number): Estabelecimento {
     ...e,
     rating: { media: +(4.3 + (h % 7) * 0.1).toFixed(1), total: 16 + (h % 42) },
     fotos,
+    status: e.status ?? 'aprovado',
+    plano: e.plano ?? 'pago',
   };
 }
 

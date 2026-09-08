@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowRight, Train, Trees, MapPin, Star, Landmark } from 'lucide-react';
 import { Link } from '../../lib/router';
 import { Button } from '../ui/Button';
+import { Carrossel } from '../ui/Carrossel';
+import { getSlidesHero } from '../../lib/db';
 
 const stats = [
   { icon: MapPin, value: '80 km', label: 'De São Paulo' },
@@ -11,17 +13,24 @@ const stats = [
 ];
 
 export const Hero: React.FC = () => {
+  const slides = getSlidesHero();
+
   return (
     <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
-      {/* Hero background */}
+      {/* Hero background carousel */}
       <div className="absolute inset-0 -z-20">
-        <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&auto=format&fit=crop&q=80"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-mist/80 via-mist/65 to-mist" />
-        <div className="absolute inset-0 bg-gradient-to-r from-mist/40 to-transparent" />
+        <div className="absolute inset-0">
+          <Carrossel
+            fotos={slides.map((s) => s.imagem)}
+            alt=""
+            autoplay
+            intervalo={4000}
+            className="h-full w-full"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-mist/85 via-mist/55 to-mist" />
+        <div className="absolute inset-0 bg-gradient-to-r from-mist/50 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,245,247,0.55),transparent_68%)] pointer-events-none" />
       </div>
 
       {/* Decorative accents */}
@@ -30,17 +39,17 @@ export const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-olive-deep/30 -z-10" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center relative z-10">
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/80 backdrop-blur border border-olive/15 text-olive-deep text-xs sm:text-sm font-semibold mb-7 shadow-sm">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/85 backdrop-blur-md border border-white/50 text-olive-deep text-xs sm:text-sm font-semibold mb-7 shadow-lg shadow-olive-deep/10">
           <span className="w-2 h-2 rounded-full bg-umber animate-pulse" />
           A Cidade Natureza · a 80 km de São Paulo
         </span>
 
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-olive-deep leading-[1.05] mb-6">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-olive-deep leading-[1.05] mb-6 [text-shadow:0_4px_30px_rgba(245,245,247,0.9),0_2px_8px_rgba(51,53,41,0.25)]">
           Visite. Conheça.
           <span className="block text-gradient-nature">E ame Guararema.</span>
         </h1>
 
-        <p className="text-base sm:text-lg lg:text-xl text-ink/80 font-normal leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-base sm:text-lg lg:text-xl text-ink/85 font-normal leading-relaxed max-w-2xl mx-auto mb-10 [text-shadow:0_2px_16px_rgba(245,245,247,0.95)]">
           Reconhecida pela qualidade de vida, segurança e preservação da natureza, Guararema reúne tudo o que
           você procura: história, gastronomia, ecoturismo e a serenidade de uma cidade de interior.
         </p>

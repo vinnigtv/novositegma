@@ -16,45 +16,42 @@ export const CidadeCarrossel: React.FC = () => {
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading align="center" eyebrow="Galeria da cidade" title="Um passeio por imagens" />
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-12">
-          <div className="lg:col-span-8 relative">
-            <Carrossel
-              fotos={slides.map((s) => s.imagem)}
-              alt=""
-              autoplay
-              className="h-[320px] sm:h-[440px] rounded-[2.5rem] shadow-2xl shadow-olive/15"
-              onChange={setAtual}
-            />
-          </div>
-          <div className="lg:col-span-4">
-            <div className="bg-surface rounded-[2rem] border border-olive/10 p-7 shadow-sm">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-umber mb-2">
-                Foto {idx + 1} de {slides.length}
-              </p>
-              <h3 className="text-2xl font-extrabold text-olive-deep leading-tight mb-3">{slide.titulo}</h3>
-              <p className="text-sm text-muted leading-relaxed">{slide.legenda}</p>
 
-              <div className="flex items-center gap-1.5 mt-6">
-                {slides.map((s, i) => (
-                  <button
-                    key={s.id}
-                    type="button"
-                    onClick={() => setAtual(i)}
-                    aria-label={s.titulo}
-                    className={`h-2 rounded-full transition-all cursor-pointer ${
-                      i === idx ? 'w-7 bg-umber' : 'w-2 bg-olive/25 hover:bg-olive/50'
-                    }`}
-                  />
-                ))}
-              </div>
+        <div className="relative mt-12 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-olive/20">
+          <Carrossel
+            fotos={slides.map((s) => s.imagem)}
+            alt=""
+            autoplay
+            className="h-[340px] sm:h-[500px]"
+            onChange={setAtual}
+          />
 
-              <div className="mt-6 pt-5 border-t border-olive/10 flex flex-wrap gap-2">
-                {[slide.titulo, 'Cidade Natureza'].map((t) => (
-                  <span key={t} className="px-3 py-1 rounded-full bg-olive-soft text-olive-deep text-xs font-semibold">
-                    {t}
-                  </span>
-                ))}
-              </div>
+          {/* Grau/scrim para o texto sobressair */}
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent pointer-events-none" />
+
+          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 text-left">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-umber-soft mb-2 [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
+              Foto {idx + 1} de {slides.length}
+            </p>
+            <h3 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight mb-2 [text-shadow:0_3px_20px_rgba(0,0,0,0.65)]">
+              {slide.titulo}
+            </h3>
+            <p className="text-sm sm:text-base text-white/90 leading-relaxed max-w-xl [text-shadow:0_1px_10px_rgba(0,0,0,0.6)]">
+              {slide.legenda}
+            </p>
+
+            <div className="flex items-center gap-1.5 mt-5">
+              {slides.map((s, i) => (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => setAtual(i)}
+                  aria-label={s.titulo}
+                  className={`h-2 rounded-full transition-all cursor-pointer ${
+                    i === idx ? 'w-7 bg-white' : 'w-2 bg-white/40 hover:bg-white/70'
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>

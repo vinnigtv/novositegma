@@ -117,7 +117,7 @@ export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
           )}
 
           <p className="mt-8 text-xs text-muted">
-            Relação atualizada pela comunidade Rota Guararema. Faltou algum lugar? Chame a gente pelo contato.
+            Relação atualizada pela comunidade Guia Guararema. Faltou algum lugar? Chame a gente pelo contato.
           </p>
         </div>
       </section>
@@ -125,7 +125,7 @@ export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
       <CtaBanner
         title="Seu negócio pode estar aqui"
         description="Destaque sua empresa no guia da Cidade Natureza e alcance visitantes do Brasil inteiro."
-        textButton="Seja parceiro da Rota"
+        textButton="Seja parceiro do Guia"
         to="/contato"
       />
     </>
