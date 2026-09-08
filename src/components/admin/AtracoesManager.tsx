@@ -5,6 +5,7 @@ import { getAtracoes, saveAtracoes } from '../../lib/db';
 import { categoriaLabels } from '../../data/pontosTuristicos';
 import { novaAtracao, novoSlug } from './utils';
 import { Botao, Campo, Input, Textarea, TextLines, Select, Toggle } from './fields';
+import { UploadImagem, UploadVarias } from '../ui/UploadImagem';
 
 const InfoLinhas: React.FC<{
   valor: { rotulo: string; valor: string }[];
@@ -139,8 +140,8 @@ export const AtracoesManager: React.FC = () => {
               onChange={(e) => patch({ rating: Number(e.target.value) })}
             />
           </Campo>
-          <Campo rotulo="Imagem principal" dica="Cole a URL de uma imagem.">
-            <Input value={draft.imagem} onChange={(e) => patch({ imagem: e.target.value })} placeholder="https://..." />
+          <Campo rotulo="Imagem principal">
+            <UploadImagem valor={draft.imagem} onChange={(v) => patch({ imagem: v })} semUrl />
           </Campo>
           <Campo rotulo="Destaque na home">
             <div className="pt-2">
@@ -168,8 +169,8 @@ export const AtracoesManager: React.FC = () => {
             </Campo>
           </div>
           <div className="md:col-span-2">
-            <Campo rotulo="Galeria" dica="Uma URL de imagem por linha.">
-              <TextLines valor={draft.galeria} onChange={(v) => patch({ galeria: v })} linha="https://..." />
+            <Campo rotulo="Galeria" dica="A primeira foto é a principal do card.">
+              <UploadVarias valor={draft.galeria} onChange={(v) => patch({ galeria: v })} semUrl />
             </Campo>
           </div>
           <div className="md:col-span-2">

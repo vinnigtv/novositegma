@@ -84,7 +84,8 @@ export const UploadImagem: React.FC<{
 export const UploadVarias: React.FC<{
   valor: string[];
   onChange: (v: string[]) => void;
-}> = ({ valor, onChange }) => {
+  semUrl?: boolean;
+}> = ({ valor, onChange, semUrl }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [carregando, setCarregando] = useState(false);
   const [urlManual, setUrlManual] = useState('');
@@ -133,25 +134,27 @@ export const UploadVarias: React.FC<{
         ) : null}
       </div>
 
-      <div className="mt-2 flex gap-2">
-        <input
-          type="url"
-          value={urlManual}
-          onChange={(e) => setUrlManual(e.target.value)}
-          placeholder="...ou adicionar por URL de imagem"
-          className="flex-1 px-3 py-2 rounded-xl bg-surface border border-olive/20 text-sm text-ink placeholder-muted focus:outline-none focus:border-umber transition"
-        />
-        <button
-          type="button"
-          onClick={() => {
-            if (urlManual.trim()) onChange([...lista, urlManual.trim()]);
-            setUrlManual('');
-          }}
-          className="px-3 py-2 rounded-xl bg-olive-soft text-olive-deep text-xs font-bold hover:bg-olive hover:text-white transition cursor-pointer"
-        >
-          Adicionar
-        </button>
-      </div>
+      {!semUrl ? (
+        <div className="mt-2 flex gap-2">
+          <input
+            type="url"
+            value={urlManual}
+            onChange={(e) => setUrlManual(e.target.value)}
+            placeholder="...ou adicionar por URL de imagem"
+            className="flex-1 px-3 py-2 rounded-xl bg-surface border border-olive/20 text-sm text-ink placeholder-muted focus:outline-none focus:border-umber transition"
+          />
+          <button
+            type="button"
+            onClick={() => {
+              if (urlManual.trim()) onChange([...lista, urlManual.trim()]);
+              setUrlManual('');
+            }}
+            className="px-3 py-2 rounded-xl bg-olive-soft text-olive-deep text-xs font-bold hover:bg-olive hover:text-white transition cursor-pointer"
+          >
+            Adicionar
+          </button>
+        </div>
+      ) : null}
 
       <input
         ref={inputRef}
