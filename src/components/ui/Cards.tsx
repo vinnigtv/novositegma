@@ -61,7 +61,7 @@ export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boole
   const base = empresa.rating ?? { media: 0, total: 0 };
   const { info } = useAvaliacoes(empresa.id, base);
   const fotos = empresa.fotos && empresa.fotos.length > 0 ? empresa.fotos : [empresa.imagem];
-  const inicial = (empresa.nome || '?').trim().charAt(0).toUpperCase();
+  const Icone = iconeTipo[empresa.tipo] ?? Store;
   const detalhe = `/guia-de-comercios/${empresa.id}`;
   const whats = empresa.whatsapp ?? empresa.telefone;
 
@@ -77,8 +77,8 @@ export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boole
           {empresa.logo ? (
             <img src={empresa.logo} alt={`Logo ${empresa.nome}`} className="w-full h-full object-cover" />
           ) : (
-            <span className="w-full h-full flex items-center justify-center bg-gradient-to-br from-olive to-umber text-white text-xl font-extrabold font-heading">
-              {inicial}
+            <span className="w-full h-full flex items-center justify-center bg-gradient-to-br from-olive to-umber text-white">
+              <Icone className="w-6 h-6" />
             </span>
           )}
         </Link>
