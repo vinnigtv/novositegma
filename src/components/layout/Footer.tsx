@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 stroke-[2.2]" />
               </div>
               <div className="leading-none">
-                <span className="text-xl font-bold tracking-tight text-white font-heading">Guia Guararema</span>
+                <span className="text-xl font-bold tracking-tight text-white font-heading">Guararema.net</span>
                 <span className="text-[9px] font-bold tracking-[0.28em] text-umber-tint uppercase block mt-0.5">
                   Cidade Natureza
                 </span>
@@ -110,7 +110,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
-          <p>© {new Date().getFullYear()} Guia Guararema. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Guararema.net. Todos os direitos reservados.</p>
           <div className="flex items-center gap-1">
             <span>Feito com</span>
             <Heart className="w-3.5 h-3.5 text-umber-tint fill-umber-tint inline" />

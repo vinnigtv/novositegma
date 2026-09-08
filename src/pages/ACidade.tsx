@@ -151,7 +151,7 @@ export const ACidadePage: React.FC = () => {
       <CtaBanner
         title="Vem conhecer a Cidade Natureza"
         description="Planejou tudo? Compartilhe seu roteiro com a gente e descubra os segredinhos que ninguém mais conta."
-        textButton="Falar com o Guia Guararema"
+        textButton="Falar com o Guararema.net"
         to="/contato"
       />
     </>

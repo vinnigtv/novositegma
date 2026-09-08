@@ -117,7 +117,7 @@ export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
           )}
 
           <p className="mt-8 text-xs text-muted">
-            Relação atualizada pela comunidade Guia Guararema. Faltou algum lugar? Chame a gente pelo contato.
+            Relação atualizada pela comunidade Guararema.net. Faltou algum lugar? Chame a gente pelo contato.
           </p>
         </div>
       </section>

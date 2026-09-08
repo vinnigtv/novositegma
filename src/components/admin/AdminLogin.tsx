@@ -34,7 +34,7 @@ export const AdminLogin: React.FC<Props> = ({ onSucesso }) => {
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-olive text-white mb-4">
             <MapPin className="w-7 h-7" />
           </div>
-          <h1 className="text-2xl font-extrabold text-olive-deep">Guia Guararema</h1>
+          <h1 className="text-2xl font-extrabold text-olive-deep">Guararema.net</h1>
           <p className="text-sm text-muted mt-1">Área restrita · Painel administrativo</p>
         </div>
 

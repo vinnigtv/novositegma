@@ -59,7 +59,7 @@ export const EstabelecimentoDetalhePage: React.FC<{ id: string }> = ({ id }) => 
             </p>
           ) : (
             <p className="text-sm text-muted mb-6">
-              Este negócio participa da listagem simples do Guia Guararema.
+              Este negócio participa da listagem simples do Guararema.net.
             </p>
           )}
           <a
@@ -258,12 +258,12 @@ const Detalhe: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
                       <Globe className="w-4 h-4" />
                     </a>
                   ) : null}
-                  <span className="p-2.5 rounded-full bg-olive/10 text-olive-deep cursor-default" aria-label="Cadastrado no Guia Guararema">
+                  <span className="p-2.5 rounded-full bg-olive/10 text-olive-deep cursor-default" aria-label="Cadastrado no Guararema.net">
                     <Calendar className="w-4 h-4" />
                   </span>
                 </div>
                 <p className="text-[10px] text-muted text-center mt-3">
-                  Cadastro {Ano} · Guia Guararema. Informações enviadas pelo próprio negócio.
+                  Cadastro {Ano} · Guararema.net. Informações enviadas pelo próprio negócio.
                 </p>
               </div>
             </aside>

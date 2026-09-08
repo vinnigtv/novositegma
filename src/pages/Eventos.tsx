@@ -39,7 +39,7 @@ export const EventosPage: React.FC = () => {
 
       <CtaBanner
         title="Quer divulgar seu evento?"
-        description="Inclua seu evento na agenda do Guia Guararema e alcance milhares de visitantes."
+        description="Inclua seu evento na agenda do Guararema.net e alcance milhares de visitantes."
         textButton="Divulgar evento"
         to="/contato"
       />

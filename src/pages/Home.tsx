@@ -21,7 +21,7 @@ export const HomePage: React.FC = () => {
       <Partners />
       <GuideSection />
       <CtaBanner
-        title="Seu negócio no Guia Guararema"
+        title="Seu negócio no Guararema.net"
         description="Cadastro grátis na listagem simples ou card completo com fotos e contatos. Alcance milhares de visitantes todos os meses."
         textButton="Cadastre sua empresa"
         to="/cadastro"

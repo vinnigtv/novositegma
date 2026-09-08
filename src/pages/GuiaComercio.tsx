@@ -113,7 +113,7 @@ export const GuiaComercioPage: React.FC = () => {
               <div className="text-center sm:text-left">
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white">Sua empresa aqui? Cadastre grátis.</h3>
                 <p className="text-sm text-white/80 mt-1.5 max-w-xl">
-                  Entre na listagem simples do Guia Guararema em poucos minutos — sem cartão, sem compromisso.
+                  Entre na listagem simples do Guararema.net em poucos minutos — sem cartão, sem compromisso.
                 </p>
               </div>
               <Link
@@ -241,7 +241,7 @@ export const GuiaComercioPage: React.FC = () => {
           )}
 
           <p className="mt-8 text-xs text-muted">
-            Relação atualizada pela comunidade Guia Guararema. Encontrou algo errado ou quer incluir seu negócio? Fale com a gente pelo contato.
+            Relação atualizada pela comunidade Guararema.net. Encontrou algo errado ou quer incluir seu negócio? Fale com a gente pelo contato.
           </p>
         </div>
       </section>

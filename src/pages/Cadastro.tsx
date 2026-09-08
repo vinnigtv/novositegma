@@ -7,7 +7,7 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 const passos = [
   { icon: ClipboardCheck, titulo: 'Cadastro grátis', texto: 'Preencha seus dados em 2 minutos. Não pedimos cartão.' },
   { icon: BadgeCheck, titulo: 'Aprovação do Guia', texto: 'Nosso time valida as informações e publica em até 48h.' },
-  { icon: Store, titulo: 'Listagem simples', texto: 'Seu negócio aparece no Guia Guararema com nome, endereço e contato.' },
+  { icon: Store, titulo: 'Listagem simples', texto: 'Seu negócio aparece no Guararema.net com nome, endereço e contato.' },
   { icon: Crown, titulo: 'Plano completo (opcional)', texto: 'Quer card com fotos, horário e destaque? Fale com a gente para evoluir.' },
 ];
 
@@ -53,7 +53,7 @@ export const CadastroPage: React.FC = () => {
           <p className="mt-6 text-base text-muted leading-relaxed">
             O <strong className="text-olive-deep">{dados.nome}</strong> está
             <strong className="text-umber"> aguardando aprovação</strong> e deve aparecer na listagem
-            simples do Guia Guararema em até 48h.
+            simples do Guararema.net em até 48h.
           </p>
           <p className="mt-3 text-sm text-muted leading-relaxed">
             Ficou com dúvidas? Fale conosco pela página de contato.
@@ -63,7 +63,7 @@ export const CadastroPage: React.FC = () => {
               to="/guia-de-comercios"
               className="inline-flex items-center gap-2 rounded-full bg-olive text-white font-semibold px-6 py-3 text-sm hover:bg-olive-deep transition"
             >
-              Ver o Guia Guararema <ArrowRight className="w-4 h-4" />
+              Ver o Guararema.net <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="#/contato"
@@ -86,7 +86,7 @@ export const CadastroPage: React.FC = () => {
           <SectionHeading
             align="center"
             eyebrow="Área do comerciante"
-            title="Divulgue seu negócio no Guia Guararema"
+            title="Divulgue seu negócio no Guararema.net"
             description="Cadastro grátis, sem compromisso. Seu comércio entra na listagem simples do maior guia local da cidade."
           />
         </div>

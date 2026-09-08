@@ -43,7 +43,7 @@ export const AdminDashboard: React.FC = () => {
               <MapPin className="w-5 h-5" />
             </span>
             <div className="min-w-0">
-              <p className="font-extrabold leading-tight truncate">Painel do Guia Guararema</p>
+              <p className="font-extrabold leading-tight truncate">Painel do Guararema.net</p>
               <p className="text-[11px] text-white/60 leading-tight">Conteúdo e atrativos do site</p>
             </div>
           </div>
