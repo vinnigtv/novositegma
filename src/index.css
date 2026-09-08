@@ -4,18 +4,18 @@
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   --font-heading: 'Outfit', sans-serif;
 
-  --color-mist: #f5ecda;
+  --color-mist: #e5e5e0;
   --color-surface: #ffffff;
-  --color-olive: #042e1c;
-  --color-olive-deep: #042e1c;
-  --color-olive-soft: #6ce94d;
-  --color-olive-tint: #6ce94d;
-  --color-umber: #000000;
-  --color-umber-deep: #042e1c;
-  --color-umber-soft: #f5ecda;
-  --color-umber-tint: #6ce94d;
-  --color-ink: #042e1c;
-  --color-muted: #5a6b61;
+  --color-olive: #045aa7;
+  --color-olive-deep: #021f59;
+  --color-olive-soft: #e5e5e0;
+  --color-olive-tint: #e5e5e0;
+  --color-umber: #f25c05;
+  --color-umber-deep: #000000;
+  --color-umber-soft: #e5e5e0;
+  --color-umber-tint: #f28705;
+  --color-ink: #021f59;
+  --color-muted: #6a7280;
 }
 
 @layer base {
@@ -38,7 +38,7 @@
 
 @layer utilities {
   .text-gradient-nature {
-    background: linear-gradient(120deg, #6ce94d 0%, #042e1c 55%, #000000 100%);
+    background: linear-gradient(120deg, #021f59 0%, #045aa7 55%, #f28705 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -50,14 +50,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #e7e0cf;
+  background: #e5e5e0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6ce94d;
+  background: #f28705;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #042e1c;
+  background: #f25c05;
 }
