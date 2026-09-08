@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, RotateCcw, ImageOff } from 'lucide-react';
+import { Check, RotateCcw } from 'lucide-react';
 import type { PageHeroImages } from '../../types';
 import { getPageHeroImages, savePageHeroImages } from '../../lib/db';
 import { defaultPageHeroImages, pageHeroLabels } from '../../data/pageHero';
@@ -58,17 +58,7 @@ export const PageHeroManager: React.FC = () => {
           {Object.keys(pageHeroLabels).map((chave) => (
             <div key={chave} className="bg-mist rounded-2xl border border-olive/10 p-4">
               <Campo rotulo={pageHeroLabels[chave]}>
-                <div className="mb-3">
-                  {mapa[chave] ? (
-                    <img src={mapa[chave]} alt={pageHeroLabels[chave]} className="w-full max-h-40 object-cover rounded-2xl border border-olive/15 bg-surface" />
-                  ) : (
-                    <div className="w-full h-28 rounded-2xl border border-dashed border-olive/25 bg-surface flex flex-col items-center justify-center gap-1 text-muted text-sm">
-                      <ImageOff className="w-5 h-5" />
-                      Sem imagem
-                    </div>
-                  )}
-                </div>
-                <UploadImagem valor={mapa[chave] ?? ''} onChange={(v) => alterar(chave, v)} />
+                <UploadImagem valor={mapa[chave] ?? ''} onChange={(v) => alterar(chave, v)} semUrl />
               </Campo>
             </div>
           ))}

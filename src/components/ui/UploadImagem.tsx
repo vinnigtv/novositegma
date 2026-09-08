@@ -6,7 +6,8 @@ export const UploadImagem: React.FC<{
   valor: string;
   onChange: (v: string) => void;
   dica?: string;
-}> = ({ valor, onChange, dica }) => {
+  semUrl?: boolean;
+}> = ({ valor, onChange, dica, semUrl }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [carregando, setCarregando] = useState(false);
 
@@ -50,16 +51,20 @@ export const UploadImagem: React.FC<{
           <span className="text-[11px] text-muted">PNG ou JPG · será redimensionada automaticamente</span>
         </button>
       )}
-      <p className="mt-2 flex items-center gap-1.5 text-[11px] text-muted">
-        <Link2 className="w-3 h-3" />
-        <span>Preferimos o upload. Sem imagem local?</span>
-      </p>
-      <input
-        value={typeof valor === 'string' && valor.startsWith('http') ? valor : ''}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder="...ou cole a URL de uma imagem"
-        className="mt-1 w-full px-3 py-2 rounded-xl bg-surface border border-olive/20 text-sm text-ink placeholder-muted focus:outline-none focus:border-umber transition"
-      />
+      {!semUrl ? (
+        <>
+          <p className="mt-2 flex items-center gap-1.5 text-[11px] text-muted">
+            <Link2 className="w-3 h-3" />
+            <span>Preferimos o upload. Sem imagem local?</span>
+          </p>
+          <input
+            value={typeof valor === 'string' && valor.startsWith('http') ? valor : ''}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder="...ou cole a URL de uma imagem"
+            className="mt-1 w-full px-3 py-2 rounded-xl bg-surface border border-olive/20 text-sm text-ink placeholder-muted focus:outline-none focus:border-umber transition"
+          />
+        </>
+      ) : null}
       <input
         ref={inputRef}
         type="file"
