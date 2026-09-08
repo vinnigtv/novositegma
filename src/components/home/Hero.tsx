@@ -45,8 +45,7 @@ export const Hero: React.FC = () => {
         </span>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.55),0_8px_40px_rgba(0,0,0,0.6)]">
-          <span className="block">Visite. Conheça.</span>
-          <span className="block text-umber [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">E ame Guararema.</span>
+          Visite, conheça e ame Guararema.
         </h1>
 
         <p className="text-base sm:text-lg lg:text-xl text-white/95 font-normal leading-relaxed max-w-2xl mx-auto mb-10 [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]">
@@ -58,6 +57,7 @@ export const Hero: React.FC = () => {
           <Button
             to="/pontos-turisticos"
             size="lg"
+            className="border-2 border-white"
             icon={<ArrowRight className="w-5 h-5" />}
           >
             Conhecer Pontos Turísticos
