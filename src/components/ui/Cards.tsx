@@ -192,22 +192,15 @@ export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boole
 };
 
 export const LinhaNegocioSimples: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
-  const detalhe = `/guia-de-comercios/${empresa.id}`;
   return (
-    <Link
-      to={detalhe}
-      className="group flex items-center gap-4 bg-surface rounded-2xl border border-olive/10 p-4 hover:shadow-lg hover:shadow-olive/10 hover:-translate-y-0.5 transition-all duration-300"
-    >
+    <article className="flex items-center gap-4 bg-surface rounded-2xl border border-olive/10 p-4">
       <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center font-extrabold text-lg flex-shrink-0 font-heading">
         {(empresa.nome || '?').trim().charAt(0).toUpperCase()}
       </span>
       <div className="min-w-0 flex-1">
-        <p className="font-bold text-olive-deep group-hover:text-umber transition-colors truncate">
-          {empresa.nome}
-        </p>
+        <p className="font-bold text-olive-deep truncate">{empresa.nome}</p>
         <p className="text-xs text-muted truncate">
-          {empresa.categoria}
-          {empresa.endereco ? ` · ${empresa.endereco}` : ''}
+          {empresa.endereco}
           {empresa.bairro ? ` · ${empresa.bairro}` : ''}
         </p>
         {empresa.telefone || empresa.whatsapp ? (
@@ -216,11 +209,7 @@ export const LinhaNegocioSimples: React.FC<{ empresa: Estabelecimento }> = ({ em
           </p>
         ) : null}
       </div>
-      <span className="inline-flex items-center gap-1 text-sm font-semibold text-olive flex-shrink-0 group-hover:text-umber transition-colors">
-        Ver
-        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-      </span>
-    </Link>
+    </article>
   );
 };
 

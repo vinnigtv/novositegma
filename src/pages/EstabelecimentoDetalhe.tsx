@@ -41,6 +41,38 @@ export const EstabelecimentoDetalhePage: React.FC<{ id: string }> = ({ id }) => 
     );
   }
 
+  if (empresa.status === 'pendente' || (empresa.plano ?? 'pago') === 'gratuito') {
+    return (
+      <section className="py-32 text-center px-4">
+        <div className="max-w-xl mx-auto">
+          <p className="text-6xl font-heading font-bold text-olive/20 mb-4">
+            {(empresa.nome || '?').trim().charAt(0).toUpperCase()}
+          </p>
+          <h1 className="text-3xl font-bold text-olive-deep mb-2">{empresa.nome}</h1>
+          <p className="text-sm text-muted mb-2">
+            {empresa.endereco}
+            {empresa.bairro ? ` · ${empresa.bairro}` : ''}
+          </p>
+          {empresa.telefone || empresa.whatsapp ? (
+            <p className="text-sm font-semibold text-umber mb-6">
+              {empresa.whatsapp ?? empresa.telefone}
+            </p>
+          ) : (
+            <p className="text-sm text-muted mb-6">
+              Este negócio participa da listagem simples do Guia Guararema.
+            </p>
+          )}
+          <a
+            href="#/guia-de-comercios"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-olive hover:text-umber transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" /> Voltar para o guia
+          </a>
+        </div>
+      </section>
+    );
+  }
+
   return <Detalhe empresa={empresa} />;
 };
 
@@ -62,7 +94,13 @@ const Detalhe: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
   };
 
   const relacionados = getEstabelecimentos()
-    .filter((e) => e.id !== empresa.id && (e.categoria === empresa.categoria || e.tipo === empresa.tipo))
+    .filter(
+      (e) =>
+        e.id !== empresa.id &&
+        e.status !== 'pendente' &&
+        (e.plano ?? 'pago') === 'pago' &&
+        (e.categoria === empresa.categoria || e.tipo === empresa.tipo)
+    )
     .slice(0, 3);
 
   return (
