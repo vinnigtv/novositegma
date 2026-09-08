@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center relative z-10">
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/25 text-white text-xs sm:text-sm font-semibold mb-7 shadow-lg shadow-black/30">
-          <span className="w-2 h-2 rounded-full bg-umber animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-umber-tint animate-pulse" />
           A Cidade Natureza · a 80 km de São Paulo
         </span>
 
@@ -93,7 +93,7 @@ export const Hero: React.FC = () => {
       >
         Descubra
         <span className="w-5 h-8 rounded-full border-2 border-white/70 flex items-start justify-center p-1.5">
-          <span className="w-1 h-2 rounded-full bg-umber animate-bounce" />
+          <span className="w-1 h-2 rounded-full bg-umber-tint animate-bounce" />
         </span>
       </Link>
     </section>

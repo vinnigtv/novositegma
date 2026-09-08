@@ -4,18 +4,18 @@
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   --font-heading: 'Outfit', sans-serif;
 
-  --color-mist: #f6f8ed;
+  --color-mist: #f5ecda;
   --color-surface: #ffffff;
-  --color-olive: #00804d;
-  --color-olive-deep: #001f3e;
-  --color-olive-soft: #74c465;
-  --color-olive-tint: #74c465;
-  --color-umber: #1e4890;
-  --color-umber-deep: #001f3e;
-  --color-umber-soft: #f6f8ed;
-  --color-umber-tint: #dbe64c;
-  --color-ink: #001f3e;
-  --color-muted: #5a6c7c;
+  --color-olive: #042e1c;
+  --color-olive-deep: #042e1c;
+  --color-olive-soft: #6ce94d;
+  --color-olive-tint: #6ce94d;
+  --color-umber: #000000;
+  --color-umber-deep: #042e1c;
+  --color-umber-soft: #f5ecda;
+  --color-umber-tint: #6ce94d;
+  --color-ink: #042e1c;
+  --color-muted: #5a6b61;
 }
 
 @layer base {
@@ -38,7 +38,7 @@
 
 @layer utilities {
   .text-gradient-nature {
-    background: linear-gradient(120deg, #1e4890 0%, #00804d 50%, #74c465 100%);
+    background: linear-gradient(120deg, #6ce94d 0%, #042e1c 55%, #000000 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -50,14 +50,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #eef1e2;
+  background: #e7e0cf;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #74c465;
+  background: #6ce94d;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00804d;
+  background: #042e1c;
 }
