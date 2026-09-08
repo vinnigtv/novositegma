@@ -1,7 +1,12 @@
 import React, { useMemo, useState } from 'react';
-import { Search, Star, Store, Globe2, SlidersHorizontal, Sparkles, BadgeCheck, ArrowRight } from 'lucide-react';
+import {
+  Search, Star, Store, Globe2, SlidersHorizontal, Sparkles, BadgeCheck,
+  ArrowRight, Users, Eye, TrendingUp, Crown, CheckCircle2,
+  Megaphone,
+} from 'lucide-react';
 import type { BusinessType, Estabelecimento } from '../types';
 import { PageHero } from '../components/ui/PageHero';
+import { SectionHeading } from '../components/ui/SectionHeading';
 import { BusinessCard, CtaBanner, LinhaNegocioSimples } from '../components/ui/Cards';
 import { getEstabelecimentos, getPageHeroImages } from '../lib/db';
 import { Link } from '../lib/router';
@@ -69,61 +74,88 @@ export const GuiaComercioPage: React.FC = () => {
       <PageHero
         kicker="Guia completo"
         title="Guia de Comércio e Serviços de Guararema"
-        description="Um diretório completo e profissional da Cidade Natureza: gastronomia, hospedagem, experiências e os negócios que a cidade aprova."
+        description="Onde quem visita a Cidade Natureza procura antes de decidir — e onde o seu negócio deveria estar. Gastronomia, hospedagem, experiências e comércio local com reputação real."
         image={heroImages.guiaComercio}
         meta="Diretório colaborativo atualizado pela comunidade"
       />
 
+      {/* Barra de oferta sponsor */}
       <section className="relative -mt-10 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-surface rounded-3xl border border-olive/10 shadow-xl shadow-olive/10 p-6 lg:p-8 grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Store, valor: String(todos.length), rotulo: 'Negócios cadastrados' },
-              { icon: Globe2, valor: String(totalCategorias), rotulo: 'Categorias diferentes' },
-              { icon: Star, valor: String(totalAvaliacoes), rotulo: 'Avaliações da comunidade' },
-              { icon: Sparkles, valor: String(totalDestaques), rotulo: 'Em destaque' },
-            ].map((s) => {
-              const Icon = s.icon;
-              return (
-                <div key={s.rotulo} className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-xl font-extrabold text-olive-deep leading-none">{s.valor}</p>
-                    <p className="text-[11px] text-muted mt-1">{s.rotulo}</p>
-                  </div>
+          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-umber via-umber to-umber-deep px-6 py-6 sm:px-8 shadow-xl shadow-umber/15">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-[50px] pointer-events-none" />
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-white/15 text-white flex items-center justify-center flex-shrink-0">
+                  <Megaphone className="w-6 h-6" />
                 </div>
-              );
-            })}
+                <div>
+                  <p className="text-lg sm:text-xl font-extrabold text-white">O seu negócio por aqui, todo dia.</p>
+                  <p className="text-sm text-white/85 mt-1 max-w-2xl">
+                    Futuros clientes pesquisam vocês no Guararema.net antes de escolher: mais <strong className="text-white">mesas</strong>, mais <strong className="text-white">hóspedes</strong> e mais <strong className="text-white">serviços contratados</strong> para quem aparece bem.
+                  </p>
+                </div>
+              </div>
+              <Link
+                to="/cadastro"
+                className="group inline-flex items-center gap-2 rounded-full bg-white text-umber-deep font-bold px-7 py-3 text-sm shadow-lg hover:bg-umber-soft transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
+              >
+                Colocar meu negócio
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Destaque: cadastre sua empresa */}
-      <section className="pt-12">
+      {/* Proposta de valor para quem anuncia */}
+      <section className="pt-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-umber via-umber to-umber-deep px-6 py-8 sm:px-10 sm:py-9 shadow-xl shadow-umber/15">
-            <div className="absolute -top-16 -right-16 w-56 h-56 bg-white/10 rounded-full blur-[70px] pointer-events-none" />
-            <div className="absolute -bottom-20 -left-10 w-64 h-64 bg-umber-deep/50 rounded-full blur-[80px] pointer-events-none" />
-            <div className="absolute top-6 left-10 w-2 h-2 rounded-full bg-white/40" />
-            <div className="absolute bottom-8 right-14 w-3 h-3 rounded-full bg-white/30" />
+          <SectionHeading
+            eyebrow="Por que anunciar"
+            title="Cliente certo, na hora certa, no lugar em que ele já procura"
+            description="Quem decide onde comer, dormir e passear em Guararema passa por aqui. Seja encontrado no momento da escolha — e transforme visita em reserva."
+          />
 
-            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="text-center sm:text-left">
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">Sua empresa aqui? Cadastre grátis.</h3>
-                <p className="text-sm text-white/80 mt-1.5 max-w-xl">
-                  Entre na listagem simples do Guararema.net em poucos minutos — sem cartão, sem compromisso.
-                </p>
-              </div>
-              <Link
-                to="/cadastro"
-                className="group inline-flex items-center gap-2 rounded-full bg-white text-umber-deep font-semibold px-7 py-3.5 text-sm shadow-lg hover:bg-umber-soft transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
-              >
-                Cadastrar agora
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            {[
+              { icon: Eye, titulo: 'Visibilidade no momento da compra', texto: 'Seu card aparece quando alguém busca exatamente o que você oferece — gastronomia, hospedagem, experiência ou serviço.' },
+              { icon: Star, titulo: 'Reputação que gera confiança', texto: 'Avaliações da comunidade e o selo de destaque fazem o visitante escolher você com mais segurança e menos hesitação.' },
+              { icon: TrendingUp, titulo: 'Ações que trazem resultado real', texto: 'Botão de WhatsApp, ligação, endereço no mapa e fotos: cada detalhe pensado para converter leitura em contato.' },
+            ].map((v) => {
+              const Icon = v.icon;
+              return (
+                <div key={v.titulo} className="bg-surface rounded-3xl border border-olive/10 p-7 hover:-translate-y-1 hover:shadow-xl hover:shadow-olive/10 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-bold text-olive-deep mb-2">{v.titulo}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{v.texto}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+            {[
+              { icon: Store, valor: String(todos.length), rotulo: 'Negócios cadastrados' },
+              { icon: Globe2, valor: String(totalCategorias), rotulo: 'Categorias diferentes' },
+              { icon: Users, valor: String(totalAvaliacoes), rotulo: 'Avaliações da comunidade' },
+              { icon: Sparkles, valor: String(totalDestaques), rotulo: 'Em destaque' },
+            ].map((s) => {
+              const Icon = s.icon;
+              return (
+                <div key={s.rotulo} className="bg-mist rounded-3xl border border-olive/10 p-6 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-surface border border-olive/10 text-umber flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-extrabold text-olive-deep leading-none">{s.valor}</p>
+                    <p className="text-xs text-muted mt-1">{s.rotulo}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -243,13 +275,62 @@ export const GuiaComercioPage: React.FC = () => {
           <p className="mt-8 text-xs text-muted">
             Relação atualizada pela comunidade Guararema.net. Encontrou algo errado ou quer incluir seu negócio? Fale com a gente pelo contato.
           </p>
+
+          {/* Bloco upgrade plano completo */}
+          <section className="mt-12 mb-12">
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-olive-deep via-olive-deep to-olive px-6 py-10 sm:px-12 sm:py-12 shadow-xl shadow-olive/15">
+              <div className="absolute -top-16 -right-16 w-48 h-48 bg-white/10 rounded-full blur-[60px] pointer-events-none" />
+              <div className="absolute bottom-0 -left-12 w-56 h-56 bg-umber/30 rounded-full blur-[70px] pointer-events-none" />
+              <div className="absolute top-5 left-12 w-2 h-2 rounded-full bg-white/40" />
+              <div className="absolute bottom-6 right-16 w-3 h-3 rounded-full bg-white/30" />
+
+              <div className="relative z-10 max-w-3xl mx-auto text-center">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-bold mb-5">
+                  <Crown className="w-3.5 h-3.5" /> Plano Destaque
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                  Quer aparecer antes dos outros? Cards completos com fotos e destaque.
+                </h3>
+                <p className="text-white/85 mt-3 max-w-2xl mx-auto leading-relaxed">
+                  O plano gratuito já resolve, mas quem escolhe o plano Destaque ganha logo, galeria de fotos,
+                  horário de funcionamento, WhatsApp na ficha e selo de confiança — tudo isso aparecendo no topo da busca.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 mt-7">
+                  <Link
+                    to="/contato"
+                    className="group inline-flex items-center gap-2 rounded-full bg-white text-olive-deep font-bold px-7 py-3.5 text-sm shadow-lg hover:bg-olive-soft transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    Solicitar plano completo
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                  <Link
+                    to="/cadastro"
+                    className="inline-flex items-center gap-2 rounded-full bg-white/15 text-white border border-white/25 font-semibold px-7 py-3.5 text-sm hover:bg-white/25 transition-colors"
+                  >
+                    Comece grátis agora
+                  </Link>
+                </div>
+                <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 mt-7 text-white/85 text-xs font-semibold">
+                  {[
+                    'Sem contrato mensal',
+                    'Aprovação em até 48h',
+                    'Suporte para atualizações',
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-white/90" /> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
       <CtaBanner
-        title="Seu negócio merece ser encontrado"
-        description="Cadastre sua empresa grátis no guia da Cidade Natureza. Nome, endereço e contatos aparecem na listagem simples; o card completo com fotos é opcional."
-        textButton="Cadastre sua empresa"
+        title="Não deixe seu cliente escolher outro lugar"
+        description={`Mais de ${todos.length} negócios já estão no Guia. Cadastre o seu agora e receba contatos diretos pelo Guararema.net — grátis e sem compromisso.`}
+        textButton="Cadastre minha empresa agora"
         to="/cadastro"
       />
     </>
