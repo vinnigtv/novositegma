@@ -1,12 +1,14 @@
 import type { SlideCidade } from '../types';
 
+export const capaHero: SlideCidade = {
+  id: 'capa',
+  imagem: '/image1.png',
+  titulo: 'Visite. Conheça. E ame Guararema.',
+  legenda: 'A Cidade Natureza · a 80 km de São Paulo',
+};
+
 export const defaultSlidesHero: SlideCidade[] = [
-  {
-    id: 'natureza',
-    imagem: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&auto=format&fit=crop&q=80',
-    titulo: 'Visite. Conheça. E ame Guararema.',
-    legenda: 'A Cidade Natureza · a 80 km de São Paulo',
-  },
+  capaHero,
   {
     id: 'rio-paraiba',
     imagem: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&auto=format&fit=crop&q=80',

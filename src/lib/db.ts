@@ -3,7 +3,7 @@ import { defaultAtracoes } from '../data/pontosTuristicos';
 import { defaultEstabelecimentos } from '../data/estabelecimentos';
 import { defaultEventos } from '../data/eventos';
 import { defaultSlidesCidade } from '../data/cidade';
-import { defaultSlidesHero } from '../data/hero';
+import { defaultSlidesHero, capaHero } from '../data/hero';
 
 const KEYS = {
   atracoes: 'rg.atracoes.v1',
@@ -72,11 +72,14 @@ export function saveSlidesCidade(list: SlideCidade[]) {
 }
 
 export function getSlidesHero(): SlideCidade[] {
-  return readCollection<SlideCidade>(KEYS.slidesHero, defaultSlidesHero);
+  const base = readCollection<SlideCidade>(KEYS.slidesHero, defaultSlidesHero);
+  const demais = base.filter((s) => s.id !== capaHero.id);
+  return [capaHero, ...demais];
 }
 
 export function saveSlidesHero(list: SlideCidade[]) {
-  writeCollection(KEYS.slidesHero, list);
+  const demais = list.filter((s) => s.id !== capaHero.id);
+  writeCollection(KEYS.slidesHero, [capaHero, ...demais]);
 }
 
 export interface CadastroComerciante {
