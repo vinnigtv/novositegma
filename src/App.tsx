@@ -7,6 +7,8 @@ import { ACidadePage } from './pages/ACidade';
 import { PontosTuristicosPage } from './pages/PontosTuristicos';
 import { AtracaoDetalhePage } from './pages/AtracaoDetalhe';
 import { ListagemPage } from './pages/Listagem';
+import { GuiaComercioPage } from './pages/GuiaComercio';
+import { EstabelecimentoDetalhePage } from './pages/EstabelecimentoDetalhe';
 import { EventosPage } from './pages/Eventos';
 import { ContatoPage } from './pages/Contato';
 import { BlogPage } from './pages/Blog';
@@ -46,8 +48,10 @@ function renderPage(path: string) {
       return <ListagemPage tipo="dormir" />;
     case 'o-que-fazer':
       return <ListagemPage tipo="fazer" />;
+    case 'guia-de-comercios':
+      return segments.length > 1 ? <EstabelecimentoDetalhePage id={segments[1]} /> : <GuiaComercioPage />;
     case 'guia-de-comercios-e-servicos':
-      return <ListagemPage tipo="guia" />;
+      return <GuiaComercioPage />;
     case 'eventos':
       return <EventosPage />;
     case 'contato':

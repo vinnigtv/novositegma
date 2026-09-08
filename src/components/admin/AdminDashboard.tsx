@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { MapPin, Store, CalendarDays, LogOut, ExternalLink, RotateCcw } from 'lucide-react';
+import { MapPin, Store, CalendarDays, Images, LogOut, ExternalLink, RotateCcw } from 'lucide-react';
 import { logout } from '../../lib/auth';
 import { resetData } from '../../lib/db';
 import { Link } from '../../lib/router';
 import { AtracoesManager } from './AtracoesManager';
 import { EstabelecimentosManager } from './EstabelecimentosManager';
 import { EventosManager } from './EventosManager';
+import { CidadeManager } from './CidadeManager';
 
-type Secao = 'atracoes' | 'estabelecimentos' | 'eventos';
+type Secao = 'atracoes' | 'estabelecimentos' | 'cidade' | 'eventos';
 
 const menus: { id: Secao; rotulo: string; icone: React.ReactNode }[] = [
   { id: 'atracoes', rotulo: 'Pontos turísticos', icone: <MapPin className="w-4 h-4" /> },
   { id: 'estabelecimentos', rotulo: 'Pra Comer · Onde Dormir · O que Fazer · Guia', icone: <Store className="w-4 h-4" /> },
+  { id: 'cidade', rotulo: 'A Cidade · Carrossel', icone: <Images className="w-4 h-4" /> },
   { id: 'eventos', rotulo: 'Eventos', icone: <CalendarDays className="w-4 h-4" /> },
 ];
 
@@ -88,6 +90,7 @@ export const AdminDashboard: React.FC = () => {
           <main>
             {secao === 'atracoes' ? <AtracoesManager /> : null}
             {secao === 'estabelecimentos' ? <EstabelecimentosManager /> : null}
+            {secao === 'cidade' ? <CidadeManager /> : null}
             {secao === 'eventos' ? <EventosManager /> : null}
 
             <p className="mt-6 text-[11px] leading-relaxed text-muted px-1">

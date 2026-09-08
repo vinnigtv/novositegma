@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
               <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 font-heading">Mais Info</h4>
               <ul className="space-y-2.5 text-sm">
                 <li><Link to="/como-chegar" className="hover:text-white transition-colors">Como Chegar</Link></li>
-                <li><Link to="/guia-de-comercios-e-servicos" className="hover:text-white transition-colors">Comércio & Serviços</Link></li>
+                <li><Link to="/guia-de-comercios" className="hover:text-white transition-colors">Guia de Comércio & Serviços</Link></li>
                 <li className="flex items-start gap-2 pt-1 text-sm text-white/70">
                   <Phone className="w-4 h-4 text-umber-tint flex-shrink-0 mt-0.5" />
                   <span>Telefones úteis na Secretaria de Turismo</span>

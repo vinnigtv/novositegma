@@ -23,6 +23,7 @@ export const Navbar: React.FC = () => {
     { label: 'Pra Comer', to: '/pra-comer' },
     { label: 'Onde Dormir', to: '/onde-dormir' },
     { label: 'O que Fazer', to: '/o-que-fazer' },
+    { label: 'Guia de Comércio', to: '/guia-de-comercios' },
     { label: 'Contato', to: '/contato' },
   ];
 

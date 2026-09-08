@@ -26,11 +26,27 @@ export interface Estabelecimento {
   categoria: string;
   descricao: string;
   imagem: string;
+  logo?: string;
+  fotos?: string[];
   endereco: string;
+  bairro?: string;
   telefone?: string;
+  whatsapp?: string;
+  email?: string;
+  instagram?: string;
+  facebook?: string;
+  website?: string;
   horario?: string;
   tags: string[];
   destaque?: boolean;
+  rating?: { media: number; total: number };
+}
+
+export interface SlideCidade {
+  id: string;
+  imagem: string;
+  titulo: string;
+  legenda: string;
 }
 
 export interface Evento {

@@ -1,6 +1,6 @@
 import type { Estabelecimento } from '../types';
 
-export const defaultEstabelecimentos: Estabelecimento[] = [
+const _estabelecimentosBase: Estabelecimento[] = [
   {
     id: 'forneria-toscana',
     nome: 'Forneria Toscana',
@@ -298,6 +298,38 @@ export const defaultEstabelecimentos: Estabelecimento[] = [
     tags: ['Petshop', 'Banho & Tosa', 'Rações'],
   },
 ];
+
+const fotosPool = [
+  'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1592861956120-e524fc739696?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1544148103-0773bf10d330?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1551632811-561732d1e306?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=900&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=900&auto=format&fit=crop&q=80',
+];
+
+function hashId(id: string): number {
+  let h = 0;
+  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+  return h;
+}
+
+function enriquecer(e: Estabelecimento, idx: number): Estabelecimento {
+  const h = hashId(e.id) || idx + 1;
+  const pool = fotosPool.map((f) => f.replace('w=900', 'w=1200'));
+  const fotos = [e.imagem, pool[h % pool.length], pool[(h + 3) % pool.length], pool[(h + 5) % pool.length]];
+  return {
+    ...e,
+    rating: { media: +(4.3 + (h % 7) * 0.1).toFixed(1), total: 16 + (h % 42) },
+    fotos,
+  };
+}
+
+export const defaultEstabelecimentos: Estabelecimento[] = _estabelecimentosBase.map(enriquecer);
 
 export const tiposRecursos: Record<Estabelecimento['tipo'], string> = {
   comer: 'Pra Comer',

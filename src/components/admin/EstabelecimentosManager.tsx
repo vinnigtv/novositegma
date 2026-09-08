@@ -94,20 +94,46 @@ export const EstabelecimentosManager: React.FC = () => {
           <Campo rotulo="Endereço">
             <Input value={draft.endereco} onChange={(e) => patch({ endereco: e.target.value })} />
           </Campo>
+          <Campo rotulo="Bairro / Região">
+            <Input value={draft.bairro ?? ''} onChange={(e) => patch({ bairro: e.target.value })} />
+          </Campo>
           <Campo rotulo="Telefone">
             <Input value={draft.telefone ?? ''} onChange={(e) => patch({ telefone: e.target.value })} />
+          </Campo>
+          <Campo rotulo="WhatsApp" dica="Usado quando disponível para contato direto.">
+            <Input value={draft.whatsapp ?? ''} onChange={(e) => patch({ whatsapp: e.target.value })} />
+          </Campo>
+          <Campo rotulo="E-mail">
+            <Input type="email" value={draft.email ?? ''} onChange={(e) => patch({ email: e.target.value })} />
+          </Campo>
+          <Campo rotulo="Instagram" dica="Pode ser o perfil (@nome) ou link completo.">
+            <Input value={draft.instagram ?? ''} onChange={(e) => patch({ instagram: e.target.value })} />
+          </Campo>
+          <Campo rotulo="Facebook">
+            <Input value={draft.facebook ?? ''} onChange={(e) => patch({ facebook: e.target.value })} />
+          </Campo>
+          <Campo rotulo="Website / Cardápio">
+            <Input value={draft.website ?? ''} onChange={(e) => patch({ website: e.target.value })} placeholder="https://..." />
           </Campo>
           <Campo rotulo="Horário">
             <Input value={draft.horario ?? ''} onChange={(e) => patch({ horario: e.target.value })} />
           </Campo>
-          <Campo rotulo="Imagem" dica="Cole a URL de uma imagem.">
+          <Campo rotulo="Imagem principal" dica="Foto de capa exibida no card e no carrossel.">
             <Input value={draft.imagem} onChange={(e) => patch({ imagem: e.target.value })} placeholder="https://..." />
+          </Campo>
+          <Campo rotulo="Logo" dica="URL da logo do negócio. Sem URL, usamos a inicial com a cor da marca.">
+            <Input value={draft.logo ?? ''} onChange={(e) => patch({ logo: e.target.value })} placeholder="https://..." />
           </Campo>
           <Campo rotulo="Destaque">
             <div className="pt-2">
               <Toggle rotulo={draft.destaque ? 'Em destaque' : 'Sem destaque'} valor={Boolean(draft.destaque)} onChange={(v) => patch({ destaque: v })} />
             </div>
           </Campo>
+          <div className="md:col-span-2">
+            <Campo rotulo="Fotos do carrossel" dica="Uma URL por linha. A primeira é a foto principal.">
+              <TextLines valor={draft.fotos ?? []} onChange={(v) => patch({ fotos: v })} linha="https://..." />
+            </Campo>
+          </div>
           <div className="md:col-span-2">
             <Campo rotulo="Descrição">
               <Textarea value={draft.descricao} onChange={(e) => patch({ descricao: e.target.value })} rows={3} />
@@ -176,6 +202,11 @@ export const EstabelecimentosManager: React.FC = () => {
                   {tiposRecursos[e.tipo]}
                   {e.categoria ? ` · ${e.categoria}` : ''}
                   {e.endereco ? ` · ${e.endereco}` : ''}
+                </p>
+                <p className="text-[11px] text-umber font-semibold mt-0.5">
+                  ★ {(e.rating?.media ?? 0) > 0 ? `${e.rating!.media.toFixed(1)} · ${e.rating!.total} avaliações base` : 'Sem avaliações base'}
+                  {e.fotos && e.fotos.length > 0 ? ` · ${e.fotos.length} foto${e.fotos.length > 1 ? 's' : ''}` : ''}
+                  {e.logo ? ' · Logo' : ''}
                 </p>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">

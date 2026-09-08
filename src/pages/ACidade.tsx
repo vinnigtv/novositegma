@@ -3,6 +3,7 @@ import { ShieldCheck, Leaf, MapPin, TrainFront, Landmark, ArrowRight } from 'luc
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { CtaBanner } from '../components/ui/Cards';
+import { CidadeCarrossel } from '../components/ui/CidadeCarrossel';
 import { Link } from '../lib/router';
 
 const pillars = [
@@ -40,6 +41,8 @@ export const ACidadePage: React.FC = () => {
         description="Reconhecida pela qualidade de vida, segurança e cuidado com a natureza, Guararema é o refúgio perfeito a uma hora da capital."
         image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&auto=format&fit=crop&q=80"
       />
+
+      <CidadeCarrossel />
 
       {/* Narrative */}
       <section className="py-24">

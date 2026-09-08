@@ -1,4 +1,4 @@
-import type { Atracao, Estabelecimento, Evento } from '../../types';
+import type { Atracao, Estabelecimento, Evento, SlideCidade } from '../../types';
 
 export function slugify(texto: string): string {
   return texto
@@ -53,8 +53,16 @@ export function novoEstabelecimento(): Estabelecimento {
     categoria: '',
     descricao: '',
     imagem: '',
+    logo: '',
+    fotos: [],
     endereco: '',
+    bairro: '',
     telefone: '',
+    whatsapp: '',
+    email: '',
+    instagram: '',
+    facebook: '',
+    website: '',
     horario: '',
     tags: [],
     destaque: false,
@@ -73,5 +81,14 @@ export function novoEvento(): Evento {
     imagem: '',
     tags: [],
     destaque: false,
+  };
+}
+
+export function novoSlide(): SlideCidade {
+  return {
+    id: novoId(),
+    imagem: '',
+    titulo: '',
+    legenda: '',
   };
 }

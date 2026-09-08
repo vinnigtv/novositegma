@@ -1,12 +1,14 @@
-import type { Atracao, Estabelecimento, Evento } from '../types';
+import type { Atracao, Estabelecimento, Evento, SlideCidade } from '../types';
 import { defaultAtracoes } from '../data/pontosTuristicos';
 import { defaultEstabelecimentos } from '../data/estabelecimentos';
 import { defaultEventos } from '../data/eventos';
+import { defaultSlidesCidade } from '../data/cidade';
 
 const KEYS = {
   atracoes: 'rg.atracoes.v1',
-  estabelecimentos: 'rg.estabelecimentos.v1',
+  estabelecimentos: 'rg.estabelecimentos.v2',
   eventos: 'rg.eventos.v1',
+  slidesCidade: 'rg.slidesCidade.v1',
 } as const;
 
 function readCollection<T>(key: string, fallback: T[]): T[] {
@@ -57,6 +59,14 @@ export function getEventos(): Evento[] {
 
 export function saveEventos(list: Evento[]) {
   writeCollection(KEYS.eventos, list);
+}
+
+export function getSlidesCidade(): SlideCidade[] {
+  return readCollection<SlideCidade>(KEYS.slidesCidade, defaultSlidesCidade);
+}
+
+export function saveSlidesCidade(list: SlideCidade[]) {
+  writeCollection(KEYS.slidesCidade, list);
 }
 
 export function resetData() {
