@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
       {/* Hero background carousel */}
-      <div className="absolute inset-0 -z-20">
+      <div className="absolute inset-0 z-0">
         <div className="absolute inset-0">
           <Carrossel
             fotos={slides.map((s) => s.imagem)}
@@ -34,9 +34,9 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Decorative accents */}
-      <div className="absolute top-24 left-10 w-2.5 h-2.5 rounded-full bg-umber/50 -z-10" />
-      <div className="absolute top-1/3 right-16 w-3 h-3 rounded-full bg-olive/40 -z-10" />
-      <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-olive-deep/30 -z-10" />
+      <div className="absolute top-24 left-10 w-2.5 h-2.5 rounded-full bg-umber/50 z-0" />
+      <div className="absolute top-1/3 right-16 w-3 h-3 rounded-full bg-olive/40 z-0" />
+      <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-olive-deep/30 z-0" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center relative z-10">
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/85 backdrop-blur-md border border-white/50 text-olive-deep text-xs sm:text-sm font-semibold mb-7 shadow-lg shadow-olive-deep/10">
