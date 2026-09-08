@@ -28,9 +28,9 @@ export const Hero: React.FC = () => {
             className="h-full w-full"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-mist/50 via-mist/30 to-mist" />
-        <div className="absolute inset-0 bg-gradient-to-r from-mist/35 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,245,247,0.35),transparent_68%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-mist/35 via-mist/15 to-mist/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-mist/20 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,245,247,0.2),transparent_68%)] pointer-events-none" />
       </div>
 
       {/* Decorative accents */}
@@ -39,17 +39,17 @@ export const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-olive-deep/30 z-0" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center relative z-10">
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/85 backdrop-blur-md border border-white/50 text-olive-deep text-xs sm:text-sm font-semibold mb-7 shadow-lg shadow-olive-deep/10">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/75 backdrop-blur-md border border-white/60 text-olive-deep text-xs sm:text-sm font-semibold mb-7 shadow-lg shadow-black/10 [text-shadow:0_1px_4px_rgba(0,0,0,0.25)]">
           <span className="w-2 h-2 rounded-full bg-umber animate-pulse" />
           A Cidade Natureza · a 80 km de São Paulo
         </span>
 
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-olive-deep leading-[1.05] mb-6 [text-shadow:0_4px_30px_rgba(245,245,247,0.9),0_2px_8px_rgba(51,53,41,0.25)]">
-          Visite. Conheça.
-          <span className="block text-gradient-nature">E ame Guararema.</span>
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 [text-shadow:0_2px_10px_rgba(245,245,247,0.95),0_6px_40px_rgba(51,53,41,0.85)]">
+          <span className="block text-olive-deep [text-shadow:0_2px_10px_rgba(245,245,247,0.95),0_6px_40px_rgba(51,53,41,0.85)]">Visite. Conheça.</span>
+          <span className="block text-umber [text-shadow:0_2px_10px_rgba(245,245,247,0.95),0_6px_40px_rgba(51,53,41,0.85)]">E ame Guararema.</span>
         </h1>
 
-        <p className="text-base sm:text-lg lg:text-xl text-ink/85 font-normal leading-relaxed max-w-2xl mx-auto mb-10 [text-shadow:0_2px_16px_rgba(245,245,247,0.95)]">
+        <p className="text-base sm:text-lg lg:text-xl text-ink/90 font-normal leading-relaxed max-w-2xl mx-auto mb-10 [text-shadow:0_2px_12px_rgba(245,245,247,0.95),0_4px_24px_rgba(51,53,41,0.6)]">
           Reconhecida pela qualidade de vida, segurança e preservação da natureza, Guararema reúne tudo o que
           você procura: história, gastronomia, ecoturismo e a serenidade de uma cidade de interior.
         </p>
