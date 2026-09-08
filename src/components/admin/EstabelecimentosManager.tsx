@@ -245,7 +245,7 @@ export const EstabelecimentosManager: React.FC = () => {
                 <p className="font-bold text-olive-deep truncate">
                   {e.nome}
                   {e.status === 'pendente' ? (
-                    <span className="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold">
+                    <span className="ml-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-umber-soft text-umber text-[11px] font-bold">
                       <Hourglass className="w-3 h-3" /> Pendente
                     </span>
                   ) : (
