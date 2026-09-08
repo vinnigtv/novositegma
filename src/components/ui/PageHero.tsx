@@ -14,13 +14,13 @@ interface PageHeroProps {
 export const PageHero: React.FC<PageHeroProps> = ({ kicker, title, description, image, crumb, meta }) => {
   return (
     <section className="relative min-h-[62vh] flex items-end overflow-hidden pt-36 pb-20">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <img src={image} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-olive-deep via-olive-deep/70 to-mist/20" />
         <div className="absolute inset-0 bg-gradient-to-r from-olive-deep/80 to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="max-w-3xl">
           <Link
             to={crumb ?? '/'}
