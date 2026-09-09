@@ -77,7 +77,7 @@ export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boole
           {empresa.logo ? (
             <img src={empresa.logo} alt={`Logo ${empresa.nome}`} className="w-full h-full object-cover" />
           ) : (
-            <span className="w-full h-full flex items-center justify-center bg-gradient-to-br from-olive to-umber text-white">
+            <span className="w-full h-full flex items-center justify-center bg-olive-deep text-white">
               <Icone className="w-6 h-6" />
             </span>
           )}
@@ -203,7 +203,7 @@ export const LinhaNegocioSimples: React.FC<{ empresa: Estabelecimento }> = ({ em
 
   return (
     <article className="flex items-center gap-3 bg-surface rounded-2xl border border-olive/10 p-4">
-      <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center flex-shrink-0">
+      <span className="w-12 h-12 rounded-xl bg-olive-deep text-white flex items-center justify-center flex-shrink-0">
         <Icone className="w-5 h-5" />
       </span>
       <div className="min-w-0 flex-1">

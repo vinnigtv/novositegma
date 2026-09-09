@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
+import { Phone, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from '../components/ui/BrandIcons';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
@@ -15,7 +15,6 @@ export const ContatoPage: React.FC = () => {
   };
 
   const canais = [
-    { icon: Mail, titulo: 'E-mail', texto: 'contato@rotaguararema.com.br', href: 'mailto:contato@rotaguararema.com.br' },
     { icon: Phone, titulo: 'Telefone', texto: 'Secretaria de Turismo de Guararema', href: 'tel:+55114693XXXX' },
     { icon: Clock, titulo: 'Atendimento', texto: 'Seg. a sex., das 9h às 17h' },
     { icon: MapPin, titulo: 'Endereço', texto: 'Guararema · SP · Brasil' },
@@ -125,7 +124,7 @@ export const ContatoPage: React.FC = () => {
                 );
               })}
 
-              <div className="rounded-2xl bg-gradient-to-br from-olive to-umber p-6 text-white">
+              <div className="rounded-2xl bg-olive-deep p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">Siga o Guararema.net</h3>
                 <p className="text-sm text-white/85 mb-4">Fotos, novidades e bastidores no nosso dia a dia.</p>
                 <div className="flex gap-2.5">

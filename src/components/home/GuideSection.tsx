@@ -28,7 +28,7 @@ export const GuideSection: React.FC = () => {
           <div className="absolute -bottom-14 -right-14 w-44 h-44 bg-umber-soft rounded-full blur-[70px]" />
 
           <div className="relative z-10">
-            <div className="mx-auto mb-6 w-14 h-14 rounded-2xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center shadow-lg shadow-umber/25">
+            <div className="mx-auto mb-6 w-14 h-14 rounded-2xl bg-olive-deep text-white flex items-center justify-center shadow-lg shadow-olive-deep/25">
               <Download className="w-7 h-7" />
             </div>
 

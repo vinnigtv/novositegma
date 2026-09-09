@@ -1,18 +1,18 @@
 import React from 'react';
-import { Mail, MapPin, Heart, Phone } from 'lucide-react';
+import { MapPin, Heart, Phone } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from '../ui/BrandIcons';
 import { Link } from '../../lib/router';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-umber-deep text-white/80 pt-16 pb-8 relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-olive via-umber to-umber" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-olive-deep" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           {/* Brand */}
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-olive to-umber flex items-center justify-center text-white">
+              <div className="w-10 h-10 rounded-full bg-olive-deep flex items-center justify-center text-white">
                 <MapPin className="w-5 h-5 stroke-[2.2]" />
               </div>
               <div className="leading-none">
@@ -44,13 +44,6 @@ export const Footer: React.FC = () => {
                 aria-label="Facebook"
               >
                 <FacebookIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="mailto:contato@rotaguararema.com.br"
-                className="w-9 h-9 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white/80 hover:bg-white hover:text-umber-deep transition-colors"
-                aria-label="E-mail"
-              >
-                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>

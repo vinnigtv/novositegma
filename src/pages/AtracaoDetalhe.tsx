@@ -94,7 +94,7 @@ export const AtracaoDetalhePage: React.FC<{ slug: string }> = ({ slug }) => {
             {/* Sidebar info */}
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-28 bg-surface rounded-3xl border border-olive/10 shadow-sm overflow-hidden">
-                <div className="bg-gradient-to-br from-olive to-umber px-6 py-5">
+                <div className="bg-olive-deep px-6 py-5">
                   <h3 className="text-white font-bold text-lg flex items-center gap-2">
                     <Map className="w-5 h-5" />
                     Informações práticas

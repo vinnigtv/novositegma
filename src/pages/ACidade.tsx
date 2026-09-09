@@ -105,7 +105,7 @@ export const ACidadePage: React.FC = () => {
               const Icon = p.icon;
               return (
                 <div key={p.title} className="bg-mist rounded-3xl border border-olive/10 p-8 hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-olive-deep text-white flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-olive-deep mb-2">{p.title}</h3>

@@ -144,14 +144,14 @@ const Detalhe: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
 
             <aside className="lg:sticky lg:top-28 space-y-6">
               <div className="bg-surface rounded-3xl border border-olive/10 p-6 lg:p-8 overflow-hidden relative">
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-olive via-umber to-umber" />
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-olive-deep" />
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white border border-olive/10 shadow flex-shrink-0">
                       {empresa.logo ? (
                         <img src={empresa.logo} alt={`Logo ${empresa.nome}`} className="w-full h-full object-cover" />
                       ) : (
-                        <span className="w-full h-full flex items-center justify-center bg-gradient-to-br from-olive to-umber text-white text-2xl font-extrabold font-heading">
+                        <span className="w-full h-full flex items-center justify-center bg-olive-deep text-white text-2xl font-extrabold font-heading">
                           {inicial}
                         </span>
                       )}

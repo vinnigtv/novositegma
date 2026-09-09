@@ -28,7 +28,7 @@ export const BlogPage: React.FC = () => {
               className="group relative rounded-[2rem] overflow-hidden min-h-[20rem] lg:min-h-full"
             >
               <img src={principal.imagem} alt={principal.titulo} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-olive-deep via-olive-deep/40 to-transparent" />
+              <div className="absolute inset-0 bg-olive-deep/70" />
               <div className="relative z-10 flex flex-col justify-end p-8 min-h-[20rem]">
                 <span className="inline-flex items-center gap-1.5 w-fit px-3 py-1 rounded-full bg-umber text-white text-[10px] font-bold uppercase tracking-wider mb-3">
                   {principal.categoria}
@@ -48,7 +48,7 @@ export const BlogPage: React.FC = () => {
               {resto.slice(0, 2).map((post) => (
                 <PostCard key={post.id} post={post} />
               ))}
-              <div className="sm:col-span-2 rounded-3xl bg-gradient-to-br from-olive to-umber p-8 flex flex-col justify-center">
+              <div className="sm:col-span-2 rounded-3xl bg-olive-deep p-8 flex flex-col justify-center">
                 <SectionHeading
                   eyebrow="Guia gratuito"
                   title="Receba nosso guia completo"

@@ -126,7 +126,7 @@ export const GuiaComercioPage: React.FC = () => {
               const Icon = v.icon;
               return (
                 <div key={v.titulo} className="bg-surface rounded-3xl border border-olive/10 p-7 hover:-translate-y-1 hover:shadow-xl hover:shadow-olive/10 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-olive-deep text-white flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="text-base font-bold text-olive-deep mb-2">{v.titulo}</h3>

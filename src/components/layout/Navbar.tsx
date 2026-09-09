@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mail, ChevronDown, MapPin, Store } from 'lucide-react';
+import { Menu, X, ChevronDown, MapPin, Store } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from '../ui/BrandIcons';
 import { Link } from '../../lib/router';
 import { getAtracoes } from '../../lib/db';
@@ -32,13 +32,6 @@ export const Navbar: React.FC = () => {
       {/* Top bar */}
       <div className="bg-olive-deep text-white/85 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9 text-xs">
-          <a
-            href="mailto:contato@rotaguararema.com.br"
-            className="flex items-center gap-1.5 hover:text-white transition-colors"
-          >
-            <Mail className="w-3.5 h-3.5" />
-            contato@rotaguararema.com.br
-          </a>
           <div className="flex items-center gap-4">
             <Link to="/cadastro" className="flex items-center gap-1.5 hover:text-white transition-colors">
               <Store className="w-3.5 h-3.5" />
@@ -83,7 +76,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center justify-between h-16 lg:h-[4.5rem]">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-olive to-umber flex items-center justify-center text-white shadow-md shadow-olive/25 group-hover:scale-105 transition-transform duration-300">
+              <div className="w-10 h-10 rounded-full bg-olive-deep flex items-center justify-center text-white shadow-md shadow-olive/25 group-hover:scale-105 transition-transform duration-300">
                 <MapPin className="w-5 h-5 stroke-[2.2]" />
               </div>
               <div className="leading-none">

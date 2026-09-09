@@ -57,7 +57,7 @@ export const CidadeNatalPage: React.FC = () => {
               const Icon = a.icon;
               return (
                 <div key={a.titulo} className="bg-surface rounded-3xl border border-olive/10 p-7 hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-olive to-umber text-white flex items-center justify-center mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-olive-deep text-white flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-olive-deep mb-2">{a.titulo}</h3>
@@ -74,7 +74,7 @@ export const CidadeNatalPage: React.FC = () => {
               loading="lazy"
               className="rounded-[2rem] h-64 object-cover w-full"
             />
-            <div className="rounded-[2rem] bg-gradient-to-br from-umber to-umber-deep p-10 flex flex-col justify-center text-white">
+            <div className="rounded-[2rem] bg-olive-deep p-10 flex flex-col justify-center text-white">
               <h3 className="font-bold text-2xl mb-3">Planeje sua noite mágica</h3>
               <p className="text-white/85 text-sm leading-relaxed mb-6">
                 Reserve sua hospedagem com antecedência — dezembro é o mês mais movimentado do ano em

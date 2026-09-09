@@ -90,7 +90,7 @@ export const Welcome: React.FC = () => {
                 loading="lazy"
                 className="rounded-3xl h-40 sm:h-44 object-cover w-3/5 shadow-lg"
               />
-              <div className="w-2/5 flex flex-col justify-center items-center bg-gradient-to-br from-olive to-umber rounded-3xl p-5 text-white text-center">
+              <div className="w-2/5 flex flex-col justify-center items-center bg-olive-deep rounded-3xl p-5 text-white text-center">
                 <Quote className="w-6 h-6 mb-1 text-umber-tint" />
                 <p className="text-xs font-medium leading-snug">A cidade onde o tempo passa devagar e as memórias ficam para sempre.</p>
               </div>
