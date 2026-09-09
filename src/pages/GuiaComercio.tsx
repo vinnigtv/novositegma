@@ -82,7 +82,7 @@ export const GuiaComercioPage: React.FC = () => {
       {/* Barra de oferta sponsor */}
       <section className="relative -mt-10 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-r from-umber via-umber to-umber-deep px-6 py-6 sm:px-8 shadow-xl shadow-umber/15">
+          <div className="relative overflow-hidden rounded-[2rem] bg-olive-deep px-6 py-6 sm:px-8 shadow-xl shadow-olive/15">
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-[50px] pointer-events-none" />
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
               <div className="flex items-start gap-4">
@@ -98,7 +98,7 @@ export const GuiaComercioPage: React.FC = () => {
               </div>
               <Link
                 to="/cadastro"
-                className="group inline-flex items-center gap-2 rounded-full bg-white text-umber-deep font-bold px-7 py-3 text-sm shadow-lg hover:bg-umber-soft transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
+                className="group inline-flex items-center gap-2 rounded-full bg-white text-olive-deep font-bold px-7 py-3 text-sm shadow-lg hover:bg-olive-soft transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
               >
                 Colocar meu negócio
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -145,8 +145,8 @@ export const GuiaComercioPage: React.FC = () => {
             ].map((s) => {
               const Icon = s.icon;
               return (
-                <div key={s.rotulo} className="bg-mist rounded-3xl border border-olive/10 p-6 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-surface border border-olive/10 text-umber flex items-center justify-center flex-shrink-0">
+                <div key={s.rotulo} className="bg-surface rounded-3xl border border-olive/10 p-6 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-olive-deep text-white flex items-center justify-center flex-shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -187,10 +187,10 @@ export const GuiaComercioPage: React.FC = () => {
                 <button
                   key={c}
                   onClick={() => setCategoria(c)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
                     categoria === c
-                      ? 'bg-umber text-white'
-                      : 'bg-umber-soft text-umber-deep hover:bg-umber/15'
+                      ? 'bg-olive text-white shadow-lg shadow-olive/25'
+                      : 'bg-surface border border-olive/15 text-olive-deep hover:bg-olive-soft'
                   }`}
                 >
                   {c === 'todas' ? 'Todas as categorias' : c}
@@ -280,7 +280,7 @@ export const GuiaComercioPage: React.FC = () => {
           <section className="mt-12 mb-12">
             <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-olive-deep via-olive-deep to-olive px-6 py-10 sm:px-12 sm:py-12 shadow-xl shadow-olive/15">
               <div className="absolute -top-16 -right-16 w-48 h-48 bg-white/10 rounded-full blur-[60px] pointer-events-none" />
-              <div className="absolute bottom-0 -left-12 w-56 h-56 bg-umber/30 rounded-full blur-[70px] pointer-events-none" />
+              <div className="absolute bottom-0 -left-12 w-56 h-56 bg-olive/30 rounded-full blur-[70px] pointer-events-none" />
               <div className="absolute top-5 left-12 w-2 h-2 rounded-full bg-white/40" />
               <div className="absolute bottom-6 right-16 w-3 h-3 rounded-full bg-white/30" />
 
