@@ -11,6 +11,7 @@ import {
   Info,
   Users,
 } from 'lucide-react';
+import { TelaCapa, TelaApresentacao, TelaProvaSocial, TelaCta } from './MidiaKitTelas';
 
 interface ItemInclui {
   titulo?: string;
@@ -150,7 +151,7 @@ export const MidiaKitGtv: React.FC = () => {
   return (
     <div className="midia-kit-area">
       {/* Cabeçalho */}
-      <div className="bg-surface rounded-3xl border border-olive/10 p-6 sm:p-8 mb-8">
+      <div className="no-print bg-surface rounded-3xl border border-olive/10 p-6 sm:p-8 mb-8">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
           <div>
             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-umber bg-umber-soft px-3 py-1 rounded-full mb-3">
@@ -174,6 +175,12 @@ export const MidiaKitGtv: React.FC = () => {
 
       {/* Blocos de planos */}
       <div className="space-y-6">
+        {/* Telas de composição do mídia kit */}
+        <TelaCapa />
+        <TelaApresentacao />
+        <TelaProvaSocial />
+        <TelaCta />
+
         {/* 01 · GTV Conexão */}
         <BlocoPlano
           numero="01"
