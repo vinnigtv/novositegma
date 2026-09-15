@@ -75,6 +75,10 @@
     margin: 0 !important;
   }
   .plan-block {
+    min-height: 8.3in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     break-inside: avoid;
     break-after: page;
     box-shadow: none !important;
@@ -83,11 +87,13 @@
     page-break-after: always;
   }
   .plan-block:last-of-type {
+    min-height: auto;
+    justify-content: flex-start;
     page-break-after: auto;
     break-after: auto;
   }
   @page {
-    size: A4;
-    margin: 16mm 14mm;
+    size: 16in 9in;
+    margin: 0.35in;
   }
 }
