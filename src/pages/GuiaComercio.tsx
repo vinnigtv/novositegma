@@ -100,7 +100,7 @@ export const GuiaComercioPage: React.FC = () => {
                 to="/cadastro"
                 className="group inline-flex items-center gap-2 rounded-full bg-white text-olive-deep font-bold px-7 py-3 text-sm shadow-lg hover:bg-olive-soft transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
               >
-                Colocar meu negócio
+                Cadastrar grátis
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
