@@ -61,3 +61,33 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #E5771E;
 }
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #014E4F !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .midia-kit-area {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .plan-block {
+    break-inside: avoid;
+    break-after: page;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+    page-break-inside: avoid;
+    page-break-after: always;
+  }
+  .plan-block:last-of-type {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  @page {
+    size: A4;
+    margin: 16mm 14mm;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Store, CalendarDays, Images, LogOut, ExternalLink, RotateCcw, Layout, PanelsTopLeft } from 'lucide-react';
+import { MapPin, Store, CalendarDays, Images, LogOut, ExternalLink, RotateCcw, Layout, PanelsTopLeft, Newspaper } from 'lucide-react';
 import { logout } from '../../lib/auth';
 import { resetData } from '../../lib/db';
 import { Link } from '../../lib/router';
@@ -9,8 +9,9 @@ import { EventosManager } from './EventosManager';
 import { CidadeManager } from './CidadeManager';
 import { HeroManager } from './HeroManager';
 import { PageHeroManager } from './PageHeroManager';
+import { MidiaKitGtv } from './MidiaKitGtv';
 
-type Secao = 'atracoes' | 'estabelecimentos' | 'cidade' | 'hero' | 'pagehero' | 'eventos';
+type Secao = 'atracoes' | 'estabelecimentos' | 'cidade' | 'hero' | 'pagehero' | 'eventos' | 'midia';
 
 const menus: { id: Secao; rotulo: string; icone: React.ReactNode }[] = [
   { id: 'atracoes', rotulo: 'Pontos turísticos', icone: <MapPin className="w-4 h-4" /> },
@@ -19,6 +20,7 @@ const menus: { id: Secao; rotulo: string; icone: React.ReactNode }[] = [
   { id: 'pagehero', rotulo: 'Cabeçalhos das páginas', icone: <PanelsTopLeft className="w-4 h-4" /> },
   { id: 'cidade', rotulo: 'A Cidade · Carrossel', icone: <Images className="w-4 h-4" /> },
   { id: 'eventos', rotulo: 'Eventos', icone: <CalendarDays className="w-4 h-4" /> },
+  { id: 'midia', rotulo: 'Mídia Kit GTV', icone: <Newspaper className="w-4 h-4" /> },
 ];
 
 export const AdminDashboard: React.FC = () => {
@@ -38,7 +40,7 @@ export const AdminDashboard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-mist">
-      <header className="bg-olive-deep text-white sticky top-0 z-30 shadow-lg shadow-olive-deep/20">
+      <header className="no-print bg-olive-deep text-white sticky top-0 z-30 shadow-lg shadow-olive-deep/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 min-w-0">
             <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-white/10">
@@ -74,7 +76,7 @@ export const AdminDashboard: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6 lg:items-start">
-          <nav className="flex lg:flex-col gap-2 lg:sticky lg:top-24 overflow-x-auto pb-1">
+          <nav className="no-print flex lg:flex-col gap-2 lg:sticky lg:top-24 overflow-x-auto pb-1">
             {menus.map((m) => (
               <button
                 key={m.id}
@@ -98,8 +100,9 @@ export const AdminDashboard: React.FC = () => {
             {secao === 'pagehero' ? <PageHeroManager /> : null}
             {secao === 'cidade' ? <CidadeManager /> : null}
             {secao === 'eventos' ? <EventosManager /> : null}
+            {secao === 'midia' ? <MidiaKitGtv /> : null}
 
-            <p className="mt-6 text-[11px] leading-relaxed text-muted px-1">
+            <p className="no-print mt-6 text-[11px] leading-relaxed text-muted px-1">
               As edições ficam salvas neste navegador (armazenamento local) e aparecem no site
               imediatamente. Para publicar para todos os visitantes, o conteúdo precisa ser
               atualizado na versão hospedada do projeto.
