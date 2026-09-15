@@ -1,4 +1,5 @@
 import React from 'react';
+import { lembrarOrigem } from './hash';
 
 interface LinkProps {
   to: string;
@@ -9,7 +10,14 @@ interface LinkProps {
 
 export function Link({ to, className, children, onClick }: LinkProps) {
   return (
-    <a href={`#${to}`} className={className} onClick={onClick}>
+    <a
+      href={`#${to}`}
+      className={className}
+      onClick={() => {
+        lembrarOrigem();
+        onClick?.();
+      }}
+    >
       {children}
     </a>
   );

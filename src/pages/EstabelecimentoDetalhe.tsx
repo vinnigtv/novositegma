@@ -14,28 +14,29 @@ import type { Estabelecimento } from '../types';
 import { getEstabelecimentos } from '../lib/db';
 import { tiposRecursos } from '../data/estabelecimentos';
 import { Link } from '../lib/router';
+import { getOrigem } from '../lib/hash';
 import { Carrossel } from '../components/ui/Carrossel';
 import { NotaTexto, VotacaoEstrelas } from '../components/ui/Avaliacao';
 import { useAvaliacoes } from '../hooks/useAvaliacoes';
 import { BusinessCard, CtaBanner } from '../components/ui/Cards';
-import { WhatsAppIcon, InstagramIcon, FacebookIcon } from '../components/ui/BrandIcons';
+import { WhatsAppIcon } from '../components/ui/BrandIcons';
 
 const limpaNumero = (v: string) => v.replace(/\D/g, '');
 const urlSegura = (v: string) => (/^https?:\/\//i.test(v) ? v : `https://${v}`);
-const handleInsta = (v: string) => (v.startsWith('@') ? v : `@${v.replace(/^https?:\/\/(www\.)?instagram\.com\//, '').replace(/\/$/, '')}`);
 
 const Ano = new Date().getFullYear();
 
 export const EstabelecimentoDetalhePage: React.FC<{ id: string }> = ({ id }) => {
   const empresa = getEstabelecimentos().find((e) => e.id === id);
+  const origem = getOrigem('/guia-de-comercios');
 
   if (!empresa) {
     return (
       <section className="py-32 text-center px-4">
         <h1 className="text-3xl font-bold text-olive-deep mb-2">Estabelecimento não encontrado</h1>
         <p className="text-sm text-muted mb-6">O link pode estar desatualizado ou o cadastro foi removido.</p>
-        <a href="#/guia-de-comercios" className="text-sm font-semibold text-umber hover:underline">
-          Voltar para o guia de comércio
+        <a href={`#${origem}`} className="text-sm font-semibold text-umber hover:underline">
+          Voltar
         </a>
       </section>
     );
@@ -62,12 +63,12 @@ export const EstabelecimentoDetalhePage: React.FC<{ id: string }> = ({ id }) => 
               Este negócio participa da listagem simples do Guararema.net.
             </p>
           )}
-          <a
-            href="#/guia-de-comercios"
+          <Link
+            to={origem}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-olive hover:text-umber transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" /> Voltar para o guia
-          </a>
+            <ArrowLeft className="w-4 h-4" /> Voltar
+          </Link>
         </div>
       </section>
     );
@@ -108,10 +109,10 @@ const Detalhe: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            to="/guia-de-comercios"
+            to={getOrigem('/guia-de-comercios')}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-olive hover:text-umber transition-colors mb-6"
           >
-            <ArrowLeft className="w-4 h-4" /> Voltar ao guia
+            <ArrowLeft className="w-4 h-4" /> Voltar
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8 items-start">
@@ -243,16 +244,6 @@ const Detalhe: React.FC<{ empresa: Estabelecimento }> = ({ empresa }) => {
                 </div>
 
                 <div className="mt-5 flex items-center justify-center gap-2 border-t border-olive/10 pt-5">
-                  {empresa.instagram ? (
-                    <a href={urlSegura(`instagram.com/${handleInsta(empresa.instagram).slice(1)}`)} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-olive/10 text-olive-deep hover:bg-olive hover:text-white transition-colors" aria-label="Instagram">
-                      <InstagramIcon className="w-4 h-4" /> 
-                    </a>
-                  ) : null}
-                  {empresa.facebook ? (
-                    <a href={urlSegura(empresa.facebook)} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-olive/10 text-olive-deep hover:bg-olive hover:text-white transition-colors" aria-label="Facebook">
-                      <FacebookIcon className="w-4 h-4" />
-                    </a>
-                  ) : null}
                   {empresa.website ? (
                     <a href={urlSegura(empresa.website)} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-olive/10 text-olive-deep hover:bg-olive hover:text-white transition-colors" aria-label="Site">
                       <Globe className="w-4 h-4" />

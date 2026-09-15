@@ -1,24 +1,27 @@
 import React from 'react';
-import { Star, MapPin, Clock, Ticket, Info, Lightbulb, Map } from 'lucide-react';
+import { Star, MapPin, Clock, Ticket, Info, Lightbulb, Map, ArrowLeft } from 'lucide-react';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { AtracaoCard, CtaBanner } from '../components/ui/Cards';
 import { GaleriaFotos } from '../components/ui/GaleriaFotos';
 import { getAtracoes, getAtracao } from '../lib/db';
 import { categoriaLabels } from '../data/pontosTuristicos';
+import { Link } from '../lib/router';
+import { getOrigem } from '../lib/hash';
 import type { Atracao } from '../types';
 
 export const AtracaoDetalhePage: React.FC<{ slug: string }> = ({ slug }) => {
   const atracao = getAtracao(slug);
   const atracoes = getAtracoes();
+  const origem = getOrigem('/pontos-turisticos');
 
   if (!atracao) {
     return (
       <section className="py-32 text-center px-4">
         <h1 className="text-3xl font-bold text-olive-deep mb-2">Ponto turístico não encontrado</h1>
         <p className="text-sm text-muted mb-6">O link pode estar desatualizado.</p>
-        <a href="#/pontos-turisticos" className="text-sm font-semibold text-umber hover:underline">
-          Ver todos os pontos turísticos
+        <a href={`#${origem}`} className="text-sm font-semibold text-umber hover:underline">
+          Voltar
         </a>
       </section>
     );
@@ -46,6 +49,13 @@ export const AtracaoDetalhePage: React.FC<{ slug: string }> = ({ slug }) => {
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            to={getOrigem('/pontos-turisticos')}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-olive hover:text-umber transition-colors mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" /> Voltar
+          </Link>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             {/* Main body */}
             <div className="lg:col-span-8">

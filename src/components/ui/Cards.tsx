@@ -5,8 +5,7 @@ import { Link } from '../../lib/router';
 import { categoriaLabels } from '../../data/pontosTuristicos';
 import { Estrelas } from './Avaliacao';
 import { useAvaliacoes } from '../../hooks/useAvaliacoes';
-import { Carrossel } from './Carrossel';
-import { WhatsAppIcon, InstagramIcon } from './BrandIcons';
+import { WhatsAppIcon } from './BrandIcons';
 
 const limpaNumero = (v: string) => v.replace(/\D/g, '');
 const urlSegura = (v: string) => (/^https?:\/\//i.test(v) ? v : `https://${v}`);
@@ -57,7 +56,7 @@ export const AtracaoCard: React.FC<{ atracao: Atracao; compact?: boolean }> = ({
   );
 };
 
-export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boolean }> = ({ empresa, destaque }) => {
+export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boolean }> = ({ empresa, destaque: _destaque }) => {
   const base = empresa.rating ?? { media: 0, total: 0 };
   const { info } = useAvaliacoes(empresa.id, base);
   const fotos = empresa.fotos && empresa.fotos.length > 0 ? empresa.fotos : [empresa.imagem];
@@ -67,8 +66,13 @@ export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boole
 
   return (
     <article className="group flex flex-col bg-surface rounded-3xl border border-olive/10 shadow-sm hover:shadow-xl hover:shadow-olive/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-      <div className="relative h-48">
-        <Carrossel fotos={fotos} alt={empresa.nome} autoplay={Boolean(destaque)} className="absolute inset-0" />
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={fotos[0]}
+          alt={empresa.nome}
+          loading="lazy"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
         <Link
           to={detalhe}
           className="absolute top-3 left-3 z-10 w-14 h-14 rounded-2xl border-2 border-white bg-white overflow-hidden shadow-lg hover:scale-105 transition-transform"
@@ -153,17 +157,6 @@ export const BusinessCard: React.FC<{ empresa: Estabelecimento; destaque?: boole
                 aria-label="Ligar"
               >
                 <Phone className="w-4 h-4" />
-              </a>
-            ) : null}
-            {empresa.instagram ? (
-              <a
-                href={urlSegura(empresa.instagram.startsWith('@') ? `instagram.com/${empresa.instagram.slice(1)}` : empresa.instagram)}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 rounded-full bg-olive/10 text-olive-deep hover:bg-olive hover:text-white transition-colors"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="w-4 h-4" />
               </a>
             ) : null}
             {empresa.website ? (

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, MapPin, Store } from 'lucide-react';
-import { InstagramIcon, FacebookIcon } from '../ui/BrandIcons';
 import { Link } from '../../lib/router';
 import { getAtracoes } from '../../lib/db';
 
@@ -41,27 +40,6 @@ export const Navbar: React.FC = () => {
               <MapPin className="w-3.5 h-3.5" />
               Programação & Eventos
             </Link>
-            <div className="w-px h-4 bg-white/20" />
-            <div className="flex items-center gap-2.5">
-              <a
-                href="https://www.instagram.com/rotaguararema"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-white transition-colors"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="https://www.facebook.com/rotaguararema"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-white transition-colors"
-                aria-label="Facebook"
-              >
-                <FacebookIcon className="w-3.5 h-3.5" />
-              </a>
-            </div>
           </div>
         </div>
       </div>

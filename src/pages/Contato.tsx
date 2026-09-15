@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Phone, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
-import { InstagramIcon, FacebookIcon } from '../components/ui/BrandIcons';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { getPageHeroImages } from '../lib/db';
@@ -123,29 +122,6 @@ export const ContatoPage: React.FC = () => {
                   </div>
                 );
               })}
-
-              <div className="rounded-2xl bg-olive-deep p-6 text-white">
-                <h3 className="font-bold text-lg mb-2">Siga o Guararema.net</h3>
-                <p className="text-sm text-white/85 mb-4">Fotos, novidades e bastidores no nosso dia a dia.</p>
-                <div className="flex gap-2.5">
-                  <a
-                    href="https://www.instagram.com/rotaguararema"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-white text-umber-deep font-semibold px-4 py-2 text-sm hover:bg-umber-soft transition-colors"
-                  >
-                    <InstagramIcon className="w-4 h-4" /> Instagram
-                  </a>
-                  <a
-                    href="https://www.facebook.com/rotaguararema"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur text-white font-semibold px-4 py-2 text-sm hover:bg-white/25 transition-colors"
-                  >
-                    <FacebookIcon className="w-4 h-4" /> Facebook
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

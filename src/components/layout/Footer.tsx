@@ -1,6 +1,5 @@
 import React from 'react';
 import { MapPin, Heart, Phone } from 'lucide-react';
-import { InstagramIcon, FacebookIcon } from '../ui/BrandIcons';
 import { Link } from '../../lib/router';
 
 export const Footer: React.FC = () => {
@@ -26,26 +25,6 @@ export const Footer: React.FC = () => {
               O guia digital da Cidade Natureza: pontos turísticos, gastronomia, hospedagem e os segredos que
               ninguém mais conta sobre Guararema.
             </p>
-            <div className="flex items-center gap-2.5 mt-6">
-              <a
-                href="https://www.instagram.com/rotaguararema"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white/80 hover:bg-white hover:text-umber-deep transition-colors"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="https://www.facebook.com/rotaguararema"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white/80 hover:bg-white hover:text-umber-deep transition-colors"
-                aria-label="Facebook"
-              >
-                <FacebookIcon className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Navegação */}

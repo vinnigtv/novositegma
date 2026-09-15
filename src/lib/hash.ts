@@ -1,11 +1,22 @@
 import { useEffect, useState } from 'react';
 
+const STORAGE_KEY = 'rg.origem.v1';
+
 export function getPath(): string {
   const raw = window.location.hash.replace(/^#/, '');
   return raw === '' ? '/' : raw;
 }
 
+export function lembrarOrigem() {
+  sessionStorage.setItem(STORAGE_KEY, getPath());
+}
+
+export function getOrigem(fallback: string): string {
+  return sessionStorage.getItem(STORAGE_KEY) || fallback;
+}
+
 export function navigate(to: string) {
+  lembrarOrigem();
   window.location.hash = to;
 }
 
