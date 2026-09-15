@@ -3,6 +3,7 @@ import { Target, HeartHandshake, Megaphone, TrendingUp } from 'lucide-react';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { CtaBanner } from '../components/ui/Cards';
+import { PlanosParceria } from '../components/ui/PlanosParceria';
 import { getPageHeroImages } from '../lib/db';
 
 const valores = [
@@ -101,6 +102,8 @@ export const OProjetoPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <PlanosParceria />
 
       <CtaBanner
         title="Vamos colocar sua marca no mapa?"
