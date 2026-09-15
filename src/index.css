@@ -87,9 +87,6 @@
     break-after: page;
   }
   .plan-block:last-of-type {
-    height: auto;
-    min-height: auto;
-    justify-content: flex-start;
     page-break-after: auto;
     break-after: auto;
   }

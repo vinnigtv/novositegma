@@ -179,7 +179,6 @@ export const MidiaKitGtv: React.FC = () => {
         <TelaCapa />
         <TelaApresentacao />
         <TelaProvaSocial />
-        <TelaCta />
 
         {/* 01 · GTV Conexão */}
         <BlocoPlano
@@ -320,10 +319,13 @@ export const MidiaKitGtv: React.FC = () => {
             },
           ]}
         />
+
+        {/* Slide final de chamada para ação */}
+        <TelaCta />
       </div>
 
       {/* Rodapé do mídia kit */}
-      <div className="mt-10 bg-surface rounded-3xl border border-olive/10 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted">
+      <div className="no-print mt-10 bg-surface rounded-3xl border border-olive/10 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted">
         <span className="inline-flex items-center gap-1.5">
           <Info className="w-3.5 h-3.5 text-umber" />
           Valores e condições válidos conforme tabela acima. Produções de conteúdo GTV · Guararema.

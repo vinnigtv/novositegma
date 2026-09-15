@@ -7,12 +7,6 @@ import {
   TrendingUp,
   Quote,
   Star,
-  Store,
-  Utensils,
-  Bed,
-  Coffee,
-  ShoppingBag,
-  Wrench,
   MessageCircle,
   Mail,
   AtSign,
@@ -23,9 +17,9 @@ import {
 } from 'lucide-react';
 import { WhatsAppIcon } from '../ui/BrandIcons';
 
-const WHATS = 'https://wa.me/5511999999999';
-const EMAIL = 'comercial@guararema.net';
-const INSTA = '@rotaguararema';
+const WHATS = 'https://wa.me/5511914928139';
+const EMAIL = 'contato.gmatv@gmail.com';
+const INSTA = '@oficialgtv';
 const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=${encodeURIComponent(WHATS)}`;
 
 const depoimentos = [
@@ -44,15 +38,6 @@ const depoimentos = [
     autor: 'Fernanda L.',
     papel: 'Pousada',
   },
-];
-
-const parceiros = [
-  { nome: 'Sabor da Serra', tipo: 'Restaurante', icone: <Utensils className="w-5 h-5" />, inicial: 'SS' },
-  { nome: 'Vale Verde', tipo: 'Pousada', icone: <Bed className="w-5 h-5" />, inicial: 'VV' },
-  { nome: 'Café Central', tipo: 'Cafeteria', icone: <Coffee className="w-5 h-5" />, inicial: 'CC' },
-  { nome: 'Boutique Aurora', tipo: 'Moda', icone: <ShoppingBag className="w-5 h-5" />, inicial: 'BA' },
-  { nome: 'Bem Viver', tipo: 'Farmácia', icone: <Store className="w-5 h-5" />, inicial: 'BV' },
-  { nome: 'Auto Center Alfa', tipo: 'Automotivo', icone: <Wrench className="w-5 h-5" />, inicial: 'AA' },
 ];
 
 const passos = [
@@ -85,23 +70,15 @@ export const TelaCapa: React.FC = () => {
           <Globe className="w-3.5 h-3.5" /> Imprensa & Parceiros
         </span>
 
-        <p className="text-sm font-bold uppercase tracking-[0.45em] text-umber mb-3">Mídia Kit</p>
-        <h2 className="text-7xl sm:text-8xl font-extrabold font-heading text-olive-deep leading-none tracking-tight">
-          GTV
-        </h2>
+        <div className="h-44 w-full max-w-md my-4" />
+
         <p className="mt-6 max-w-xl text-ink/75 text-base sm:text-lg leading-relaxed">
           Conectamos a sua marca ao coração de Guararema — do comércio local às grandes oportunidades.
         </p>
-
-        <div className="mt-12 w-full max-w-md rounded-3xl border-2 border-dashed border-olive/30 bg-white/60 px-10 py-9">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted">Espaço para</p>
-          <p className="text-xl font-extrabold text-olive-deep mt-1">Logotipo da empresa</p>
-        </div>
       </div>
 
-      <div className="relative px-8 py-5 border-t border-olive/10 bg-white/50 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
-        <span className="font-bold text-olive-deep">Guararema.net · Cidade Natureza</span>
-        <span>Mídia Kit GTV · {new Date().getFullYear()}</span>
+      <div className="relative px-8 py-5 border-t border-olive/10 bg-white/50 flex items-center justify-center text-xs text-muted">
+        <span>Mídia Kit · {new Date().getFullYear()}</span>
       </div>
     </section>
   );
@@ -196,22 +173,7 @@ export const TelaProvaSocial: React.FC = () => {
       <p className="text-sm font-bold uppercase tracking-wider text-muted mb-4 flex items-center gap-1.5">
         <Star className="w-4 h-4 text-umber" /> Logotipos de parceiros que confiam na GTV
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {parceiros.map((p) => (
-          <div
-            key={p.nome}
-            className="rounded-2xl border border-olive/10 bg-surface px-5 py-4 flex items-center gap-3 hover:border-umber/40 transition-colors"
-          >
-            <span className="w-11 h-11 rounded-xl bg-olive-soft text-olive-deep flex items-center justify-center flex-shrink-0">
-              {p.icone}
-            </span>
-            <div className="min-w-0">
-              <p className="text-sm font-extrabold text-olive-deep truncate">{p.nome}</p>
-              <p className="text-[11px] text-muted truncate">{p.tipo}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <div className="h-44" />
     </section>
   );
 };
@@ -249,7 +211,7 @@ export const TelaCta: React.FC = () => {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-emerald-500 text-white font-bold px-6 py-3 text-sm shadow-lg shadow-black/15 hover:bg-emerald-600 transition-colors"
             >
-              <WhatsAppIcon className="w-4 h-4" /> WhatsApp comercial
+              <WhatsAppIcon className="w-4 h-4" /> 11 91492-8139
             </a>
             <a
               href={`mailto:${EMAIL}`}
