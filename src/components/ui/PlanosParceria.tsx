@@ -1,7 +1,6 @@
 import React from 'react';
 import { Check, Crown, Leaf, Sparkles, ArrowRight } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
-import { Link } from '../../lib/router';
 
 const essenciais = [
   'Página exclusiva no Guia com galeria (até 8 fotos).',
@@ -79,13 +78,15 @@ export const PlanosParceria: React.FC = () => {
               </ul>
             </div>
 
-            <Link
-              to="/contato"
+            <a
+              href="https://wa.me/5511914928139"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group mt-8 inline-flex items-center justify-center gap-2 rounded-full border-2 border-olive text-olive-deep font-bold px-6 py-3 text-sm hover:bg-olive hover:text-white transition-all duration-200"
             >
               Quero o Essencial
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
           </article>
 
           {/* Plano Destaque Turismo */}
@@ -133,13 +134,15 @@ export const PlanosParceria: React.FC = () => {
               </ul>
             </div>
 
-            <Link
-              to="/contato"
+            <a
+              href="https://wa.me/5511914928139"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-umber text-white font-bold px-6 py-3.5 text-sm shadow-lg shadow-black/15 hover:bg-umber-tint hover:-translate-y-0.5 transition-all duration-200"
             >
               Quero o Destaque
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
           </article>
 
           {/* Plano VIP */}
@@ -188,13 +191,15 @@ export const PlanosParceria: React.FC = () => {
               </ul>
             </div>
 
-            <Link
-              to="/contato"
+            <a
+              href="https://wa.me/5511914928139"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-umber-tint text-umber-deep font-bold px-6 py-3.5 text-sm shadow-lg shadow-black/20 hover:bg-umber hover:text-white hover:-translate-y-0.5 transition-all duration-200"
             >
               Quero o VIP
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
           </article>
         </div>
 
