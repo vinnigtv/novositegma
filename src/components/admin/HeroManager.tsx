@@ -4,8 +4,8 @@ import { SlidesManager } from './SlidesManager';
 
 export const HeroManager: React.FC = () => (
   <SlidesManager
-    rotulo="Carrossel · Página inicial"
-    descricao="na faixa principal da Home, trocando automaticamente a cada 4 segundos."
+    rotulo="Imagens · Página inicial"
+    descricao="nos 3 blocos de imagem do topo da Home, na ordem em que aparecem."
     usar={getSlidesHero}
     salvar={saveSlidesHero}
   />
