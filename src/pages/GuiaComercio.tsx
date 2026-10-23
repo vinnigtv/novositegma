@@ -5,7 +5,7 @@ import {
   Megaphone,
 } from 'lucide-react';
 import type { BusinessType, Estabelecimento } from '../types';
-import { PageHero } from '../components/ui/PageHero';
+import { PageHeroPadrao } from '../components/ui/PageHeroPadrao';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { BusinessCard, CtaBanner, LinhaNegocioSimples } from '../components/ui/Cards';
 import { getEstabelecimentos, getPageHeroImages } from '../lib/db';
@@ -71,11 +71,16 @@ export const GuiaComercioPage: React.FC = () => {
 
   return (
     <>
-      <PageHero
+      <PageHeroPadrao
         kicker="Guia completo"
         title="Guia de Comércio e Serviços de Guararema"
         description="Onde quem visita Guararema procura antes de decidir — e onde o seu negócio deveria estar. Gastronomia, hospedagem, experiências e comércio local com reputação real."
-        image={heroImages.guiaComercio}
+        imagens={Array.from(
+          new Set([
+            ...aprovados.map((e) => e.imagem).filter(Boolean),
+            heroImages.guiaComercio,
+          ])
+        )}
         meta="Diretório colaborativo atualizado pela comunidade"
       />
 

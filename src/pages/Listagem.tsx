@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
-import { PageHero } from '../components/ui/PageHero';
+import { PageHeroPadrao } from '../components/ui/PageHeroPadrao';
 import { BusinessCard, CtaBanner } from '../components/ui/Cards';
 import { getEstabelecimentosPorTipo, getPageHeroImages } from '../lib/db';
 import type { BusinessType, Estabelecimento } from '../types';
@@ -51,6 +51,9 @@ export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
   const [busca, setBusca] = useState('');
 
   const todos = getEstabelecimentosPorTipo(tipo);
+  const imagens = Array.from(
+    new Set([...todos.map((e) => e.imagem).filter(Boolean), heroImages[`listagem/${tipo}`]])
+  );
   const categorias = ['todas', ...Array.from(new Set(todos.map((e) => e.categoria)))];
 
   const filtradas: Estabelecimento[] = todos.filter((e) => {
@@ -66,7 +69,7 @@ export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
 
   return (
     <>
-      <PageHero kicker={config.kicker} title={config.titulo} description={config.descricao} image={heroImages[`listagem/${tipo}`]} />
+      <PageHeroPadrao kicker={config.kicker} title={config.titulo} description={config.descricao} imagens={imagens} />
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

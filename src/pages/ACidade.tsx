@@ -1,11 +1,11 @@
 import React from 'react';
 import { ShieldCheck, Leaf, MapPin, TrainFront, Landmark, ArrowRight } from 'lucide-react';
-import { PageHero } from '../components/ui/PageHero';
+import { PageHeroPadrao } from '../components/ui/PageHeroPadrao';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { CtaBanner } from '../components/ui/Cards';
 import { CidadeCarrossel } from '../components/ui/CidadeCarrossel';
 import { Link } from '../lib/router';
-import { getPageHeroImages } from '../lib/db';
+import { getAtracoes, getPageHeroImages } from '../lib/db';
 
 const pillars = [
   {
@@ -34,14 +34,18 @@ const timelines = [
 
 export const ACidadePage: React.FC = () => {
   const heroImages = getPageHeroImages();
+  const atracoes = getAtracoes();
+  const imagens = Array.from(
+    new Set([...atracoes.map((a) => a.imagem).filter(Boolean), heroImages.aCidade])
+  );
 
   return (
     <>
-      <PageHero
+      <PageHeroPadrao
         kicker="A Cidade"
         title="Guararema"
         description="Reconhecida pela qualidade de vida, segurança e cuidado com a natureza, Guararema é o refúgio perfeito a uma hora da capital."
-        image={heroImages.aCidade}
+        imagens={imagens}
       />
 
       <CidadeCarrossel />
