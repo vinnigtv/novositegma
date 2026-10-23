@@ -46,7 +46,7 @@ export const CidadeNatalPage: React.FC = () => {
           <div className="max-w-3xl mx-auto text-center mb-14">
             <SectionHeading
               align="center"
-              eyebrow="O Natal da Cidade Natureza"
+              eyebrow="O Natal de Guararema"
               title="A cidade inteira vira um presépio"
               description="Tradição que já virou patrimônio dos guararemenses: por semanas, as ruas ganham luz, o coreto recebe coral e a Casa do Papai Noel abre as portas para os pequenos."
             />

@@ -48,7 +48,7 @@ export const postagens: Postagem[] = [
   },
   {
     id: 'fotografias-cidade-natureza',
-    titulo: '5 lugares para fotografar a Cidade Natureza',
+    titulo: '5 lugares para fotografar Guararema',
     categoria: 'Dicas',
     resumo: 'Do trapiche ao coreto, um roteiro fotográfico com os melhores ângulos e luzes de Guararema.',
     imagem: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=900&auto=format&fit=crop&q=80',

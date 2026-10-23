@@ -15,14 +15,14 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 stroke-[2.2]" />
               </div>
               <div className="leading-none">
-                <span className="text-xl font-bold tracking-tight text-white font-heading">Guararema.net</span>
+                <span className="text-xl font-bold tracking-tight text-white font-heading">Guia de Guararema</span>
                 <span className="text-[9px] font-bold tracking-[0.28em] text-umber-tint uppercase block mt-0.5">
-                  Cidade Natureza
+                  By GTV
                 </span>
               </div>
             </Link>
             <p className="text-sm leading-relaxed max-w-sm">
-              O guia digital da Cidade Natureza: pontos turísticos, gastronomia, hospedagem e os segredos que
+              O guia digital de Guararema: pontos turísticos, gastronomia, hospedagem e os segredos que
               ninguém mais conta sobre Guararema.
             </p>
           </div>
@@ -82,11 +82,11 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
-          <p>© {new Date().getFullYear()} Guararema.net. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Guia de Guararema. Todos os direitos reservados.</p>
           <div className="flex items-center gap-1">
             <span>Feito com</span>
             <Heart className="w-3.5 h-3.5 text-umber-tint fill-umber-tint inline" />
-            <span>para visitantes & moradores da Cidade Natureza</span>
+            <span>para visitantes & moradores de Guararema</span>
           </div>
         </div>
       </div>

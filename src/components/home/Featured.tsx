@@ -14,7 +14,7 @@ export const Featured: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <SectionHeading
             eyebrow="Pontos turísticos"
-            title="Os favoritos da Cidade Natureza"
+            title="Os favoritos de Guararema"
             description="Destinos escolhidos a dedo por quem conhece Guararema de coração. Perfeitos para o primeiro roteiro."
           />
           <Link

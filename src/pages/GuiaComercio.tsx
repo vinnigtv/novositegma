@@ -74,7 +74,7 @@ export const GuiaComercioPage: React.FC = () => {
       <PageHero
         kicker="Guia completo"
         title="Guia de Comércio e Serviços de Guararema"
-        description="Onde quem visita a Cidade Natureza procura antes de decidir — e onde o seu negócio deveria estar. Gastronomia, hospedagem, experiências e comércio local com reputação real."
+        description="Onde quem visita Guararema procura antes de decidir — e onde o seu negócio deveria estar. Gastronomia, hospedagem, experiências e comércio local com reputação real."
         image={heroImages.guiaComercio}
         meta="Diretório colaborativo atualizado pela comunidade"
       />
@@ -92,7 +92,7 @@ export const GuiaComercioPage: React.FC = () => {
                 <div>
                   <p className="text-lg sm:text-xl font-extrabold text-white">O seu negócio por aqui, todo dia.</p>
                   <p className="text-sm text-white/85 mt-1 max-w-2xl">
-                    Futuros clientes pesquisam vocês no Guararema.net antes de escolher: mais <strong className="text-white">mesas</strong>, mais <strong className="text-white">hóspedes</strong> e mais <strong className="text-white">serviços contratados</strong> para quem aparece bem.
+                    Futuros clientes pesquisam vocês no Guia de Guararema antes de escolher: mais <strong className="text-white">mesas</strong>, mais <strong className="text-white">hóspedes</strong> e mais <strong className="text-white">serviços contratados</strong> para quem aparece bem.
                   </p>
                 </div>
               </div>
@@ -273,7 +273,7 @@ export const GuiaComercioPage: React.FC = () => {
           )}
 
           <p className="mt-8 text-xs text-muted">
-            Relação atualizada pela comunidade Guararema.net. Encontrou algo errado ou quer incluir seu negócio? Fale com a gente pelo contato.
+            Relação atualizada pela equipe do Guia de Guararema. Encontrou algo errado ou quer incluir seu negócio? Fale com a gente pelo contato.
           </p>
 
           {/* Bloco upgrade plano completo */}
@@ -329,7 +329,7 @@ export const GuiaComercioPage: React.FC = () => {
 
       <CtaBanner
         title="Não deixe seu cliente escolher outro lugar"
-        description={`Mais de ${todos.length} negócios já estão no Guia. Cadastre o seu agora e receba contatos diretos pelo Guararema.net — grátis e sem compromisso.`}
+        description={`Mais de ${todos.length} negócios já estão no Guia. Cadastre o seu agora e receba contatos diretos pelo Guia de Guararema — grátis e sem compromisso.`}
         textButton="Cadastre minha empresa agora"
         to="/cadastro"
       />

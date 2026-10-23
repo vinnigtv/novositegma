@@ -17,7 +17,7 @@ export const ContatoPage: React.FC = () => {
     <>
       <PageHero
         kicker="Contato"
-        title="Fale com o Guararema.net"
+        title="Fale com o Guia de Guararema"
         description="Dúvidas sobre o roteiro, indicações de lugares ou interesse em ser parceiro? Mande uma mensagem que a gente responde rapidinho."
         image={heroImages.contato}
       />

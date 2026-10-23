@@ -5,7 +5,7 @@ export const capaHero: SlideCidade = {
   id: 'capa',
   imagem: capaUrl,
   titulo: 'Visite. Conheça. E ame Guararema.',
-  legenda: 'A Cidade Natureza · a 80 km de São Paulo',
+  legenda: 'Guararema · a 80 km de São Paulo',
 };
 
 export const defaultSlidesHero: SlideCidade[] = [

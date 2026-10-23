@@ -30,7 +30,7 @@ export const ComoChegarPage: React.FC = () => {
       <PageHero
         kicker="Planeje sua viagem"
         title="Como chegar em Guararema"
-        description="Duas ótimas estradas te trazem até a Cidade Natureza em cerca de uma hora — o difícil é escolher o que fazer primeiro."
+        description="Duas ótimas estradas te trazem até Guararema em cerca de uma hora — o difícil é escolher o que fazer primeiro."
         image={heroImages.comoChegar}
       />
 

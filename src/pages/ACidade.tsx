@@ -29,7 +29,7 @@ const timelines = [
   { ano: '1652', label: 'Igreja da Freguesia da Escada' },
   { ano: '1891', label: 'Chegada da ferrovia e construção da estação' },
   { ano: '1919', label: 'Fundação da Matriz de São Benedito' },
-  { ano: 'Hoje', label: 'A Cidade Natureza que encanta milhares de visitantes' },
+  { ano: 'Hoje', label: 'Guararema encanta milhares de visitantes' },
 ];
 
 export const ACidadePage: React.FC = () => {
@@ -39,7 +39,7 @@ export const ACidadePage: React.FC = () => {
     <>
       <PageHero
         kicker="A Cidade"
-        title="A Cidade Natureza"
+        title="Guararema"
         description="Reconhecida pela qualidade de vida, segurança e cuidado com a natureza, Guararema é o refúgio perfeito a uma hora da capital."
         image={heroImages.aCidade}
       />
@@ -68,8 +68,7 @@ export const ACidadePage: React.FC = () => {
                   Vila de Luís Carlos, e a cidade vive um novo capítulo: ser referência em turismo sustentável.
                 </p>
                 <p className="text-sm text-muted">
-                  É esse equilíbrio entre passado, natureza e hospitalidade que faz Guararema ser chamada,
-                  hoje, de Cidade Natureza.
+                  É esse equilíbrio entre passado, natureza e hospitalidade que define Guararema hoje.
                 </p>
               </div>
             </div>
@@ -151,9 +150,9 @@ export const ACidadePage: React.FC = () => {
       </section>
 
       <CtaBanner
-        title="Vem conhecer a Cidade Natureza"
+        title="Vem conhecer Guararema"
         description="Planejou tudo? Compartilhe seu roteiro com a gente e descubra os segredinhos que ninguém mais conta."
-        textButton="Falar com o Guararema.net"
+        textButton="Falar com o Guia de Guararema"
         to="/contato"
       />
     </>

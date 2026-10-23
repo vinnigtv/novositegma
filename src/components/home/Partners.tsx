@@ -26,7 +26,7 @@ export const Partners: React.FC = () => {
           <SectionHeading
             eyebrow="Parceiros"
             title="Empresas que acreditam em Guararema"
-            description="Comércio e serviços locais que fazem a Cidade Natureza acontecer todos os dias."
+            description="Comércio e serviços locais que fazem Guararema acontecer todos os dias."
           />
           <Link
             to="/o-projeto"

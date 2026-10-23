@@ -113,14 +113,14 @@ export const ListagemPage: React.FC<{ tipo: BusinessType }> = ({ tipo }) => {
           )}
 
           <p className="mt-8 text-xs text-muted">
-            Relação atualizada pela comunidade Guararema.net. Faltou algum lugar? Chame a gente pelo contato.
+            Relação atualizada pela equipe do Guia de Guararema. Faltou algum lugar? Chame a gente pelo contato.
           </p>
         </div>
       </section>
 
       <CtaBanner
         title="Seu negócio pode estar aqui"
-        description="Destaque sua empresa no guia da Cidade Natureza e alcance visitantes do Brasil inteiro."
+        description="Destaque sua empresa no guia de Guararema e alcance visitantes do Brasil inteiro."
         textButton="Seja parceiro do Guia"
         to="/contato"
       />

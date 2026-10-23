@@ -174,7 +174,7 @@ export const defaultAtracoes: Atracao[] = [
     subtitulo: 'Cultura e café em uma estação de 1891',
     resumo: 'Antiga estação ferroviária restaurada que hoje abriga livros, exposições, shows ao ar livre e um café encantador.',
     descricao: [
-      'A Estação Literária transformou a antiga estação construída em 1891 em um polo cultural da Cidade Natureza. Prateleiras repletas de livros convidam à leitura no deque da antiga plataforma, onde o tempo parece ter parado.',
+      'A Estação Literária transformou a antiga estação construída em 1891 em um polo cultural de Guararema. Prateleiras repletas de livros convidam à leitura no deque da antiga plataforma, onde o tempo parece ter parado.',
       'O espaço recebe exposições, shows, contações de histórias e feiras ao longo do ano. Junto à estação, o café tornou-se ponto de encontro de moradores e turistas que passeiam pelo centro histórico.',
     ],
     info: [
@@ -394,7 +394,7 @@ export const defaultAtracoes: Atracao[] = [
     resumo: 'Uma das praças mais agradáveis do Centro, com jardins, sombra generosa e o movimento diário dos guararemenses.',
     descricao: [
       'A Praça Deoclésia é um dos pontos de convivência mais queridos do Centro de Guararema. Com canteiros bem cuidados, bancos sob árvores frondosas e o ritmo tranquilo da cidade pequena, é o lugar perfeito para observar a vida local.',
-      'Ponto de encontro de famílias, caminhadas matinais e tardes de conversa, a praça também é palco de feirinhas e manifestações culturais ao longo do ano, reforçando a atmosfera acolhedora da Cidade Natureza.',
+      'Ponto de encontro de famílias, caminhadas matinais e tardes de conversa, a praça também é palco de feirinhas e manifestações culturais ao longo do ano, reforçando a atmosfera acolhedora de Guararema.',
     ],
     info: [
       { rotulo: 'Localização', valor: 'Centro' },

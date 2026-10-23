@@ -15,7 +15,7 @@ export const BlogPage: React.FC = () => {
       <PageHero
         kicker="Blog"
         title="Dicas, roteiros e bastidores"
-        description="Tudo o que a gente aprende morando na Cidade Natureza — e que ninguém mais conta para você."
+        description="Tudo o que a gente aprende morando em Guararema — e que ninguém mais conta para você."
         image={heroImages.blog}
       />
 

@@ -16,7 +16,7 @@ export const EventsSection: React.FC = () => {
           <SectionHeading
             eyebrow="Programação & eventos"
             title="Guararema é festa o ano inteiro"
-            description="Da Orquestra Sinfônica ao Natal Cidade Natureza, confira o que está por vir na agenda cultural."
+            description="Da Orquestra Sinfônica ao Natal de Guararema, confira o que está por vir na agenda cultural."
           />
           <Link
             to="/eventos"

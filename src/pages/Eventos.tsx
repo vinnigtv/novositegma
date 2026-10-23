@@ -14,7 +14,7 @@ export const EventosPage: React.FC = () => {
     <>
       <PageHero
         kicker="Programação & eventos"
-        title="A agenda cultural da Cidade Natureza"
+        title="A agenda cultural de Guararema"
         description="Música, festas tradicionais, gastronomia e o Natal mais encantador do Vale do Paraíba: Guararema celebra o ano inteiro."
         image={heroImages.eventos}
         meta="Programação sujeita a alteração"
@@ -39,7 +39,7 @@ export const EventosPage: React.FC = () => {
 
       <CtaBanner
         title="Quer divulgar seu evento?"
-        description="Inclua seu evento na agenda do Guararema.net e alcance milhares de visitantes."
+        description="Inclua seu evento na agenda do Guia de Guararema e alcance milhares de visitantes."
         textButton="Divulgar evento"
         to="/contato"
       />

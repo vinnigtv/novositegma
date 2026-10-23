@@ -41,7 +41,7 @@ const _estabelecimentosBase: Estabelecimento[] = [
     nome: 'Gelateria Santa Neve',
     tipo: 'comer',
     categoria: 'Sorveteria',
-    descricao: 'Gelatos artesanais com frutas da estação e sabores criativos. O final de tarde mais doce da Cidade Natureza.',
+    descricao: 'Gelatos artesanais com frutas da estação e sabores criativos. O final de tarde mais doce de Guararema.',
     imagem: 'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=900&auto=format&fit=crop&q=80',
     endereco: 'Praça do Coreto · Centro',
     horario: 'Qua a dom, 12h às 21h',

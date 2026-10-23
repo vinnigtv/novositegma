@@ -59,10 +59,10 @@ export const Navbar: React.FC = () => {
               </div>
               <div className="leading-none">
                 <span className="text-xl font-bold tracking-tight text-olive-deep font-heading">
-                  Guararema.net
+                  Guia de Guararema
                 </span>
                 <span className="text-[9px] font-bold tracking-[0.28em] text-umber uppercase block mt-0.5">
-                  Cidade Natureza
+                  By GTV
                 </span>
               </div>
             </Link>

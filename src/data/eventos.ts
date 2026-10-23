@@ -8,7 +8,7 @@ export const defaultEventos: Evento[] = [
     mes: 'SET',
     dia: '05',
     local: 'Praça do Coreto · Centro',
-    descricao: 'Apresentação especial ao ar livre da Orquestra Sinfônica, com repertório que vai do erudito à MPB, celebrando a cultura da Cidade Natureza.',
+    descricao: 'Apresentação especial ao ar livre da Orquestra Sinfônica, com repertório que vai do erudito à MPB, celebrando a cultura de Guararema.',
     imagem: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=900&auto=format&fit=crop&q=80',
     tags: ['Música', 'Gratuito', 'Ao Ar Livre'],
   },
@@ -47,7 +47,7 @@ export const defaultEventos: Evento[] = [
   },
   {
     id: 'cidade-natal-guararema',
-    titulo: 'Natal Cidade Natureza',
+    titulo: 'Natal de Guararema',
     data: 'Dezembro de 2026',
     mes: 'DEZ',
     dia: 'Mês inteiro',

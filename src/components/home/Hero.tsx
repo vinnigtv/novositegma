@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center relative z-10">
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/25 text-white text-xs sm:text-sm font-semibold mb-7 shadow-lg shadow-black/30">
           <span className="w-2 h-2 rounded-full bg-umber-tint animate-pulse" />
-          A Cidade Natureza · a 80 km de São Paulo
+          Guararema · a 80 km de São Paulo
         </span>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-6 [text-shadow:0_2px_12px_rgba(0,0,0,0.55),0_8px_40px_rgba(0,0,0,0.6)]">

@@ -43,8 +43,8 @@ export const OProjetoPage: React.FC = () => {
     <>
       <PageHero
         kicker="Institucional"
-        title="O Projeto Guararema.net"
-        description="Somos o guia digital da Cidade Natureza: conectamos visitantes, moradores e negócios em torno do melhor da nossa cidade."
+        title="O Projeto Guia de Guararema"
+        description="Somos o guia digital de Guararema: conectamos visitantes, moradores e negócios em torno do melhor da nossa cidade."
         image={heroImages.oProjeto}
       />
 
@@ -58,12 +58,12 @@ export const OProjetoPage: React.FC = () => {
               />
               <div className="mt-6 space-y-4 text-ink/80 leading-relaxed">
                 <p>
-                  O Guararema.net nasceu da vontade de contar a história da cidade que amamos: mais do que uma
+                  O Guia de Guararema nasceu da vontade de contar a história da cidade que amamos: mais do que uma
                   lista de lugares, um jeito de mostrar os segredos que só quem mora aqui conhece.
                 </p>
                 <p>
                   Hoje, somos a vitrine de centenas de negócios locais e um canal de inspiração para quem quer
-                  descobrir a Cidade Natureza — do primeiro roteiro ao retorno apaixonado.
+                  descobrir Guararema — do primeiro roteiro ao retorno apaixonado.
                 </p>
               </div>
             </div>
@@ -107,7 +107,7 @@ export const OProjetoPage: React.FC = () => {
 
       <CtaBanner
         title="Vamos colocar sua marca no mapa?"
-        description="Entre em contato e descubra os planos de parceria do Guararema.net."
+        description="Entre em contato e descubra os planos de parceria do Guia de Guararema."
         textButton="Quero ser parceiro"
         to="/contato"
       />

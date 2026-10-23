@@ -42,7 +42,7 @@ export const CategoryCards: React.FC = () => {
           align="center"
           eyebrow="É um prazer ter você aqui!"
           title="Escolha a sua rota"
-          description="Tudo o que você precisa para montar o passeio perfeito pela Cidade Natureza."
+          description="Tudo o que você precisa para montar o passeio perfeito por Guararema."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">

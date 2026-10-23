@@ -5,7 +5,7 @@ export const defaultSlidesCidade: SlideCidade[] = [
     id: 'rio-paraiba',
     imagem: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&auto=format&fit=crop&q=80',
     titulo: 'Rio Paraíba do Sul',
-    legenda: 'O rio que atravessa a cidade e inspira o nome "Cidade Natureza".',
+    legenda: 'O rio que atravessa a cidade e inspira o nome de Guararema.',
   },
   {
     id: 'estacao-trem',
@@ -28,7 +28,7 @@ export const defaultSlidesCidade: SlideCidade[] = [
   {
     id: 'por-do-sol',
     imagem: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1600&auto=format&fit=crop&q=80',
-    titulo: 'Pôr do sol da Cidade Natureza',
+    titulo: 'Pôr do sol em Guararema',
     legenda: 'O fim de tarde mais bonito do Vale do Paraíba.',
   },
 ];
