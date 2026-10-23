@@ -53,11 +53,11 @@ export const PlanosParceria: React.FC = () => {
             <div className="mb-6">
               <div className="flex items-end gap-1.5">
                 <span className="text-2xl font-extrabold text-ink leading-none pb-1">R$</span>
-                <span className="text-4xl font-extrabold text-olive-deep font-heading leading-none">35,90</span>
+                <span className="text-4xl font-extrabold text-olive-deep font-heading leading-none">24,90</span>
                 <span className="text-sm text-muted pb-0.5">/mês</span>
               </div>
               <p className="text-xs text-muted mt-2.5">
-                ou <strong className="text-olive-deep">R$ 359/ano</strong> à vista — 2 meses grátis
+                ou <strong className="text-olive-deep">R$ 249/ano</strong> à vista — 2 meses grátis
               </p>
             </div>
 
@@ -107,11 +107,11 @@ export const PlanosParceria: React.FC = () => {
             <div className="mb-6">
               <div className="flex items-end gap-1.5">
                 <span className="text-2xl font-extrabold text-white/90 leading-none pb-1">R$</span>
-                <span className="text-4xl font-extrabold text-white font-heading leading-none">59,90</span>
+                <span className="text-4xl font-extrabold text-white font-heading leading-none">49,90</span>
                 <span className="text-sm text-white/70 pb-0.5">/mês</span>
               </div>
               <p className="text-xs text-white/70 mt-2.5">
-                ou <strong className="text-white">R$ 599/ano</strong> à vista — 2 meses grátis
+                ou <strong className="text-white">R$ 499/ano</strong> à vista — 2 meses grátis
               </p>
             </div>
 
@@ -162,11 +162,11 @@ export const PlanosParceria: React.FC = () => {
             <div className="relative mb-6">
               <div className="flex items-end gap-1.5">
                 <span className="text-2xl font-extrabold text-white/90 leading-none pb-1">R$</span>
-                <span className="text-4xl font-extrabold text-white font-heading leading-none">129,90</span>
+                <span className="text-4xl font-extrabold text-white font-heading leading-none">69,90</span>
                 <span className="text-sm text-white/70 pb-0.5">/mês</span>
               </div>
               <p className="text-xs text-white/70 mt-2.5">
-                ou <strong className="text-umber-tint">R$ 1.299/ano</strong> à vista — 2 meses grátis
+                ou <strong className="text-umber-tint">R$ 699/ano</strong> à vista — 2 meses grátis
               </p>
             </div>
 
