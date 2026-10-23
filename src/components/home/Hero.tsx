@@ -12,8 +12,9 @@ const stats = [
 
 export const Hero: React.FC = () => {
   const slides = getSlidesHero();
-  // Três blocos de imagem: use os slides gerenciados no painel (Admin > Hero).
-  const fotos = [slides[0], slides[1] ?? slides[0], slides[2] ?? slides[0]];
+  // Três blocos de imagem: use os slides gerenciados no painel (Admin > Imagens · Página inicial).
+  const editaveis = slides.filter((s) => s.id !== 'capa');
+  const fotos = [editaveis[0] ?? slides[0], editaveis[1] ?? slides[0], editaveis[2] ?? slides[0]];
 
   return (
     <section className="relative py-20 lg:py-24 bg-surface border-b border-olive/10 overflow-hidden">
