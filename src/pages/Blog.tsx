@@ -48,20 +48,6 @@ export const BlogPage: React.FC = () => {
               {resto.slice(0, 2).map((post) => (
                 <PostCard key={post.id} post={post} />
               ))}
-              <div className="sm:col-span-2 rounded-3xl bg-olive-deep p-8 flex flex-col justify-center">
-                <SectionHeading
-                  eyebrow="Guia gratuito"
-                  title="Receba nosso guia completo"
-                  description="Roteiros prontos e mapa das atrações direto no seu e-mail."
-                  tone="light"
-                />
-                <a
-                  href="#/contato"
-                  className="mt-6 inline-flex items-center justify-center w-fit rounded-full bg-white text-umber-deep font-semibold px-6 py-3 text-sm hover:bg-umber-soft transition-colors"
-                >
-                  Pedir o guia
-                </a>
-              </div>
             </div>
           </div>
 
